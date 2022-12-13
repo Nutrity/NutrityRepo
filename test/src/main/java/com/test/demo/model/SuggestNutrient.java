@@ -18,7 +18,7 @@ public class SuggestNutrient {
 	private double sg_kcal;
 	private double sg_protein;
 	private double sg_fat;
-	private double sg_carb;
+	private double sg_car;
 	private double sg_suger;
 	private double sg_fiber;
 	private double sg_calcium;

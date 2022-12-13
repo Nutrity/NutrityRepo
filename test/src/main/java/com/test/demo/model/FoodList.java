@@ -12,13 +12,12 @@ public class FoodList {
 	private String foodcode;
 	private String foodname;
 	private String category;
-	private String cate_detail;
 	private String madeby;
 	private int gram;
 	private double kcal;
 	private double protein;
 	private double fat;
-	private double carb;
+	private double car;
 	private double suger;
 	private double fiber;
 	private double calcium;

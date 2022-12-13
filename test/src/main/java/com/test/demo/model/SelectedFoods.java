@@ -20,7 +20,7 @@ public class SelectedFoods {
 	@ManyToOne
 	@JoinColumn(name = "bnum")
 	private DietBoard bnum;
-	
+	 
 	@ManyToOne
 	@JoinColumn(name = "foodcode")
 	private FoodList foodcode;

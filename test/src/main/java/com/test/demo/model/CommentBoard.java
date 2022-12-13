@@ -19,7 +19,7 @@ public class CommentBoard {
 	private Long cnum;
 	private String content;
 	private Date c_regdate;
-	
+	 
 	@ManyToOne
 	@JoinColumn(name = "num")
 	private Member member;

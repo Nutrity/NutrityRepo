@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Entity
 public class Address {
-	
+	 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long addrnum;
 	private String address1;

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-@Data
+@Data 
 @Entity
 public class FoodList {
 	@Id

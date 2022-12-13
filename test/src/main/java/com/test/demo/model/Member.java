@@ -32,7 +32,7 @@ public class Member {
 	private int subscribe;
 	private Date user_regdate;
 	private String ip;
-
+ 
 	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "addrnum")
 	private Address address;

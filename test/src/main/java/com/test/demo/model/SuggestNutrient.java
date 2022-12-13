@@ -29,5 +29,5 @@ public class SuggestNutrient {
 	private double sg_vit_c;
 	private double sg_satuated_fat;
 	private double sg_trans_fat;
-	
+	 
 }

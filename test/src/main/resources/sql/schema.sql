@@ -16,7 +16,7 @@ CREATE TABLE `food_list` (
   `kcal` double NOT NULL,
   `madeby` varchar(255) COLLATE utf8mb3_bin DEFAULT NULL,
   `protein` double NOT NULL,
-  `satuafed_fat` double NOT NULL,
+  `satuated_fat` double NOT NULL,
   `sodium` double NOT NULL,
   `suger` double NOT NULL,
   `trans_fat` double NOT NULL,

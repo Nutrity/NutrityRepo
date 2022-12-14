@@ -21,7 +21,7 @@ public class MemberController {
 	
 	@GetMapping("/")
 	public String main() {
-		return "/dietboard/datepicker";
+		return "home";
 	}
 	
 	@GetMapping("login")

@@ -57,7 +57,7 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Service</a></li>
+          <li><a href="services.html">Diet</a></li>
           <li><a href="pricing.html">Subscribe</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -76,12 +76,14 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">???</a></li>
           <li><a href="#">Sign In</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Sign Up</a></li>
+          <li><a class="get-a-quote" href="get-a-quote.html">Register</a></li>
         </ul>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
   <!-- End Header -->
+
+ 

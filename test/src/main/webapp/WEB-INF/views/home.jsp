@@ -1,7 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%@include file="include/header.jsp" %>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+  <style>
+
+  body {
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js'></script>
     <script>
@@ -76,24 +92,13 @@
             calendar.render();
       });  
     </script>
-    <style>
+    <div class=""  style="height:15vh; background-color: black; background-size: cover; background-position: center;">
+    </div>
+    <div>
+    <div id='calendar' style="background-color: olive;"></div>
+    </div>
+    
+  <%@include file="include/footer.jsp" %>
+    
 
-  body {
-    margin: 40px 10px;
-    padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-  }
 
-  #calendar {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-</style>
-  </head>
-  <body>
-  <h3>Calendar</h3>
-    <div id='calendar'></div>
-  </body>
-</html>

@@ -12,6 +12,4 @@ public class Job {
 	private String role;
 	private String job;
 	private String qual_name;
-	 
-
 }

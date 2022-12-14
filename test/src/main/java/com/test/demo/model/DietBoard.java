@@ -26,6 +26,7 @@ public class DietBoard {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long bnum;
 	private String memo;
+	private String title;
 	
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
@@ -40,7 +41,6 @@ public class DietBoard {
 	@ManyToOne
 	@JoinColumn(name = "num")
 	private Member member;
-	
 	
 	@OneToOne
 	@JoinColumn(name = "snum")

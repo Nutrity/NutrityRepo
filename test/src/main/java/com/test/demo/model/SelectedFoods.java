@@ -1,5 +1,6 @@
 package com.test.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class SelectedFoods {
 	@JoinColumn(name = "bnum")
 	private DietBoard bnum;
 	 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "foodcode")
 	private FoodList foodcode;
 	

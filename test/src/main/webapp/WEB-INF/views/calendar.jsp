@@ -81,9 +81,21 @@
             calendar.render();
       });  
     </script>
-    <section style="min-height:20vh; padding:60px 0 30px 0; background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('img/month-cal-bg-1.jpg'); background-size: cover; background-position: bottom; position: relative;">
-    </section>
+
+<!--      style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('img/month-cal-bg-1.jpg'); background-size: cover; background-position: bottom; position: relative;" -->
  <main id="main">
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('img/month-cal-bg-1.jpg');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Calendar</h2>
+              <p>안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! </p>
+            </div>
+          </div>
+        </div>
+       </div>
+    </div>
  	<section id="month-cal" class="month-cal row">
     		<div id='calendar' class="col-10"></div>
  			<div id="right-sidebar" class="col-2" style="background-color: olive;"></div>

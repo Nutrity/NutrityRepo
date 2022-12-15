@@ -21,7 +21,7 @@ public class MemberController {
 	
 	@GetMapping("/")
 	public String main() {
-		return "home2";
+		return "home";
 	}
 	
 	@GetMapping("login")

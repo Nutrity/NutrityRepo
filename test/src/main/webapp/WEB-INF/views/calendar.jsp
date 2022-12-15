@@ -19,6 +19,7 @@
                 right: 'dayGridMonth'                
               },
               initialDate: '2020-09-12',
+<<<<<<< HEAD
               navLinks: false, // can click day/week names to navigate views
               businessHours: true, // display business hours
               editable: true,
@@ -80,9 +81,72 @@
 
             calendar.render();
       });  
-    </script>
+=======
+              navLinks: true, // can click day/week names to navigate views
+              navLinkDayClick: function(date, jsEvent) {
+            	  location.href='https://www.naver.com'
+              },
+              businessHours: true, // display business hours
+              editable: true,
+              selectable: true,
+              events: [
+                {
+                  title: '음식 이름',
+                  start: '2020-09-03',
+                  constraint: 'businessHours',
+                  url : 'https://naver.com'
+                },
+                {
+                  title: 'Meeting',
+                  start: '2020-09-13T11:00:00',
+                  constraint: 'availableForMeeting', // defined below
+                  color: '#257e4a'
+                },
+                {
+                  title: 'Conference',
+                  start: '2020-09-18',
+                  end: '2020-09-20'
+                },
+                {
+                  title: 'Party',
+                  start: '2020-09-29T20:00:00'
+                },
 
-<!--      style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('img/month-cal-bg-1.jpg'); background-size: cover; background-position: bottom; position: relative;" -->
+                // areas where "Meeting" must be dropped
+                {
+                  groupId: 'availableForMeeting',
+                  start: '2020-09-11T10:00:00',
+                  end: '2020-09-11T16:00:00',
+                  display: 'background'
+                },
+                {
+                  groupId: 'availableForMeeting',
+                  start: '2020-09-13T10:00:00',
+                  end: '2020-09-13T16:00:00',
+                  display: 'background'
+                },
+
+                // red areas where no events can be dropped
+                {
+                  start: '2020-09-24',
+                  end: '2020-09-28',
+                  overlap: false,
+                  display: 'background',
+                  color: '#ff9f89'
+                },
+                {
+                  start: '2020-09-06',
+                  end: '2020-09-08',
+                  overlap: false,
+                  display: 'background',
+                  color: '#ff9f89'
+                }
+              ]
+            });
+
+            calendar.render();
+      });  
+    </script>
  <main id="main">
     <div class="breadcrumbs">
       <div class="page-header d-flex align-items-center" style="background-image: url('img/month-cal-bg-1.jpg');">

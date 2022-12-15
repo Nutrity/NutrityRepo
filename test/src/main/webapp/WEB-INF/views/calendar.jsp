@@ -19,7 +19,6 @@
                 right: 'dayGridMonth'                
               },
               initialDate: '2020-09-12',
-<<<<<<< HEAD
               navLinks: false, // can click day/week names to navigate views
               businessHours: true, // display business hours
               editable: true,
@@ -81,7 +80,6 @@
 
             calendar.render();
       });  
-=======
               navLinks: true, // can click day/week names to navigate views
               navLinkDayClick: function(date, jsEvent) {
             	  location.href='https://www.naver.com'

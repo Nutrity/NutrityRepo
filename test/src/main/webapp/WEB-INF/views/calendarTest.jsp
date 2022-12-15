@@ -21,7 +21,7 @@
 			 initialDate: '2020-09-12',
 			navLinks: true,
 			 navLinkDayClick: function(date, jsEvent) {
-				 locaion.href= 'https://www.naver.com'
+				 location.href= 'https://www.naver.com'
 			 },
 			selectable: true,
 			editable : true,

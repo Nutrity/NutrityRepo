@@ -5,7 +5,7 @@
   <footer id="footer" class="footer">
 
     <div class="container">
-      <div class="row gy-4">
+      <div class="row gy-3">
         <div class="col-lg-5 col-md-12 footer-info">
           <a href="index.html" class="logo d-flex align-items-center">
             <span>Nutrity</span>
@@ -19,7 +19,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        <div class="col-lg-3 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
             <li><a href="#">Home</a></li>
@@ -30,7 +30,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        <div class="col-lg-3 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
             <li><a href="#">Web Design</a></li>
@@ -41,17 +41,17 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
-          </p>
+<!--         <div class="col-lg-2 col-6 "> -->
+<!--           <h4>Contact Us</h4> -->
+<!--           <p> -->
+<!--             A108 Adam Street <br> -->
+<!--             New York, NY 535022<br> -->
+<!--             United States <br><br> -->
+<!--             <strong>Phone:</strong> +1 5589 55488 55<br> -->
+<!--             <strong>Email:</strong> info@example.com<br> -->
+<!--           </p> -->
 
-        </div>
+<!--         </div> -->
 
       </div>
     </div>

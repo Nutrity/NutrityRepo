@@ -2,20 +2,8 @@
     pageEncoding="UTF-8"%>
     <%@include file="include/header.jsp" %>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
-  <style>
-
-  body {
-    padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-  }
-
-  #calendar {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-</style>
+<!--   <style> -->
+<!-- </style> -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
@@ -92,11 +80,14 @@
             calendar.render();
       });  
     </script>
-    <div class=""  style="height:15vh; background-color: black; background-size: cover; background-position: center;">
-    </div>
-    <div>
-    <div id='calendar' style="background-color: olive;"></div>
-    </div>
+    <section style="min-height:20vh; padding:60px 0 30px 0; background-color: black; background-size: cover; background-position: center; position: relative;">
+    </section>
+ <main id="main">
+ 	<section id="month-cal" class="month-cal row">
+ 			<div id="left-sidbar" class="col-2" style="background-color: olive;"></div>
+    		<div id='calendar' class="col-10"></div>
+	 </section>
+ </main>
     
   <%@include file="include/footer.jsp" %>
     

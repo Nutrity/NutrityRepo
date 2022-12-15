@@ -12,6 +12,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <!-- Favicons -->
   <link href="img/Nutrity-favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">

@@ -12,21 +12,19 @@
             더욱 건강하게!</h2>
           <p data-aos="fade-up" data-aos-delay="100">역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! </p>
 
-          <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-            <input type="text" class="form-control" placeholder="오늘 먹은 음식을 검색">
-            <button type="submit" class="btn btn-primary">Search</button>
+          <form class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+            <input type="text" class="form-control" placeholder="오늘 먹은 음식을 검색" id="foodname">
+            <button type="button" class="btn btn-primary" id="foodBtn">Search</button>
           </form>
         </div>
-
-        <!-- <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-          <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="">
-        </div> -->
-
       </div>
     </div>
   </section><!-- End Hero Section -->
 
   <main id="main">
+    <!-- ======= Result Foodlists Section ======= -->
+    <section id="foodlists" style="display: none;">
+    </section>
 
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">

@@ -153,5 +153,79 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     aos_init();
   });
-
+  
+//  Result FoodLists Section
+	$("#foodBtn").click(function() {
+		if ($("#foodname").val() == "") {
+			alert("음식 이름을 입력하세요")
+			return;
+		}
+		$.ajax({
+			type: "get",
+			url: "/board/foodList?foodname=" + $("#foodname").val(),
+		})
+			.done(function(resp) {
+				if (resp != null) {
+					var str = "<div class='container'>";
+						str += "<div data-aos='fade-up' class='list-text-header row'>"
+						str += "<div class='col-3'>음식 이름</div>"
+						str += "<div class='col'>카테고리</div> "
+						str += "<div class='col'>칼로리</div> "
+						str += "<div class='col'>탄수화물</div> "
+						str += "<div class='col'>단백질</div> "
+						str += "<div class='col'>지방</div> "
+						str += "<div class='col'>당</div>"
+						str += "<div class='col'>나트륨</div> "
+						str += "<div class='col'>트랜스<br>지방</div> "
+						str += "<div class='col'>칼슘</div> "
+						str += "<div class='col'>비타민C</div> "
+						str += "<div class='col'>철분</div> "
+						str += "</div>"
+						str += "<div data-aos='fade-up' class='list-text-content'>";
+						
+					$.each(resp, function(key, val) {
+						str += "<div class='row slide-up'>"
+						str += "<div class='col-3'>" + val.foodname + "</div> "
+						
+						str += "<div class='col'>" + val.category + "</div> "
+						
+						str += "<div class='col'>" + val.kcal + "</div> "
+						str += "<div class='col'>" + val.car + "</div> "
+						str += "<div class='col'>" + val.protein + "</div> "
+						str += "<div class='col'>" + val.fat + "</div> "
+						str += "<div class='col'>" + val.suger + "</div>"
+						str += "<div class='col'>" + val.sodium + "</div> "
+						str += "<div class='col'>" + val.trans_fat + "</div> "
+						str += "<div class='col'>" + val.calcium + "</div> "
+						str += "<div class='col'>" + val.vit_c + "</div> "
+						str += "<div class='col'>" + val.iron + "</div> "
+						str += "</div>"
+					})
+					
+          			str += "</div>"
+					str += "<div data-aos='fade-up' data-aos-delay='100' class='link-sector'>"
+					str += "<div class='row justify-content-end'>"
+					str += "<div class='col-4'>"
+        		    str += "<a href='#'>"
+              		str += "<h3>"
+                	str += "나만의 식단 만들기"
+                	str += "<i class='bi bi-arrow-right'></i>"
+              		str += "</h3>"
+            		str += "</a>"
+          			str += "</div>"
+          			str += "</div>"
+					str += "</div>"
+					
+					str += "</div>"
+					
+					$("#foodlists").html(str)
+					if($("#foodlists").css("display") == "none")  {
+					    $("#foodlists").show();
+					} 
+				}
+			})
+			.fail(function(e) {
+				alert("error" + e)
+			})
+	})
 });

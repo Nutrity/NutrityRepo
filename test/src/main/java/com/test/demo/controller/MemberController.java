@@ -21,7 +21,11 @@ public class MemberController {
 	
 	@GetMapping("/")
 	public String main() {
-		return "calender";
+		return "home";
+	}
+	
+	@GetMapping("calendar")
+	public void calendar() {
 	}
 	
 	@GetMapping("login")

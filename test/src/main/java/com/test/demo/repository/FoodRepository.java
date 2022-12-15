@@ -9,7 +9,7 @@ import com.test.demo.model.FoodList;
 
 public interface FoodRepository extends JpaRepository<FoodList, String>{
 
-	@Query(value =  "select * from food_list where foodname like '%?1%'", nativeQuery = true)
+	@Query(value =  "select * from food_list where foodname like CONCAT('%',:foodname,'%')", nativeQuery = true)
 	List<FoodList> findByFoodname(String foodname);
 	
 }

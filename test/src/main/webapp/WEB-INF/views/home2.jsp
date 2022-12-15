@@ -569,18 +569,19 @@ $("#foodBtn").click(function(){
 if($("#foodname").val()==""){
 	alert("음식 이름을 입력하세요")
 	return;
-}	
+}
+alert( $("#foodname").val())
 data = {
 		"foodname" : $("#foodname").val()
 }
 $.ajax({
 	type : "get",
-	url : "/board/foodList",
-	contentType:"application/json;charset=utf-8",
-	data:JSON.stringify(data)
+	url : "/board/foodList?foodname="+$("#foodname").val(),
+	//contentType:"application/json;charset=utf-8",
+//	data:JSON.stringify(data)
 	})
 	.done(function(resp){
-		if(resp=="success"){
+		if(resp!=null){
 		var str = "";
 		$.each(resp, function(key,val){
 			str+="<table>"

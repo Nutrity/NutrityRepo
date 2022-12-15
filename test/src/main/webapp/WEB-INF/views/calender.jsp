@@ -19,7 +19,7 @@
                 right: 'dayGridMonth'                
               },
               initialDate: '2020-09-12',
-              navLinks: true, // can click day/week names to navigate views
+              navLinks: false, // can click day/week names to navigate views
               businessHours: true, // display business hours
               editable: true,
               selectable: true,
@@ -27,7 +27,8 @@
                 {
                   title: '음식 이름',
                   start: '2020-09-03',
-                  constraint: 'businessHours'
+                  constraint: 'businessHours',
+                  url : 'https://naver.com'
                 },
                 {
                   title: 'Meeting',
@@ -84,8 +85,8 @@
     </section>
  <main id="main">
  	<section id="month-cal" class="month-cal row">
- 			<div id="left-sidbar" class="col-2" style="background-color: olive;"></div>
     		<div id='calendar' class="col-10"></div>
+ 			<div id="right-sidebar" class="col-2" style="background-color: olive;"></div>
 	 </section>
  </main>
     

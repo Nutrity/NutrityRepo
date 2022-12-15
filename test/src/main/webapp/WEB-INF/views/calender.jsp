@@ -80,7 +80,7 @@
             calendar.render();
       });  
     </script>
-    <section style="min-height:20vh; padding:60px 0 30px 0; background-color: black; background-size: cover; background-position: center; position: relative;">
+    <section style="min-height:20vh; padding:60px 0 30px 0; background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('img/month-cal-bg-1.jpg'); background-size: cover; background-position: bottom; position: relative;">
     </section>
  <main id="main">
  	<section id="month-cal" class="month-cal row">

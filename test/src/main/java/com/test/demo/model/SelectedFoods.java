@@ -20,10 +20,10 @@ public class SelectedFoods {
 	
 	@ManyToOne
 	@JoinColumn(name = "bnum")
-	private DietBoard bnum;
+	private DietBoard dietBoard;
 	 
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "foodcode")
-	private FoodList foodcode;
+	private FoodList foodList;
 	
 }

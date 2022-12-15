@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
 import com.test.demo.repository.BoardRepository;
+import com.test.demo.repository.FoodRepository;
 
 @Service
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
 	private BoardRepository boardRepository;
+	
+	@Autowired
+	private FoodRepository foodRepository;
 
 	@Override
 	public void dietInsert(DietBoard board) {
@@ -37,9 +41,9 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<FoodList> list(String foodname) {
+	public List<FoodList> foodLists(String foodname) {
 		
-		return boardRepository.findByWord(foodname);
+		return foodRepository.findByFoodname(foodname);
 	}
 
 }

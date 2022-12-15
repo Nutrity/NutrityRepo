@@ -16,6 +16,6 @@ public interface BoardService {
 	//상세보기
 	public DietBoard dietDetail(Long bnum);
 	//음식리스트
-	public List<FoodList> list(String foodname);
+	public List<FoodList> foodLists(String foodname);
 	
 }

@@ -19,7 +19,7 @@ public class BoardController {
 	
 	@GetMapping("foodList/{foodname}")
 	public String foodlist(@PathVariable String foodname ,Model model) {
-		List<FoodList> foodlists = boardService.list(foodname);
+		List<FoodList> foodlists = boardService.foodLists(foodname);
 		model.addAttribute("foodlist", foodlists);
 		return "foodlist";
 	}

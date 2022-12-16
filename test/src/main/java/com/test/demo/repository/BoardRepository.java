@@ -8,6 +8,6 @@ import com.test.demo.model.DietBoard;
 
 public interface BoardRepository extends JpaRepository<DietBoard, Long>{
 
-	List<DietBoard> findByNum(Long num);
+	List<DietBoard> findByMember(Long num);
 	
 }

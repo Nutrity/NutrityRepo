@@ -14,6 +14,7 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -23,6 +24,7 @@ import lombok.Setter;
 
 @Setter @Getter
 @Entity
+@DynamicInsert
 public class Member {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY )
@@ -51,7 +53,7 @@ public class Member {
 	private Address address;
 	
 	@OneToOne(cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "role")
+	@JoinColumn(name = "jnum")
 	private Job job;
 	
 	

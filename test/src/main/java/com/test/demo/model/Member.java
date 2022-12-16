@@ -12,6 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -35,13 +36,14 @@ public class Member {
 	private String phone;
 	private String birth;
 	private String age;
+	
+	@ColumnDefault("0")
 	private int subscribe;
 	
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
 	private Date user_regdate;
-	@NonNull
 	private String ip;
  
 	@OneToOne(cascade = CascadeType.REMOVE)

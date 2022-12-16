@@ -43,9 +43,11 @@
 			id="SelectFoodname">
 		<button type="button" class="btn btn-primary" id="selectFoodBtn">Search</button>
 		<div id="selectFood"></div>
+		<div style="float: right; ">
 		<input type="submit" value="확인">
-		 <input type="button" onclick="checkAll(false);" class="btn btn-warning" value="선택취소">
+		<input type="button" onclick="checkAll(false);" class="btn" value="선택취소">
 		<button type="button" id="closeBtn">창 닫기</button>
+		</div>
 	</form>
 	
 </body>

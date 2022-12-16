@@ -2,17 +2,27 @@ package com.test.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.test.demo.model.Address;
 import com.test.demo.model.Member;
+import com.test.demo.repository.AddressRepository;
 import com.test.demo.repository.MemberRepository;
 
 @Service
+@Transactional
 public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	private MemberRepository memberRepository;
 	
-	public void join(Member member) {
+	@Autowired
+	private AddressRepository addressRepository;
+	
+	@Transactional
+	public void join(Member member, Address address) {
+		addressRepository.save(address);
+		member.setAddress(address);
 		memberRepository.save(member);
 	}
 	

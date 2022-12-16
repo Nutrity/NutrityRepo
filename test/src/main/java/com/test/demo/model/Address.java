@@ -18,6 +18,6 @@ public class Address {
 	private String address1;
 	@Nullable
 	private String address2;
-	private int zipcode;
+	private String zipcode;
 
 }

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.test.demo.model.Address;
 import com.test.demo.model.Member;
 import com.test.demo.service.MemberServiceImpl;
 
@@ -35,14 +37,20 @@ public class MemberController {
 	
 	@GetMapping("join")
 	public String join() {
-		return "join";
+		return "member/join";
 	}
 	
 	@PostMapping("join")
-	public String join(Member member, HttpServletRequest request) {
+	public String join(Member member,String zipcode, 
+			String address1, String address2, HttpServletRequest request) {
 	 	member.setIp(request.getRemoteAddr());
-		mService.join(member);
-		return "main";
+	 	Address addr = new Address();
+	 	addr.setAddress2(address2);
+	 	addr.setAddress1(address1);
+	 	addr.setZipcode(zipcode);
+	 	System.out.println(address2+ ", " + address1 + ", " + zipcode);
+		mService.join(member, addr);
+		return "redirect:/";
 	}
 	
 	@GetMapping("modify")

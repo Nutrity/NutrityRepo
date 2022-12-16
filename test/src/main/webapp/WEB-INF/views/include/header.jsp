@@ -80,7 +80,7 @@
           </li> -->
 <!--           <li><a href="#">???</a></li> -->
           <li><a href="#">Sign In</a></li>
-          <li><a class="get-a-quote" href="#">Sign Up</a></li>
+          <li><a class="get-a-quote" href="/join">Sign Up</a></li>
         </ul>
       </nav><!-- .navbar -->
 

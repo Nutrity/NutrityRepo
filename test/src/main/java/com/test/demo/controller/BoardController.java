@@ -33,7 +33,7 @@ public class BoardController {
 	
 	@GetMapping("insert")
 	public String boardInsert() {
-		return "dietinsert";
+		return "/dietboard/dietinsert";
 	}
 	
 	@PostMapping("insert")
@@ -47,6 +47,11 @@ public class BoardController {
 	public String boardList(DietBoard board) {
 		
 		return "calendarTest";
+	}
+	
+	@GetMapping("selectfood")
+	public String selectfood(){
+		return "/dietboard/selectfood";
 	}
 	
 	

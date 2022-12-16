@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						
 					$.each(resp, function(key, val) {
 						str += "<div class='row slide-up'>"
+						str += "<input type='checkbox'', value= '"+val.foodname+"' id>"
 						str += "<div class='col-3'>" + val.foodname + "</div> "
 						
 						str += "<div class='col'>" + val.category + "</div> "
@@ -228,4 +229,49 @@ document.addEventListener('DOMContentLoaded', () => {
 				alert("error" + e)
 			})
 	})
+	
+	
+	$("#selectFoodBtn").click(function() {
+		if ($("#SelectFoodname").val() == "") {
+			alert("음식 이름을 입력하세요")
+			return;
+		}
+		$.ajax({
+			type: "get",
+			url: "/board/foodList?foodname=" + $("#SelectFoodname").val(),
+		})
+			.done(function(resp) {
+				if (resp != null) {
+					var str = "<div class='container'  style='text-align: center;'>";
+						str += "<div class='list-text-header row'>"
+						str += "<div class ='col-1'></div>"
+						str += "<div class='col-2'>음식 이름</div>"
+						str += "<div class='col'>카테고리</div> "
+						str += "<div class='col'>Made By</div> "
+						str += "</div>"
+						
+					$.each(resp, function(key, val) {
+						str += "<div class='row'>"
+						str += "<div class = 'col-1'><input type='checkbox'' value= '"+val.foodname+"' id='fname'></div>"
+						str += "<div class='col-2'>" + val.foodname + "</div> "
+						str += "<div class='col'>" + val.category + "</div> "
+						str += "<div class='col'>" + val.madeby + "</div> "
+						str += "</div>"
+					})
+					
+					$("#selectFood").html(str)
+					if($("#selectFood").css("display") == "none")  {
+					    $("#selectFood").show();
+					} 
+				}
+			})
+			.fail(function(e) {
+				alert("error" + e)
+			})
+	})
+	
+
+
+
+	
 });

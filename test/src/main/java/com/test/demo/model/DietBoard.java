@@ -51,6 +51,4 @@ public class DietBoard {
 	@OneToMany(mappedBy = "dietBoard")
 	private List<SelectedFoods> sfoods;
 	
-	
-	
 }

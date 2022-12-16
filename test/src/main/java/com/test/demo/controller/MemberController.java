@@ -1,6 +1,7 @@
 package com.test.demo.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,7 @@ public class MemberController {
 	@GetMapping("calendar")
 	public void calendar() {
 	}
-	
-	@GetMapping("login")
-	public String login() {
-		return "login";
-	}
-	
+		
 	@GetMapping("join")
 	public String join() {
 		return "member/join";
@@ -50,6 +46,23 @@ public class MemberController {
 	 	addr.setZipcode(zipcode);
 	 	System.out.println(address2+ ", " + address1 + ", " + zipcode);
 		mService.join(member, addr);
+		return "redirect:/";
+	}
+	
+	@GetMapping("login")
+	public String login() {
+		return "member/login";
+	}
+	
+	@PostMapping("login")
+	public String login(Member member, HttpSession session) {
+		session.setAttribute("member", mService.login(member));
+		return "calendarTest";
+	}
+	
+	@GetMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
 		return "redirect:/";
 	}
 	

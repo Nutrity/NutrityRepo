@@ -79,7 +79,9 @@
             </ul>
           </li> -->
 <!--           <li><a href="#">???</a></li> -->
-          <li><a href="#">Sign In</a></li>
+          <c:if test = "${sessionScope.member.username == null}">
+          <li><a href="/login">Sign In</a></li>
+          </c:if>
           <li><a class="get-a-quote" href="/join">Sign Up</a></li>
         </ul>
       </nav><!-- .navbar -->

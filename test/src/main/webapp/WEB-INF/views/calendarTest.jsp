@@ -18,7 +18,6 @@
 				center : 'title',
 				right : 'dayGridMonth'
 			},
-			 initialDate: '2020-09-12',
 			navLinks: true,
 			 navLinkDayClick: function(date, jsEvent) {
 				 location.href= 'https://www.naver.com'
@@ -53,7 +52,9 @@
        </div>
     </div>
     <section>
-		<div id='calendar-container'>
+    <h3>${sessionScope.member.username}의 캘린더</h3>
+    <input type = "button" onclick = "location.href='/logout'" value = "로그아웃">
+		<div id='calendar-container'>		
 			<div id='calendar'></div>
 		</div>
     </section>

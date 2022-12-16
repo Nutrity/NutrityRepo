@@ -48,6 +48,11 @@ public class MemberServiceImpl implements MemberService{
 		Member subscribe = memberRepository.findById(member.getNum()).get();
 		subscribe.setSubscribe(0);
 	}
+
+	@Override
+	public Member login(Member member) {
+		return memberRepository.findByUsername(member.getUsername());
+	}
 	
 	
 	

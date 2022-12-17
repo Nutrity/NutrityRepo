@@ -12,7 +12,6 @@ public class FoodList {
 	private String foodcode;
 	private String foodname;
 	private String category;
-	private String madeby;
 	private double kcal;
 	private double car;
 	private double protein;
@@ -24,6 +23,7 @@ public class FoodList {
 	private double vit_c;
 	private double iron;
 	private int gram;
+	private String madeby;
 	private double fiber;
 	private double vit_b1;
 	private double vit_b2;

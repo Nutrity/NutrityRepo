@@ -52,7 +52,7 @@
        </div>
     </div>
     <section>
-    <h3>${p.user.username}의 캘린더</h3>
+    <h3>${pinfo.user.username}의 캘린더</h3>
 		<div id='calendar-container'>		
 			<div id='calendar'></div>
 		</div>

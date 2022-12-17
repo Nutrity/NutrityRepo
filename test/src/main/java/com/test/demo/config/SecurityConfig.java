@@ -32,11 +32,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.formLogin()
 		.loginPage("/login")
 		.usernameParameter("useremail")
-		.defaultSuccessUrl("/calendar")
+		.defaultSuccessUrl("/calendarTest")
 		.and()
 		.logout()
 		.logoutUrl("/logout")
-		.logoutSuccessUrl("/")
+		.logoutSuccessUrl("/home")
 		.invalidateHttpSession(true);
 	}
 

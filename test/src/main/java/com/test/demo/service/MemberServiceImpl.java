@@ -6,7 +6,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.test.demo.model.Address;
+import com.test.demo.model.Job;
 import com.test.demo.model.Member;
+import com.test.demo.repository.AddressRepository;
+import com.test.demo.repository.JobRepository;
 import com.test.demo.repository.MemberRepository;
 
 @Service
@@ -19,14 +22,24 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberRepository memberRepository;
 	
-
+	@Autowired
+	private AddressRepository addressRepository;
+	
+	@Autowired
+	private JobRepository jobRepository;
 	
 	@Transactional
-	public void join(Member member) {
+	public void join(Member member, Address address) {
+		
+		Job job = new Job();
 		
 		String rawPwd = member.getPassword();
 		String encPwd = encoder.encode(rawPwd);
 		member.setPassword(encPwd);
+		jobRepository.save(job);
+		member.setJob(job);
+		addressRepository.save(address);
+		member.setAddress(address);
 		memberRepository.save(member);
 	}
 	

@@ -6,7 +6,7 @@ import com.test.demo.model.Member;
 public interface MemberService {
 	
 	//회원가입
-	public void join(Member member);
+	public void join(Member member, Address address);
 	
 	//회원수정 
 	public void modify(Member member);

@@ -38,14 +38,14 @@ public class MemberController {
 	}
 	
 	@PostMapping("join")
-	public String join(Member member,String zipcode, 
-		String address1, String address2, HttpServletRequest request) {
+	public String join(Member member,HttpServletRequest request) {
 	 	member.setIp(request.getRemoteAddr());
 	 	Address addr = new Address();
-	 	addr.setAddress2(address2);
-	 	addr.setAddress1(address1);
-	 	addr.setZipcode(zipcode);
-		mService.join(member, addr);
+	 	addr.setAddress1(request.getParameter("address1"));
+	 	addr.setAddress2(request.getParameter("address2"));
+	 	addr.setZipcode(request.getParameter("zipcode"));
+        member.setAddress(addr);
+		mService.join(member);
 		return "redirect:/";
 	}
 	

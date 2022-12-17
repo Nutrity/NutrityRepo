@@ -1,25 +1,18 @@
 package com.test.demo.model;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
 import lombok.Data;
 
+
 @Data
 @Embeddable
 @DynamicInsert
 public class Job {
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long jnum;
-	
-	@ColumnDefault("'role_user'")
+			
+	@ColumnDefault("'ROLE_USER'")
 	private String role;
 	
 	private String job;

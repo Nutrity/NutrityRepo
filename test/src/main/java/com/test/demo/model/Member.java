@@ -3,6 +3,7 @@ package com.test.demo.model;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,12 +49,10 @@ public class Member {
 	private Date user_regdate;
 	private String ip;
  
-	@OneToOne(cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "addrnum")
+	@Embedded
 	private Address address;
 	
-	@OneToOne(cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "jnum")
+	@Embedded
 	private Job job;
 	
 	

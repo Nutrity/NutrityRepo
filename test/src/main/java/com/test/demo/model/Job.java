@@ -1,5 +1,6 @@
 package com.test.demo.model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +12,7 @@ import org.hibernate.annotations.DynamicInsert;
 import lombok.Data;
 
 @Data
-@Entity
+@Embeddable
 @DynamicInsert
 public class Job {
 	

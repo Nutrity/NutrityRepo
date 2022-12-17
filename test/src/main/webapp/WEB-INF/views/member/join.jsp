@@ -26,21 +26,21 @@
     </section>
 
 <form action = "join" method = "post">
-UserName : <input type = "text" id = "username" name = "username"><br/>
-PassWord : <input type = "text" id = "password" name = "password"><br/>
-Birth : <input type = "text" id = "birth" name = "birth"><br/>
-Age : <input type = "text" id = "age" name = "age"><br/>
-Phone : <input type = "text" id = "phone" name = "phone"><br/>
-Address : 
+아이디 : <input type = "email" id = "useremail" name = "useremail"><br/>
+이름: <input type = "text" id = "username" name = "username"><br/>
+비밀번호 : <input type = "text" id = "password" name = "password"><br/>
+생일 : <input type = "text" id = "birth" name = "birth"><br/>
+나이 : <input type = "text" id = "age" name = "age"><br/>
+휴대전화 : <input type = "text" id = "phone" name = "phone"><br/>
+주소 : 
 <input type="text" id="zipcode" name = "zipcode" placeholder="우편번호">
 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
 <input type="text" id="address1"  name = "address1" placeholder="도로명주소">
 <span id="guide" style="color:#999;display:none"></span>
 <input type="text" id="address2"  name = "address2" placeholder="상세주소">
 <br>
-Email : <input type = "text" id = "useremail" name = "useremail"><br/>
-남 : <input type = "radio" id = "gender" name = "gender" value = "남" checked/>
-여 : <input type = "radio" id = "gender" name = "gender" value = "여" checked/>        
+남 : <input type = "radio" id = "gender" name = "gender" value = "남" />
+여 : <input type = "radio" id = "gender" name = "gender" value = "여" />        
 <button type = "submit">회원가입</button>
 </form>
 

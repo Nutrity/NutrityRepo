@@ -39,7 +39,7 @@ public class MemberController {
 	
 	@PostMapping("join")
 	public String join(Member member,String zipcode, 
-			String address1, String address2, HttpServletRequest request) {
+		String address1, String address2, HttpServletRequest request) {
 	 	member.setIp(request.getRemoteAddr());
 	 	Address addr = new Address();
 	 	addr.setAddress2(address2);
@@ -52,11 +52,6 @@ public class MemberController {
 	@GetMapping("login")
 	public String login() {
 		return "/member/login";
-	}
-	
-	@PostMapping("login")
-	public String login(Member member) {
-		return "redirect:calendar";
 	}
 		
 	@GetMapping("modify")

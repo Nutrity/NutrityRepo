@@ -1,5 +1,6 @@
 package com.test.demo.model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,7 @@ import org.springframework.lang.Nullable;
 import lombok.Data;
 
 @Data
-@Entity
+@Embeddable
 public class Address {
 	 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)

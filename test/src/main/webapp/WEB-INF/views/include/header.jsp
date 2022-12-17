@@ -81,7 +81,7 @@
             </ul>
           </li> -->
 <!--           <li><a href="#">???</a></li> -->
-          <sec:authentication property = "principal" var = "pinfo"/>
+          <sec:authentication property = "principal" var = "p"/>
           <sec:authorize access = "isAnonymous()">
           <li><a href="/login">Sign In</a></li>        
           <li><a class="get-a-quote" href="/join">Sign Up</a></li>

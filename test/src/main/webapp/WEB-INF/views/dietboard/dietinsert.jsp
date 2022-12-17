@@ -9,6 +9,15 @@ function foodFinder() {
 }
 
 function getReturnObj(foodObj) {
+	$.ajax({
+		type: 'post',
+		url:'/board/foodlist',
+		data : '',
+		
+		
+		
+	})
+	
 	
 	alert(foodObj);
 	

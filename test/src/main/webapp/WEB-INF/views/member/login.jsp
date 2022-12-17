@@ -26,7 +26,7 @@
     </section>
 
 <form action = "/login" method = "post">
-UserName : <input type = "text" id = "username" name = "username"><br/>
+UserName : <input type = "text" id = "useremail" name = "useremail"><br/>
 PassWord : <input type = "text" id = "password" name = "password"><br/>
 <button>로그인</button>
 </form>

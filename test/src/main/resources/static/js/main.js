@@ -154,83 +154,90 @@ document.addEventListener('DOMContentLoaded', () => {
 		aos_init();
 	});
 
+	const listHeadr = ['음식 이름', '카테고리', 'Made By', '칼로리', '탄수화물', '단백질', '지방', '당', '나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분']
 	//  Result FoodLists Section
 	$("#foodBtn").click(function() {
 		if ($("#foodname").val() == "") {
 			alert("음식 이름을 입력하세요")
 			return;
-		}
+		}//if
 		$.ajax({
 			type: "get",
 			url: "/board/foodListDesc?foodname=" + $("#foodname").val(),
-		})
+		})//ajax
 			.done(function(resp) {
 				if (resp != null) {
-					const listHeadr = ['음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당', '나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분']
 					var str = '';
 					str += "<div class='container'>";
 					str += "<div data-aos='fade-up' class='list-text-header row'>"
-					str += "<div class='col-3'></div>"
-					for (let i = 0; i < 11; i++) {
-						str += "<div class='col'></div>"
-					}
+					for (let i = 0; i < 12; i++) {
+						if (i != 0) {
+							str += "<div class='col'></div>"
+						} else {
+							str += "<div class='col-3'></div>"
+						}//if
+					}//for
 					str += "</div>" //list-text-header row
+					
+					let i = 0;
+					$('.list-text-header.row > div').each(function(index, item) {
+						$(this).append(listHeadr[i])
+						i++;
+						if (i = 2) {
+							i++;
+							return i;
+						}
+					})//list-text-header row > div
 					str += "<div data-aos='fade-up' class='list-text-content'>";
 
 						str += "<div class='slide-up'>";
 					$.each(resp, function(key, val) {
 							str += "<div class='row'>";
-							str += "<div class='col-3'>" + Object.values(val)[1] + '</div> ';
-						for (let i = 2; i < 13; i++) {
+						for (let i = 1; i < 13; i++) {
+							if (i = 1) {
+								str += "<div class='col-3'>" + Object.values(val)[i] + '</div> ';
+							} else if (i != 3) {
 								str += "<div class='col'>" + Object.values(val)[i] + "</div>"
-						}
+							}//if
+						}//for
 							str += '</div>'; //row
-					});
+					});//each
 						str += '</div>'; //slide-up
 					str += '</div>'; //list-text-content
 
 					str +=
 						"<div data-aos='fade-up' data-aos-delay='100' class='link-sector'>";
-					str += "<div class='row justify-content-end'>";
-					str += "<div class='col-4'>";
-					str += "<a href='#'>";
-					str += '<h3>';
-					str += '나만의 식단 만들기';
-					str += "<i class='bi bi-arrow-right'></i>";
-					str += '</h3>';
-					str += '</a>';
-					str += '</div>'; //col-4
-					str += '</div>'; //row justify-content-end
+						str += "<div class='row justify-content-end'>";
+							str += "<div class='col-4'>";
+								str += "<a href='#'>";
+									str += '<h3>';
+										str += '나만의 식단 만들기';
+										str += "<i class='bi bi-arrow-right'></i>";
+									str += '</h3>';
+								str += '</a>';
+							str += '</div>'; //col-4
+						str += '</div>'; //row justify-content-end
 					str += '</div>'; //link-sector
 
 					str += "</div>" //container
 
 					$('#foodlists').html(str);
 
-					let j = 0;
-					$('.list-text-header.row > div').each(function(index, item) {
-						if (j < listHeadr.length) {
-							$(this).append(listHeadr[j])
-							j++
-						} else {
-							j = 0;
-						}
-					})
 					if ($('#foodlists').css('display') == 'none') {
 						$('#foodlists').show();
-					}
-				}
-			})
+					}//display
+				}//if
+			})//.done
 			.fail(function(e) {
 				alert("error" + e)
 			})
-	})
+	})//foodBtn
 
 	//	var checkbox = $("input[name=fcode]:checkbox");
 
 	var	foodObj = {
 					0 : 'foodcode'
-			};
+		};
 	
 	$("#selectFoodBtn").click(function() {
 
@@ -248,23 +255,31 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (resp != null) {
 				var str = "<div class='container'  style='text-align: center;'>";
 					str += "<table class='table table-hover'>"
-					str += "<thead> <tr>"
-					str += "<th><input type='checkbox'></th>"
-					str += "<th>음식 이름</th>"
-					str += "<th>카테고리</th> "
-					str += "<th>Made By</th> "
-					str += "</tr>"
-					str += "</thead>"
-					str += "</tbody>"
+						str += "<thead> <tr>"
+						str += "<th><input type='checkbox'></th>"
+						for(i=0; i<3; i++) {
+								str += "<th></th>"
+						}//for
+						str += "</tr> </thead>"
+						str += "</tbody>"
+					
+					let i = 1;
+					for (i=1; i<4; i++) {
+						$('tr > th').next().text(
+							listHeadr[i]
+						)
+					}//for
 				$.each(resp, function(key, val) {
 					str += "<tr>"
-					str += "<td><input type='checkbox' class='chckbox' value= '" + val.foodcode + "' name='fcode'></td>"
-					str += "<td id='fname'>" + val.foodname + "</td> "
-					str += "<td>" + val.category + "</td> "
-					str += "<td>" + val.madeby + "</td> "
+						str += "<td><input type='checkbox' class='chckbox' value= '" + val.foodcode + "' name='fcode'></td>"
+						for (i=1; i<4; i++) {
+							$('tr > th').next().text(
+								Object.values(val)[i]
+							)
+						}//for
 					str += "</tr>"
 				})//each
-					str += "</tbody>"
+						str += "</tbody>"
 					str += "</table>"
 				
 				$("#selectFood").html(str)
@@ -303,10 +318,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	$("#finBtn").click(function() {
 		window.opener.getReturnObj(JSON.stringify(foodObj))
 		self.close();
-	})
+	})//finBtn
 	
 	$("#closeBtn").click(function() {
 		self.close();
-	})
+	})//closeBtn
  
 });

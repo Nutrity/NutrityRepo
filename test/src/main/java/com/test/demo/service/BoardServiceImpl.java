@@ -45,6 +45,12 @@ public class BoardServiceImpl implements BoardService{
 		
 		return foodRepository.findByFoodname(foodname);
 	}
+	
+	@Override
+	public List<FoodList> foodListsDesc(String foodname) {
+		
+		return foodRepository.findByFoodnameDesc(foodname);
+	}
 
 	@Override
 	public List<DietBoard> dietLists(DietBoard board) {

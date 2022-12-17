@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		$.ajax({
 			type: "get",
-			url: "/board/foodList?foodname=" + $("#foodname").val(),
+			url: "/board/foodListDesc?foodname=" + $("#foodname").val(),
 		})
 			.done(function(resp) {
 				if (resp != null) {
@@ -177,14 +177,16 @@ document.addEventListener('DOMContentLoaded', () => {
 					str += "</div>" //list-text-header row
 					str += "<div data-aos='fade-up' class='list-text-content'>";
 
+						str += "<div class='slide-up'>";
 					$.each(resp, function(key, val) {
-						str += "<div class='row slide-up'>";
-						str += "<div class='col-3'>" + Object.values(val)[1] + '</div> ';
+							str += "<div class='row'>";
+							str += "<div class='col-3'>" + Object.values(val)[1] + '</div> ';
 						for (let i = 2; i < 13; i++) {
-							str += "<div class='col'>" + Object.values(val)[i] + "</div>"
+								str += "<div class='col'>" + Object.values(val)[i] + "</div>"
 						}
-						str += '</div>'; //row slide-up
+							str += '</div>'; //row
 					});
+						str += '</div>'; //slide-up
 					str += '</div>'; //list-text-content
 
 					str +=

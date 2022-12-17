@@ -1921,51 +1921,55 @@ section {
   padding: 0;
 }
 
-.list-text-header {
+#foodlists .list-text-header {
   height: 5vh;
   padding: 0;
   overflow: hidden;
   text-align: center;
 }
 
-.list-text-content {
+#foodlists .list-text-content {
   height: 15vh;
   padding: 0;
   overflow: hidden;
   text-align: center;
 }
 
-.list-text-content .row {
+#foodlists .list-text-content .slide-up {
+  animation: slide-up ease-in-out 10s both;
+}
+
+#foodlists .list-text-content .row {
   padding: 10px 0;
 }
 
-.slide-up {
-  animation: slide-up ease-in-out 10s;
-  animation-fill-mode: both;
-}
-
-.link-sector {
+#foodlists .link-sector {
   margin: 20px 0;
   height: 5vh;
 }
 
-.link-sector a {
+#foodlists .link-sector a {
   text-align: right;
   color: var(--color-secondary);
   transition: 0.3s;
 }
 
-.link-sector a:hover {
+#foodlists .link-sector a:hover {
   color: var(--color-primary);
 }
 
 @keyframes slide-up {
   0% {
-    transform: translateY(0vh);
+  	opacity: 0;
+    transform: translateY(15vh);
+  }
+  
+  50%{
+  	opacity: 1;
   }
   
   100% {
-    transform: translateY(-100vh);
+    transform: translateY(calc(-100% + 15vh));
   }
 }
 

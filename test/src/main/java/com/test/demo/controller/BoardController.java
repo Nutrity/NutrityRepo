@@ -30,6 +30,15 @@ public class BoardController {
 		System.out.println(foodlists.size());
 		return foodlists;
 	}
+
+	@GetMapping("foodListDesc")
+	@ResponseBody
+	public List<FoodList> foodlistDesc(String foodname ,Model model) {
+		//	System.out.println(flist.getFoodname());
+		List<FoodList> foodlistsDesc = boardService.foodListsDesc(foodname);
+		System.out.println(foodlistsDesc.size());
+		return foodlistsDesc;
+	}
 	
 	@GetMapping("insert")
 	public String boardInsert() {

@@ -8,30 +8,46 @@
 	}
 
 	function getReturnObj(fdlist) {
-		const listHeadr = [ '음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
-				'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분' ]
+		const listHeadr = ['음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
+			'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분']
 		var str = '';
 		str += "<div class='container'>";
-		str += "<div data-aos='fade-up' class='list-text-header row'>"
-		str += "<div class='col-3'></div>"
+		str += "<table data-aos='fade-up' class='table table-hover'>"
+		str += "<thead>"
+		str += "<tr>"
+		str += "<th class='col-3'>"
+		str += "</th>" 
 		for (let i = 0; i < 11; i++) {
-			str += "<div class='col'></div>"
+			str += "<th class='col'></th>"
 		}
-		str += "</div>" //list-text-header row
-		str += "<div data-aos='fade-up' class='list-text-content'>";
-		str += "<div class='slide-up'>";
-		$.each(fdlist, function(key, val) {
-			str += "<div class='row'>";
-			str += "<div class='col-3'>" + Object.values(val)[1] + '</div> ';
+		str += "</tr>" 
+		str += "</thead>" 
+		str += "<tbody data-aos='fade-up'>";
+		str += "<tr>";
+		$.each(JSON.parse(fdlist), function(key, val) {
+			str += "<td class='col-3'>" + Object.values(val)[1] + '</td> ';
 			for (let i = 2; i < 13; i++) {
-				str += "<div class='col'>" + Object.values(val)[i] + "</div>"
+				str += "<td class='col'>" + Object.values(val)[i] + "</td>"
 			}
-			str += '</div>'; //row
+			str += '</tr>'; //row
 		});
-		str += '</div>'; //slide-up
-		str += '</div>'; //list-text-content
+		str += '</tbody>'; //slide-up
+		str += '</table>'; //list-text-content
+		
 		$("#resultFoodList").html(str);
+
+		let j = 0;
+		$('tr > th').each(function(index, item) {
+			if (j < listHeadr.length) {
+				$(this).append(listHeadr[j])
+				j++
+			} else {
+				j = 0;
+			}
+		})
+
 	}
+	
 </script>
 
 <main id="main">

@@ -271,6 +271,16 @@ document.addEventListener('DOMContentLoaded', () => {
 						$("#selectFood").show();
 					}//display
 				}//resp
+				
+				for (let i=0; i<foodArr.length; i++) {
+					if (foodArr.length > 0) {
+						$('input[name=fcode]:checkbox').each(function (){
+							if ($(this).val() == foodArr[i]){
+								$(this).prop('checked', true);
+							}
+						})
+					}
+				}
 
 				$("input[name=fcode]:checkbox").click(function() {
 					if ($(this).is(":checked") == true) {

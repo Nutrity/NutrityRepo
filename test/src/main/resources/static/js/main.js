@@ -289,22 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert("error" + e)
 		})//fail
 	})//selectFoodBtn
-//	console.log(foodArr)
-//	function food_check() {
-//
-//		for (var i = 0; i < select.fname.length; i++) {
-//
-//			if (checked[i].checked == true) {
-//
-//				chkList += checked[i].value + "";
-//
-//			}
-//
-//		}
 
-
-//		self.close();
-
-//	}
+	$("#finBtn").click(function() {
+		alert('아무거나')
+		self.close();
+	})
 
 });

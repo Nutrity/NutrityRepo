@@ -71,7 +71,7 @@
 
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="../img/about.jpg" class="img-fluid" alt="">
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
           </div>
           <div class="col-lg-6 content order-last  order-lg-first">
@@ -123,7 +123,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/storage-service.jpg" alt="" class="img-fluid">
+                <img src="../img/storage-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">Storage</a></h3>
               <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
@@ -133,7 +133,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/logistics-service.jpg" alt="" class="img-fluid">
+                <img src="../img/logistics-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">Logistics</a></h3>
               <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
@@ -143,7 +143,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/cargo-service.jpg" alt="" class="img-fluid">
+                <img src="../img/cargo-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">Cargo</a></h3>
               <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
@@ -153,7 +153,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/trucking-service.jpg" alt="" class="img-fluid">
+                <img src="../img/trucking-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">Trucking</a></h3>
               <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
@@ -163,7 +163,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/packaging-service.jpg" alt="" class="img-fluid">
+                <img src="../img/packaging-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">Packaging</a></h3>
               <p>Illo consequuntur quisquam delectus praesentium modi dignissimos facere vel cum onsequuntur maiores beatae consequatur magni voluptates</p>
@@ -173,7 +173,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/warehousing-service.jpg" alt="" class="img-fluid">
+                <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">Warehousing</a></h3>
               <p>Quas assumenda non occaecati molestiae. In aut earum sed natus eatae in vero. Ab modi quisquam aut nostrum unde et qui est non quo nulla</p>
@@ -207,7 +207,7 @@
         <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
 
           <div class="col-md-5">
-            <img src="assets/img/features-1.jpg" class="img-fluid" alt="">
+            <img src="../img/features-1.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-7">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -225,7 +225,7 @@
 
         <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
           <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/features-2.jpg" class="img-fluid" alt="">
+            <img src="../img/features-2.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-7 order-2 order-md-1">
             <h3>Corporis temporibus maiores provident</h3>
@@ -243,7 +243,7 @@
 
         <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
           <div class="col-md-5">
-            <img src="assets/img/features-3.jpg" class="img-fluid" alt="">
+            <img src="../img/features-3.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-7">
             <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
@@ -258,7 +258,7 @@
 
         <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
           <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/features-4.jpg" class="img-fluid" alt="">
+            <img src="../img/features-4.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-md-7 order-2 order-md-1">
             <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
@@ -348,7 +348,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="../img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
@@ -364,7 +364,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="../img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <div class="stars">
@@ -380,7 +380,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="../img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <div class="stars">
@@ -396,7 +396,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="../img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <div class="stars">
@@ -412,7 +412,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="../img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <div class="stars">

@@ -87,6 +87,7 @@
           <li><a class="get-a-quote" href="/join">Sign Up</a></li>
           </sec:authorize>
           <sec:authorize access = "isAuthenticated()">
+          <li><a href="/modify">Modify</a></li>
           <li><a href="/logout">LogOut</a></li>
           </sec:authorize>
 

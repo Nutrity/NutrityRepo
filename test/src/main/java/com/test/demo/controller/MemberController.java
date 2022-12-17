@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.test.demo.model.Address;
+import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.service.MemberServiceImpl;
 
@@ -41,11 +42,13 @@ public class MemberController {
 	public String join(Member member,String zipcode, 
 		String address1, String address2, HttpServletRequest request) {
 	 	member.setIp(request.getRemoteAddr());
+	 	Job job = new Job();
+	 	member.setJob(job);
 	 	Address addr = new Address();
 	 	addr.setAddress2(address2);
 	 	addr.setAddress1(address1);
-	 	addr.setZipcode(zipcode);
-		mService.join(member, addr);
+	 	addr.setZipcode(zipcode);	 	
+		mService.join(member,addr);
 		return "redirect:/";
 	}
 	
@@ -53,10 +56,10 @@ public class MemberController {
 	public String login() {
 		return "/member/login";
 	}
-		
+			
 	@GetMapping("modify")
 	public String modify() {
-		return "modify";
+		return "/member/update";
 	}
 	
 	@PutMapping("modify")

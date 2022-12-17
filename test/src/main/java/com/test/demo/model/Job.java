@@ -15,13 +15,9 @@ import lombok.Data;
 @Embeddable
 @DynamicInsert
 public class Job {
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long jnum;
-	
-	@ColumnDefault("'role_user'")
-	private String role;
-	
+		
+	@ColumnDefault("'ROLE_USER'")
+	private String role;	
 	private String job;
 	private String qualName;
 }

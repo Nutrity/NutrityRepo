@@ -14,8 +14,6 @@ import lombok.Data;
 @Embeddable
 public class Address {
 	 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long addrnum;
 	private String address1;
 	@Nullable
 	private String address2;

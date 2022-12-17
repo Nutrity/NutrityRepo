@@ -28,7 +28,8 @@ public class MemberController {
 	}
 	
 	@GetMapping("calendar")
-	public void calendar() {
+	public String calendar() {
+		return "calendarTest";
 	}
 		
 	@GetMapping("join")
@@ -44,28 +45,20 @@ public class MemberController {
 	 	addr.setAddress2(address2);
 	 	addr.setAddress1(address1);
 	 	addr.setZipcode(zipcode);
-	 	System.out.println(address2+ ", " + address1 + ", " + zipcode);
 		mService.join(member, addr);
 		return "redirect:/";
 	}
 	
 	@GetMapping("login")
 	public String login() {
-		return "member/login";
+		return "/member/login";
 	}
 	
 	@PostMapping("login")
-	public String login(Member member, HttpSession session) {
-		session.setAttribute("member", mService.login(member));
-		return "calendarTest";
+	public String login(Member member) {
+		return "redirect:calendar";
 	}
-	
-	@GetMapping("logout")
-	public String logout(HttpSession session) {
-		session.invalidate();
-		return "redirect:/";
-	}
-	
+		
 	@GetMapping("modify")
 	public String modify() {
 		return "modify";

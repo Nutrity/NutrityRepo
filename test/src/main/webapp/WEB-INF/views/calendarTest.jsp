@@ -52,8 +52,7 @@
        </div>
     </div>
     <section>
-    <h3>${sessionScope.member.username}의 캘린더</h3>
-    <input type = "button" onclick = "location.href='/logout'" value = "로그아웃">
+    <h3>${pinfo.pmember.username}의 캘린더</h3>
 		<div id='calendar-container'>		
 			<div id='calendar'></div>
 		</div>

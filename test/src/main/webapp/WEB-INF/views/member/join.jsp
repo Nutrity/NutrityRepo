@@ -1,12 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file = "../include/header.jsp" %>
+
+<section id="hero" class="hero hero-bg-anime d-flex align-items-center">
+    <div class="container">
+      <div class="row gy-4 d-flex justify-content-between">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h2 data-aos="fade-up">나의 식단을
+            <br>  
+            더욱 건강하게!</h2>
+          <p data-aos="fade-up" data-aos-delay="100">역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! </p>
+
+          <form class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+            <input type="text" class="form-control" placeholder="오늘 먹은 음식을 검색" id="foodname">
+            <button type="button" class="btn btn-primary" id="foodBtn">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+    <!-- ======= Result Foodlists Section ======= -->
+    <section id="foodlists" style="display: none;">
+    </section>
+
 <form action = "join" method = "post">
 UserName : <input type = "text" id = "username" name = "username"><br/>
 PassWord : <input type = "text" id = "password" name = "password"><br/>
@@ -25,7 +43,7 @@ Email : <input type = "text" id = "useremail" name = "useremail"><br/>
 여 : <input type = "radio" id = "gender" name = "gender" value = "여" checked/>        
 <button type = "submit">회원가입</button>
 </form>
-</body>
+
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -80,4 +98,5 @@ Email : <input type = "text" id = "useremail" name = "useremail"><br/>
         }).open();
     }
 </script>
-</html>
+
+<%@ include file = "../include/footer.jsp" %>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix = "sec" uri = "http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -80,10 +81,15 @@
             </ul>
           </li> -->
 <!--           <li><a href="#">???</a></li> -->
-          <c:if test = "${sessionScope.member.username == null}">
-          <li><a href="/login">Sign In</a></li>
-          </c:if>
+          <sec:authentication property = "principal" var = "pinfo"/>
+          <sec:authorize access = "isAnonymous()">
+          <li><a href="/login">Sign In</a></li>        
           <li><a class="get-a-quote" href="/join">Sign Up</a></li>
+          </sec:authorize>
+          <sec:authorize access = "isAuthenticated()">
+          <li><a href="/logout">LogOut</a></li>
+          </sec:authorize>
+
         </ul>
       </nav><!-- .navbar -->
 

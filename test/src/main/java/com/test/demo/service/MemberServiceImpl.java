@@ -1,17 +1,23 @@
 package com.test.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.test.demo.model.Address;
+import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.repository.AddressRepository;
+import com.test.demo.repository.JobRepository;
 import com.test.demo.repository.MemberRepository;
 
 @Service
 @Transactional
 public class MemberServiceImpl implements MemberService{
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 
 	@Autowired
 	private MemberRepository memberRepository;
@@ -19,8 +25,19 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private AddressRepository addressRepository;
 	
+	@Autowired
+	private JobRepository jobRepository;
+	
 	@Transactional
 	public void join(Member member, Address address) {
+		
+		Job job = new Job();
+		
+		String rawPwd = member.getPassword();
+		String encPwd = encoder.encode(rawPwd);
+		member.setPassword(encPwd);
+		jobRepository.save(job);
+		member.setJob(job);
 		addressRepository.save(address);
 		member.setAddress(address);
 		memberRepository.save(member);

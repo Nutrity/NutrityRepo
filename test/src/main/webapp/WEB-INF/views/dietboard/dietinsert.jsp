@@ -5,22 +5,10 @@
 <script type="text/javascript">
 function foodFinder() {
 	window.open("selectfood", "", "width=700 height=400");
-// 	window.showModalDialog("selectfood",  "", "status:false;dialogWith:700px; dialogHeight:400px");
 }
 
-function getReturnObj(foodObj) {
-	$.ajax({
-		type: 'post',
-		url:'/board/foodlist',
-		data : '',
-		
-		
-		
-	})
-	
-	
-	alert(foodObj);
-	
+function getReturnObj(fdlist) {
+	alert(fdlist)
 }
 	
 	

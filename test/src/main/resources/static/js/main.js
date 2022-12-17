@@ -229,9 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//	var checkbox = $("input[name=fcode]:checkbox");
 
-	var	foodObj = {
-					0 : 'foodcode'
-			};
+	var	foodArr = new Array();
 	
 	$("#selectFoodBtn").click(function() {
 
@@ -274,25 +272,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				}//display
 			}//resp
 
-			let i = 0;
 			$("input[name=fcode]:checkbox").click(function() {
 				if ($(this).is(":checked") == true) {
-						if(foodObj[i] != $(this).val()) {
-							foodObj[i] = $(this).val();
-							i++;
-							return i;
-						}
-				}//isChecked
+						foodArr.push ($(this).val())
+						}//isChecked
 				else if ($(this).is(":checked") == false) {
-					for(let i = 0; i < Object.keys(foodObj).length; i++) {
-					  	if(foodObj[i] == $(this).val()) {
-							delete foodObj[i];
-					    	return i;
-					  	}//if
+					for(let i = 0; i < foodArr.length; i++) {
+					  if(foodArr[i] === $(this).val()) {
+					    foodArr.splice(i, 1);
+					    i--;
+					  }//if
 					}//for
 				}//else
 			})//.click
-			console.log(foodObj)
+			
+			console.log(foodArr)
 		})//done
 		.fail(function(e) {
 			alert("error" + e)
@@ -302,8 +296,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 
 	$("#finBtn").click(function() {
-		window.opener.getReturnObj(JSON.stringify(foodObj))
+		$.ajax({
+			type:'post',
+			url : '/board/findfoods',
+			data : {foodArr : foodArr},
+			dataType:'json',
+			traditional : true
+		}).done(function(resp){
+//			alert(resp)
+		window.opener.getReturnObj(JSON.stringify(resp))
 		self.close();
+		})
+		
 	})
 	
 	$("#closeBtn").click(function() {

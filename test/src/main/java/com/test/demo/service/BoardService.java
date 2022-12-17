@@ -21,4 +21,7 @@ public interface BoardService {
 	public List<FoodList> foodListsDesc(String foodname);
 	//전체보기(유저 자신의 것)
 	public List<DietBoard> dietLists(DietBoard board);
+	
+	//음식리스트
+	public List<FoodList> foodList(Long foodcode);
 }

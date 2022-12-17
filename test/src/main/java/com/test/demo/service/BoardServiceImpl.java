@@ -58,4 +58,11 @@ public class BoardServiceImpl implements BoardService{
 		return null;
 	}
 
+	@Override
+	public List<FoodList> foodList(Long foodcode) {
+		boardRepository.findById(foodcode);
+	
+		return null;
+	}
+
 }

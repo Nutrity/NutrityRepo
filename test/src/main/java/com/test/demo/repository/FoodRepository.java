@@ -15,4 +15,6 @@ public interface FoodRepository extends JpaRepository<FoodList, String>{
 	@Query(value =  "select * from food_list where foodname like CONCAT('%',:foodname,'%')", nativeQuery = true)
 	List<FoodList> findByFoodname(String foodname);
 	
+	FoodList findByFoodcode(String foodcode);
+	
 }

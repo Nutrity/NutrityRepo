@@ -1,18 +1,22 @@
 package com.test.demo.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.DietBoard;
+import com.test.demo.model.FoodArr;
 import com.test.demo.model.FoodList;
+import com.test.demo.repository.FoodRepository;
 import com.test.demo.service.BoardService;
 
 @Controller
@@ -22,18 +26,33 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	@Autowired
+	private FoodRepository foodRepository;
+	
 	@GetMapping("foodList")
 	@ResponseBody
-	public List<FoodList> foodlist(String foodname ,Model model) {
+	public List<FoodList> foodlist(String foodname) {
 	//	System.out.println(flist.getFoodname());
 		List<FoodList> foodlists = boardService.foodLists(foodname);
 		System.out.println(foodlists.size());
 		return foodlists;
 	}
 
+	@PostMapping("findfoods")
+	@ResponseBody
+	public List<FoodList> findfoods(@RequestParam(value = "foodArr") String[] foodArr){
+//		System.out.println(Arrays.toString(foodArr));
+		List<FoodList> fdlist = new ArrayList<>();
+		for(int i=0; i <foodArr.length; i++ ) {
+			fdlist.add(foodRepository.findByFoodcode(foodArr[i]));
+		}
+		System.out.println(Arrays.toString(foodArr));
+		return fdlist;
+	}
+
 	@GetMapping("foodListDesc")
 	@ResponseBody
-	public List<FoodList> foodlistDesc(String foodname ,Model model) {
+	public List<FoodList> foodlistDesc(String foodname) {
 		//	System.out.println(flist.getFoodname());
 		List<FoodList> foodlistsDesc = boardService.foodListsDesc(foodname);
 		System.out.println(foodlistsDesc.size());
@@ -54,7 +73,6 @@ public class BoardController {
 	
 	@GetMapping("list")
 	public String boardList(DietBoard board) {
-		
 		return "calendarTest";
 	}
 	

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.test.demo.model.Address;
+import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 
 import com.test.demo.repository.MemberRepository;
@@ -22,7 +23,7 @@ public class MemberServiceImpl implements MemberService{
 		
 	@Transactional
 	public void join(Member member,Address address) {
-						
+								
 		String rawPwd = member.getPassword();
 		String encPwd = encoder.encode(rawPwd);
 		member.setPassword(encPwd);

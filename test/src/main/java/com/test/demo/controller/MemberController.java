@@ -1,7 +1,6 @@
 package com.test.demo.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.test.demo.model.Address;
-import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.service.MemberServiceImpl;
 
@@ -41,9 +38,7 @@ public class MemberController {
 	@PostMapping("join")
 	public String join(Member member,String zipcode, 
 		String address1, String address2, HttpServletRequest request) {
-	 	member.setIp(request.getRemoteAddr());
-	 	Job job = new Job();
-	 	member.setJob(job);
+	 	member.setIp(request.getRemoteAddr());	 	
 	 	Address addr = new Address();
 	 	addr.setAddress2(address2);
 	 	addr.setAddress1(address1);

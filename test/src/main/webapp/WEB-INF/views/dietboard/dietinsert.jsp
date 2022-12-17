@@ -9,7 +9,9 @@ function foodFinder() {
 }
 
 function getReturnValue(foodArr) {
-	 
+	
+alert(foodArr)
+	
 	}
 	
 	
@@ -23,7 +25,7 @@ function getReturnValue(foodArr) {
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Calendar</h2>
+              <h2>Insert</h2>
               <p>안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! </p>
             </div>
           </div>
@@ -43,22 +45,7 @@ function getReturnValue(foodArr) {
 
 <div>
 <label>foodlist</label>
-<table>
-<thead>
-<tr>
-<th>이름</th>
-<th>분류</th>
-<th>제조</th>
-<th>칼로리</th>
-</tr>
-</thead>
-<tr>
-<td>??</td>
-<td>??</td>
-<td>??</td>
-<td>??</td>
-</tr>
-</table>
+<div id="resultFoodList"></div>
 <button onclick="foodFinder()">검색</button>
 </div>
 

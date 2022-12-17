@@ -228,7 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//	var checkbox = $("input[name=fcode]:checkbox");
 
-	var foodArr = new Array();
+	var foodArr = new Object;
+	
+	
 	$("#selectFoodBtn").click(function() {
 
 		if ($("#SelectFoodname").val() == "") {
@@ -256,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				$.each(resp, function(key, val) {
 					str += "<tr>"
 					str += "<td><input type='checkbox' class='chckbox' value= '" + val.foodcode + "' name='fcode'></td>"
-					str += "<td>" + val.foodname + "</td> "
+					str += "<td id='fname'>" + val.foodname + "</td> "
 					str += "<td>" + val.category + "</td> "
 					str += "<td>" + val.madeby + "</td> "
 					str += "</tr>"
@@ -272,7 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			$("input[name=fcode]:checkbox").click(function() {
 				if ($(this).is(":checked") == true) {
-					foodArr.push($(this).val())
+					foodArr.foodcode = $(this).val();
+					foodArr.foodname = $(this).next("#fname").text();
+					
 				}//isChecked
 				else if ($(this).is(":checked") == false) {
 					for(let i = 0; i < foodArr.length; i++) {
@@ -289,9 +293,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert("error" + e)
 		})//fail
 	})//selectFoodBtn
+	
+	
 
 	$("#finBtn").click(function() {
-	window.opener.getReturnValue(foodArr)
+	window.opener.getReturnValue(foodArr.fcode)
 		self.close();
 	})
 	

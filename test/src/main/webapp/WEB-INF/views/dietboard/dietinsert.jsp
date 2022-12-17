@@ -8,9 +8,13 @@ function foodFinder() {
 // 	window.showModalDialog("selectfood",  "", "status:false;dialogWith:700px; dialogHeight:400px");
 }
 
-function getReturnValue(returnValue) {
-	  alert(returnValue);
+function getReturnValue(foodArr) {
+	 
 	}
+	
+	
+	
+	
 </script>
 
 <div>
@@ -24,23 +28,8 @@ function getReturnValue(returnValue) {
 
 <div>
 <label>foodlist</label>
-<table>
-<thead>
-<tr>
-<th>이름</th>
-<th>분류</th>
-<th>제조</th>
-<th>칼로리</th>
-</tr>
-</thead>
-<tr>
-<td>??</td>
-<td>??</td>
-<td>??</td>
-<td>??</td>
-</tr>
-</table>
 <button onclick="foodFinder()">검색</button>
+<div id=resultFoodList></div>
 </div>
 
 <div>

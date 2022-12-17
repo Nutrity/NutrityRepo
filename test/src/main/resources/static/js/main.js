@@ -291,8 +291,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	})//selectFoodBtn
 
 	$("#finBtn").click(function() {
-		alert('아무거나')
+	window.opener.getReturnValue(foodArr)
 		self.close();
 	})
-
+	
+		$("#closeBtn").click(function() {
+		self.close();
+	})
+ 
 });

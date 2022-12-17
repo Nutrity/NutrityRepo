@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//	var checkbox = $("input[name=fcode]:checkbox");
 
-	var	foodArr = {
+	var	foodObj = {
 					0 : 'foodcode'
 			};
 	
@@ -276,22 +276,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			let i = 0;
 			$("input[name=fcode]:checkbox").click(function() {
 				if ($(this).is(":checked") == true) {
-						if(foodArr[i] != $(this).val()) {
-							foodArr[i] = $(this).val();
+						if(foodObj[i] != $(this).val()) {
+							foodObj[i] = $(this).val();
 							i++;
 							return i;
 						}
 				}//isChecked
 				else if ($(this).is(":checked") == false) {
-					for(let i = 0; i < Object.keys(foodArr).length; i++) {
-					  	if(foodArr[i] == $(this).val()) {
-							delete foodArr[i];
+					for(let i = 0; i < Object.keys(foodObj).length; i++) {
+					  	if(foodObj[i] == $(this).val()) {
+							delete foodObj[i];
 					    	return i;
 					  	}//if
 					}//for
 				}//else
 			})//.click
-			console.log(foodArr)
+			console.log(foodObj)
 		})//done
 		.fail(function(e) {
 			alert("error" + e)
@@ -301,11 +301,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 
 	$("#finBtn").click(function() {
-	window.opener.getReturnValue(foodArr.fcode)
+		window.opener.getReturnObj(JSON.stringify(foodObj))
 		self.close();
 	})
 	
-		$("#closeBtn").click(function() {
+	$("#closeBtn").click(function() {
 		self.close();
 	})
  

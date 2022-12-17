@@ -8,11 +8,11 @@ function foodFinder() {
 // 	window.showModalDialog("selectfood",  "", "status:false;dialogWith:700px; dialogHeight:400px");
 }
 
-function getReturnValue(foodArr) {
+function getReturnObj(foodObj) {
 	
-alert(foodArr)
+	alert(foodObj);
 	
-	}
+}
 	
 	
 	

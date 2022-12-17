@@ -19,6 +19,7 @@
     </div>
   </section>
 <div class = "container">
+<input type = "hidden" id = "num" name = "num" value = "${p.user.num}">
 <table>
 	<tr>
 		<td>이메일</td>
@@ -32,12 +33,28 @@
 	</tr>
 	<tr>
 		<td>비밀번호</td>
-		<td><input type="password" id="password" name="password">
+		<td><input type="password" id="password" name="password"
+		     value = "${p.user.password}" readonly="readonly">
 		</td>
 	</tr>
 	<tr>
 		<td>성별</td>
-		<td>${p.user.gender}</td>
+		<td>
+		<c:choose>
+		<c:when test = "${p.user.gender == '남'}">
+		남 : <input type = "radio" id = "gender" name = "gender" value = "남" checked
+		     onclick="return(false);"/>
+        여 : <input type = "radio" id = "gender" name = "gender" value = "여" 
+             onclick="return(false);"/>
+		</c:when>
+		<c:otherwise>
+		남 : <input type = "radio" id = "gender" name = "gender" value = "남"
+		     onclick="return(false);"/>
+        여 : <input type = "radio" id = "gender" name = "gender" value = "여" checked
+             onclick="return(false);"/>
+		</c:otherwise>
+		</c:choose>		  
+		</td>
 	</tr>
 	<tr>
 		<td>번호</td>
@@ -64,9 +81,26 @@
 </table>
 <button id = "modifyBtn">수정</button>
 </div>
-
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+$("#modifyBtn").click(function(){
+    if($("#phone").val() == ""){
+      alert("휴대폰 번호를 입력해주세요");
+ 	  return false;
+    }
+    if($("#zipcode").val() == ""){
+        alert("우편번호를 입력해주세요");
+   	  return false;
+      }
+    if($("#address1").val() == ""){
+        alert("주소를 입력해주세요");
+   	  return false;
+      }
+    if($("#address2").val() == ""){
+        alert("상세주소를 입력해주세요");
+   	  return false;
+      }
+})
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
         new daum.Postcode({

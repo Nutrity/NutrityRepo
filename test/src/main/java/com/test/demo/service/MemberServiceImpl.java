@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.test.demo.model.Address;
-import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 
 import com.test.demo.repository.MemberRepository;
@@ -34,9 +33,7 @@ public class MemberServiceImpl implements MemberService{
 	public void modify(Member member) {
 		Member m = memberRepository.findById(member.getNum()).get();
 		m.setAddress(member.getAddress());
-		m.setPassword("");
 		m.setPhone(member.getPhone());
-		m.setUseremail(member.getUseremail());
 	}
 	
 	public void subscribe(Member member) {

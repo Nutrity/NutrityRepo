@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.Address;
 import com.test.demo.model.Member;
@@ -58,9 +60,10 @@ public class MemberController {
 	}
 	
 	@PutMapping("modify")
-	public String modify(Member member) {
+	@ResponseBody
+	public String modify(@RequestBody Member member) {
 		mService.modify(member);
-		return "";
+		return "success";
 	}
 	
 	@PutMapping("subscribe")

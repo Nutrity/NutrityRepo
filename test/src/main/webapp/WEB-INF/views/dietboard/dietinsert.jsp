@@ -17,6 +17,21 @@ function getReturnValue(foodArr) {
 	
 </script>
 
+ <main id="main">
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('../img/month-cal-bg-1.jpg');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Calendar</h2>
+              <p>안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! </p>
+            </div>
+          </div>
+        </div>
+       </div>
+    </div>
+
+
 <div>
 <input type="text" id="foodname">
 </div>
@@ -28,14 +43,29 @@ function getReturnValue(foodArr) {
 
 <div>
 <label>foodlist</label>
+<table>
+<thead>
+<tr>
+<th>이름</th>
+<th>분류</th>
+<th>제조</th>
+<th>칼로리</th>
+</tr>
+</thead>
+<tr>
+<td>??</td>
+<td>??</td>
+<td>??</td>
+<td>??</td>
+</tr>
+</table>
 <button onclick="foodFinder()">검색</button>
-<div id=resultFoodList></div>
 </div>
 
 <div>
 <label>memo</label>
 <textarea rows="5" cols="40"></textarea>
 </div>
-
+</main>
 
 <%@include file="../include/footer.jsp"%>

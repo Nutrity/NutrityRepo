@@ -10,8 +10,9 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
 import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 @Embeddable
 @DynamicInsert
 public class Job {

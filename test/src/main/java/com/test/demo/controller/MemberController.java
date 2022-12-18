@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.Address;
@@ -42,11 +43,8 @@ public class MemberController {
 			String address1, String address2, 
 			HttpServletRequest request) {			
 				member.setIp(request.getRemoteAddr());	 	
-			 	Address addr = new Address();
-			 	addr.setAddress2(address2);
-			 	addr.setAddress1(address1);
-			 	addr.setZipcode(zipcode);	 	
-				mService.join(member,addr);
+				member.setAddress(new Address(zipcode,address1,address2));
+				mService.join(member);
 				return "redirect:/";			 	
 	}
 	
@@ -62,7 +60,12 @@ public class MemberController {
 	
 	@PutMapping("modify")
 	@ResponseBody
-	public String modify(@RequestBody Member member) {
+	public String modify(@RequestBody Member member,@RequestParam("zipcode") String zipcode, 
+			@RequestParam(value = "address1") String address1, @RequestParam(value = "address2") String address2) {
+		System.out.println(zipcode);
+		System.out.println(address1);
+		System.out.println(address2);
+		member.setAddress(new Address(zipcode, address1, address2));
 		mService.modify(member);
 		return "success";
 	}

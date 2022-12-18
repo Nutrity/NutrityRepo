@@ -5,9 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.test.demo.model.Address;
 import com.test.demo.model.Member;
-
 import com.test.demo.repository.MemberRepository;
 
 @Service
@@ -21,20 +19,25 @@ public class MemberServiceImpl implements MemberService{
 	private MemberRepository memberRepository;
 		
 	@Transactional
-	public void join(Member member,Address address) {
+	public void join(Member member) {
 								
 		String rawPwd = member.getPassword();
 		String encPwd = encoder.encode(rawPwd);
 		member.setPassword(encPwd);
-		member.setAddress(address);
 		memberRepository.save(member);
 	}
 	
 	public void modify(Member member) {
-		Member m = memberRepository.findById(member.getNum()).get();
-		m.setAddress(member.getAddress());
-		m.setPhone(member.getPhone());
+		String rawPwd = member.getPassword();
+		String encPwd = encoder.encode(rawPwd);
+		member.setPassword(encPwd);
+		memberRepository.save(member);
 	}
+	
+	public Member detailMember(Long num) {
+		return memberRepository.findById(num).get();
+	}
+	
 	
 	public void subscribe(Member member) {
 		Member subscribe = memberRepository.findById(member.getNum()).get();

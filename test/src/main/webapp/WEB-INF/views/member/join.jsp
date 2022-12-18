@@ -19,14 +19,8 @@
       </div>
     </div>
   </section><!-- End Hero Section -->
-
-  <main id="main">
-    <!-- ======= Result Foodlists Section ======= -->
-    <section id="foodlists" style="display: none;">
-    </section>
-
 <form action = "join" method = "post">
-아이디 : <input type = "email" id = "useremail" name = "useremail"><br/>
+아이디 : <input type = "text" id = "useremail" name = "useremail" placeholder = "abc@de.fg"><br/>
 이름: <input type = "text" id = "username" name = "username"><br/>
 비밀번호 : <input type = "text" id = "password" name = "password"><br/>
 생일 : <input type = "text" id = "birth" name = "birth"><br/>
@@ -39,13 +33,60 @@
 <span id="guide" style="color:#999;display:none"></span>
 <input type="text" id="address2"  name = "address2" placeholder="상세주소">
 <br>
-남 : <input type = "radio" id = "gender" name = "gender" value = "남" />
-여 : <input type = "radio" id = "gender" name = "gender" value = "여" />        
-<button type = "submit">회원가입</button>
+남 : <input type = "radio" id = "gender" name = "gender" value = "남" checked/>
+여 : <input type = "radio" id = "gender" name = "gender" value = "여" /><br/>       
+<button type = "submit" id = "JoinBtn">회원가입</button>
 </form>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+$("#JoinBtn").click(function(){		
+	if($("#useremail").val() == ""){
+		alert("아이디를 입력해주세요.");
+		$("#useremail").focus();
+		return false;
+	}	
+	if($("#password").val() == ""){
+		alert("비밀번호를 입력해주세요.");
+		$("#password")focus();
+		return false;
+	}
+	if($("#birth").val() == ""){
+		alert("생년월일을 입력해주세요.");
+		$("#birth").focus();
+		return false;
+	}
+	if($("#age").val() == ""){
+		alert("나이를 입력해주세요.");
+		$("#age").focus();
+		return false;
+	}
+	if($("#phone").val() == ""){
+		alert("번호를 입력해주세요.");
+		$("#phone").focus();
+		return false;
+	}
+	if($("#username").val() == ""){
+		alert("이름를 입력해주세요.");
+		$("#username").focus();
+		return false;
+	}
+	if($("#zipcode").val() == ""){
+		alert("우편번호를 입력해주세요.");
+		$("#zipcode").focus();
+		return false;
+	}
+	if($("#address1").val() == ""){
+		alert("주소를 입력해주세요.");
+		$("#address1").focus();
+		return false;
+	}
+	if($("#address2").val() == ""){
+		alert("상세주소를 입력해주세요.");
+		$("#address2").focus();
+		return false;
+	}	
+})
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
         new daum.Postcode({

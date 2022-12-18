@@ -20,7 +20,6 @@
     </div>
   </section><!-- End Hero Section -->
 
-  <main id="main">
     <!-- ======= Result Foodlists Section ======= -->
     <section id="foodlists" style="display: none;">
     </section>
@@ -28,7 +27,19 @@
 <form action = "/login" method = "post">
 UserName : <input type = "text" id = "useremail" name = "useremail"><br/>
 PassWord : <input type = "text" id = "password" name = "password"><br/>
-<button>로그인</button>
+<button type = "submit" id = "LoginBtn">로그인</button>
 </form>
-
+<script>
+$("#LoginBtn").click(function(){	
+	if($("#useremail").val() == ""){
+		alert("아이디를 입력해주세요")
+		return false;
+	}
+	
+	if($("#password").val() == ""){
+		alert("비밀번호를 입력해주세요")
+		return false;
+	}
+})
+</script>
 <%@ include file = "../include/footer.jsp" %>

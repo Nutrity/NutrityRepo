@@ -20,8 +20,8 @@ import com.test.demo.service.MemberServiceImpl;
 public class MemberController {
 	
 	@Autowired
-	private MemberServiceImpl mService;
-	
+	private MemberServiceImpl mService;	
+		
 	@GetMapping("/")
 	public String main() {
 		return "home";
@@ -37,16 +37,17 @@ public class MemberController {
 		return "member/join";
 	}
 	
-	@PostMapping("join")
-	public String join(Member member,String zipcode, 
-		String address1, String address2, HttpServletRequest request) {
-	 	member.setIp(request.getRemoteAddr());	 	
-	 	Address addr = new Address();
-	 	addr.setAddress2(address2);
-	 	addr.setAddress1(address1);
-	 	addr.setZipcode(zipcode);	 	
-		mService.join(member,addr);
-		return "redirect:/";
+	@PostMapping("join")	
+	public String join(Member member, String zipcode, 
+			String address1, String address2, 
+			HttpServletRequest request) {			
+				member.setIp(request.getRemoteAddr());	 	
+			 	Address addr = new Address();
+			 	addr.setAddress2(address2);
+			 	addr.setAddress1(address1);
+			 	addr.setZipcode(zipcode);	 	
+				mService.join(member,addr);
+				return "redirect:/";			 	
 	}
 	
 	@GetMapping("login")

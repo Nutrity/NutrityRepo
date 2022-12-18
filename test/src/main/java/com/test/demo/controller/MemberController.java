@@ -3,7 +3,6 @@ package com.test.demo.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Delete;
-import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,7 +43,7 @@ public class MemberController {
 			String address1, String address2, 
 			HttpServletRequest request) {			
 				member.setIp(request.getRemoteAddr());	 	
-				member.setAddress(new Address(zipcode,address1,address2));
+				member.setAddress(new Address(address1,address2,zipcode));
 				mService.join(member);
 				return "redirect:/";			 	
 	}
@@ -61,8 +60,8 @@ public class MemberController {
 	
 	@PutMapping("modify")
 	@ResponseBody
-	public String modify(@RequestBody Member member, String zipcode, String address1, String address2) {
-		member.setAddress(new Address(member.getAddress().getZipcode(), member.getAddress().getAddress1(), member.getAddress().getAddress2()));
+	public String modify(@RequestBody Member member) {
+		System.out.println(member.toString());
 		mService.modify(member);
 		return "success";
 	}

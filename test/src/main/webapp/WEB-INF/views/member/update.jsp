@@ -83,13 +83,18 @@
 
 $("#modifyBtn").click(function(){
 
+addr = {
+		zipcode : $("#zipcode").val(),
+		address1 : $("#address1").val(),
+		address2 : $("#address2").val()
+}
+	
+	
 data = {	
 		num : $("#num").val(),
 		password : $("#password").val(),
 		phone : $("#phone").val(),
-		zipcode : $("#zipcode").val(),
-		address1 : $("#address1").val(),
-		address2 : $("#address2").val()
+		address : addr
 }
 
 console.log($("#zipcode").val())

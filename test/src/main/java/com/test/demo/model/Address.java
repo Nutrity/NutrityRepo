@@ -5,9 +5,11 @@ import javax.persistence.Embeddable;
 import org.springframework.lang.Nullable;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
 @Embeddable
+@ToString
 public class Address {
 	 
 	private String address1;

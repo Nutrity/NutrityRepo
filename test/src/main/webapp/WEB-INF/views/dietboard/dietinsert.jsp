@@ -23,14 +23,15 @@
 		str += "</tr>" 
 		str += "</thead>" 
 		str += "<tbody data-aos='fade-up'>";
-		str += "<tr>";
 		$.each(JSON.parse(fdlist), function(key, val) {
+		str += "<tr>";
 			str += "<td class='col-3'>" + Object.values(val)[1] + '</td> ';
 			for (let i = 2; i < 13; i++) {
 				str += "<td class='col'>" + Object.values(val)[i] + "</td>"
 			}
 			str += '</tr>'; //row
 		});
+		str += '<button id="insertSFBtn">식단 입력</button>'
 		str += '</tbody>'; //slide-up
 		str += '</table>'; //list-text-content
 		
@@ -76,7 +77,6 @@
 		</div>
 	</div>
 
-
 	<div>
 		<input type="text" id="foodname">
 	</div>
@@ -96,15 +96,5 @@
 		<textarea rows="5" cols="40"></textarea>
 	</div>
 </main>
-
-<!-- <script> -->
-<!-- 	$.ajax({ -->
-<!-- 		type:'post', -->
-<!-- 		url:'/board/insertSelectFoods', -->
-<!-- 		data : { -->
-<!-- 			foodcode : fdlistFoodcodes -->
-<!-- 		} -->
-<!-- 	}) -->
-<!-- </script> -->
 
 <%@include file="../include/footer.jsp"%>

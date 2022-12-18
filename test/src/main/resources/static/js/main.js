@@ -1,4 +1,4 @@
-
+~
 /**
 * Template Name: Logis - v1.2.1
 * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
@@ -304,8 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			})//fail
 	})//selectFoodBtn
 
-
-
 	$("#finBtn").click(function() {
 		$.ajax({
 			type: 'post',
@@ -325,6 +323,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		self.close();
 	})
 
+//	$('#insertSFBtn').click(function() {
+//		$.ajax({
+//			type: 'post',
+//			url: '/board/insertSelectedFoods',
+//			data: { fdlistFoodcodes: fdlistFoodcodes },
+//			dataType: 'json',
+//			traditional: true
+//		}).done(function(resp) {
+//			alert(resp)
+//		})
+//	})
 
 
 });

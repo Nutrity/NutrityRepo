@@ -84,6 +84,7 @@ public class BoardController {
 //		for(int i=0; i <fdlistFoodcodes.length; i++ ) {
 //			sf.setEx(1);
 //			sf.setFoodList(foodRepository.findByFoodcode(fdlistFoodcodes[i]));
+//			System.out.println(sf.toString());
 //			selectedFoodsRepository.save(sf);
 //		}
 //		

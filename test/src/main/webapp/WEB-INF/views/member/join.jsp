@@ -43,47 +43,38 @@
 $("#JoinBtn").click(function(){		
 	if($("#useremail").val() == ""){
 		alert("아이디를 입력해주세요.");
-		$("#useremail").focus();
 		return false;
 	}	
 	if($("#password").val() == ""){
 		alert("비밀번호를 입력해주세요.");
-		$("#password")focus();
 		return false;
 	}
 	if($("#birth").val() == ""){
 		alert("생년월일을 입력해주세요.");
-		$("#birth").focus();
 		return false;
 	}
 	if($("#age").val() == ""){
 		alert("나이를 입력해주세요.");
-		$("#age").focus();
 		return false;
 	}
 	if($("#phone").val() == ""){
 		alert("번호를 입력해주세요.");
-		$("#phone").focus();
 		return false;
 	}
 	if($("#username").val() == ""){
 		alert("이름를 입력해주세요.");
-		$("#username").focus();
 		return false;
 	}
 	if($("#zipcode").val() == ""){
 		alert("우편번호를 입력해주세요.");
-		$("#zipcode").focus();
 		return false;
 	}
 	if($("#address1").val() == ""){
 		alert("주소를 입력해주세요.");
-		$("#address1").focus();
 		return false;
 	}
 	if($("#address2").val() == ""){
 		alert("상세주소를 입력해주세요.");
-		$("#address2").focus();
 		return false;
 	}	
 })
@@ -110,16 +101,8 @@ $("#JoinBtn").click(function(){
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('zipcode').value = data.zonecode;
-                document.getElementById("address1").value = roadAddr;
-                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                document.getElementById("address1").value = roadAddr;               
                 
-                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                if(roadAddr !== ''){
-                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-                } else {
-                    document.getElementById("sample4_extraAddress").value = '';
-                }
-
                 var guideTextBox = document.getElementById("guide");
                 // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
                 if(data.autoRoadAddress) {
@@ -136,7 +119,7 @@ $("#JoinBtn").click(function(){
                     guideTextBox.style.display = 'none';
                 }
             }
-        }).open();
+        }).open();      
     }
 </script>
 

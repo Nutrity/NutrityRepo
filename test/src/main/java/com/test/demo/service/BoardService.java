@@ -20,7 +20,7 @@ public interface BoardService {
 	//음식리스트(내림차순)
 	public List<FoodList> foodListsDesc(String foodname);
 	//전체보기(유저 자신의 것)
-	public List<DietBoard> dietLists(DietBoard board);
+	public List<DietBoard> dietLists(Long num);
 	
 	//음식리스트
 	public List<FoodList> foodList(Long foodcode);

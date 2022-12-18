@@ -2,13 +2,13 @@ package com.test.demo.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.Member;
 import com.test.demo.repository.FoodRepository;
 import com.test.demo.service.BoardService;
 
@@ -68,31 +69,15 @@ public class BoardController {
 	}
 	
 	@PostMapping("insert")
-	@ResponseBody
 	public String boardInsert(@RequestBody DietBoard board) {
 		System.out.println(board.toString());
 		boardService.dietInsert(board);
-		return "success";
+		return "redirect:/board/list/";
 	}
 	
-//	@PostMapping("insertSelectFoods")
-//	@ResponseBody
-//	public String insertSelectFoods(
-//			@RequestParam(value = "fdlistFoodcodes") String[] fdlistFoodcodes) {
-//		
-//		SelectedFoods sf = new SelectedFoods();
-//		for(int i=0; i <fdlistFoodcodes.length; i++ ) {
-//			sf.setEx(1);
-//			sf.setFoodList(foodRepository.findByFoodcode(fdlistFoodcodes[i]));
-//			System.out.println(sf.toString());
-//			selectedFoodsRepository.save(sf);
-//		}
-//		
-//		return null;
-//	}
-	
-	@GetMapping("list")
-	public String boardList(DietBoard board) {
+	@GetMapping("list/{num}")
+	public String boardList(@PathVariable Long num , Model model) {
+		model.addAttribute("diets", boardService.dietLists(num));
 		return "calendarTest";
 	}
 	

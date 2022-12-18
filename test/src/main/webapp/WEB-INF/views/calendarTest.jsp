@@ -6,6 +6,7 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
+            	  console.log(resp)
 		var Calendar = FullCalendar.Calendar;
 		var calendarEl = document.getElementById('calendar');
 
@@ -20,14 +21,22 @@
 			},
 			navLinks: true,
 			 navLinkDayClick: function(date, jsEvent) {
-				 location.href= 'https://www.naver.com'
+				 location.href= '/board/detail'+{}
 			 },
 			selectable: true,
 			editable : true,
 		      select: function(info) {
 		        alert('selected ' + info.startStr + ' to ' + info.endStr);
-		        location.href = "https://www.naver.com"
-		      }
+		        location.href = "detail"
+		      },
+              events: [
+//             	  $.each(diets)
+//                   {
+//                     title: '음식 이름',
+//                     start: '2020-09-03',
+//                     constraint: 'businessHours',
+//                   }
+                  ]
 		});
 
 		calendar.render();

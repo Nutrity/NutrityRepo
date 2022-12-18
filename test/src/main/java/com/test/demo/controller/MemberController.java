@@ -3,6 +3,7 @@ package com.test.demo.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,12 +61,9 @@ public class MemberController {
 	
 	@PutMapping("modify")
 	@ResponseBody
-	public String modify(@RequestBody Member member,@RequestParam("zipcode") String zipcode, 
-			@RequestParam(value = "address1") String address1, @RequestParam(value = "address2") String address2) {
-		System.out.println(zipcode);
-		System.out.println(address1);
-		System.out.println(address2);
-		member.setAddress(new Address(zipcode, address1, address2));
+	public String modify(@RequestBody Member member, @RequestBody Address address) {
+		System.out.println(address);
+		member.setAddress(new Address(address.getZipcode(), address.getAddress1(),address.getAddress2()));
 		mService.modify(member);
 		return "success";
 	}

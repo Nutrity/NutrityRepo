@@ -87,15 +87,19 @@ data = {
 		num : $("#num").val(),
 		password : $("#password").val(),
 		phone : $("#phone").val(),
+}
+
+addr = {
 		zipcode : $("#zipcode").val(),
 		address1 : $("#address1").val(),
 		address2 : $("#address2").val()
 }
+
 console.log($("#zipcode").val())
 $.ajax({
 	type: 'put',
 	url : 'modify',
-	data : JSON.stringify(data),
+	data : JSON.stringify({member : JSON.stringify(data), address : JSON.stringify(addr)}),
 	contentType : 'application/json;charset=utf-8' 
 })
 .done(function(resp){

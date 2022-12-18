@@ -10,4 +10,5 @@ public interface BoardRepository extends JpaRepository<DietBoard, Long>{
 
 	List<DietBoard> findByMember(Long num);
 	
+//	DietBoard findByMember
 }

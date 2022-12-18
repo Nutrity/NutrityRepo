@@ -323,7 +323,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		self.close();
 	})
 
-//	$('#insertSFBtn').click(function() {
+$("#dietInsertBtn").click(function(){
+	
+data={
+	title: $("#title").val(),
+	memo : $("#memo").val(),
+	num : $("#num").val(),
+	snum : "1",
+	foodcode : fdlistFoodcodes
+}
+console.log(JSON.stringify(data))
+//$.ajax({
+//	type:"post",
+//	url:"/board/insert",
+//	data: JSON.stringify(data),
+//	contentType:"application/json;charset=utf-8"
+//}).done(function(resp){
+//	
+//})
+})
+
 //		$.ajax({
 //			type: 'post',
 //			url: '/board/insertSelectedFoods',
@@ -333,7 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //		}).done(function(resp) {
 //			alert(resp)
 //		})
-//	})
 
 
 });

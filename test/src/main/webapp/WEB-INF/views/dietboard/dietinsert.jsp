@@ -6,7 +6,7 @@
 	function foodFinder() {
 		window.open("selectfood", "", "width=700 height=400");
 	}
-
+	var fdlistFoodcodes = []
 	function getReturnObj(fdlist) {
 		const listHeadr = ['음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
 			'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분']
@@ -31,7 +31,6 @@
 			}
 			str += '</tr>'; //row
 		});
-		str += '<button id="insertSFBtn">식단 입력</button>'
 		str += '</tbody>'; //slide-up
 		str += '</table>'; //list-text-content
 		
@@ -47,16 +46,15 @@
 			}
 		})
 		var JSONfdlist = JSON.parse(fdlist)
-		var fdlistFoodcodes = []
+		
 		
 		$.each(JSONfdlist, function(key, val) {
 			fdlistFoodcodes.push(Object.values(val)[0])
 		});
 		
-		console.log(fdlistFoodcodes)
 
 	}
-	
+		console.log(fdlistFoodcodes)
 </script>
 
 <main id="main">
@@ -76,13 +74,13 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<div>
-		<input type="text" id="foodname">
+		<input type="hidden" id="num">
 	</div>
 
 	<div>
-		<label>title</label> <input type="text" id="foodname">
+		<label>title</label> <input type="text" id="title">
 	</div>
 
 	<div>
@@ -93,8 +91,10 @@
 
 	<div>
 		<label>memo</label>
-		<textarea rows="5" cols="40"></textarea>
+		<textarea rows="5" cols="40" id="memo"></textarea>
 	</div>
+	
+	<button type="button" id="dietInsertBtn">저장</button>
 </main>
 
 <%@include file="../include/footer.jsp"%>

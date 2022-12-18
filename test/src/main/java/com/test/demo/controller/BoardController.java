@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
-import com.test.demo.model.SelectedFoods;
 import com.test.demo.repository.FoodRepository;
-import com.test.demo.repository.SelectedFoodsRepository;
 import com.test.demo.service.BoardService;
 
 @Controller
@@ -30,8 +28,7 @@ public class BoardController {
 	@Autowired
 	private FoodRepository foodRepository;
 	
-//	@Autowired
-//	private SelectedFoodsRepository selectedFoodsRepository;
+
 	
 	@GetMapping("foodList")
 	@ResponseBody
@@ -71,6 +68,7 @@ public class BoardController {
 	@PostMapping("insert")
 	@ResponseBody
 	public String boardInsert(@RequestBody DietBoard board) {
+		System.out.println(board.toString());
 		boardService.dietInsert(board);
 		return "success";
 	}

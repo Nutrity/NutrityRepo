@@ -64,7 +64,7 @@
 					<!--           <li><a href="about">About</a></li> -->
 					<sec:authentication property="principal" var="p" />
 					<sec:authorize access="isAuthenticated()">
-						<li><a href="/board/list/${p.user.num}">Diet</a></li>
+						<li><a href="/list/${p.user.num}">Diet</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
 						<li><a href="/board/list">Diet</a></li>

@@ -22,7 +22,7 @@ import com.test.demo.repository.FoodRepository;
 import com.test.demo.service.BoardService;
 
 @Controller
-@RequestMapping("/board/*")
+
 public class BoardController {
 	
 	@Autowired

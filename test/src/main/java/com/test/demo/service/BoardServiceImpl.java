@@ -54,7 +54,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<DietBoard> dietLists(Long num) {
-		return boardRepository.findByMember(num);
+		return boardRepository.findAllByMemberNum(num);
 	}
 
 	@Override

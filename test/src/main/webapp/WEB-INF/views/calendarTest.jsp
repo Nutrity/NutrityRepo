@@ -6,7 +6,6 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-            	  console.log(resp)
 		var Calendar = FullCalendar.Calendar;
 		var calendarEl = document.getElementById('calendar');
 

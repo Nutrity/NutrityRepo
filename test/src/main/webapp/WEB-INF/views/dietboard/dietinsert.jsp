@@ -46,13 +46,13 @@
 			}
 		})
 		var JSONfdlist = JSON.parse(fdlist)
-		var JSONfdlistFoodcode = []
+		var fdlistFoodcodes = []
 		
 		$.each(JSONfdlist, function(key, val) {
-			JSONfdlistFoodcode.push(Object.values(val)[0])
+			fdlistFoodcodes.push(Object.values(val)[0])
 		});
 		
-		console.log(JSONfdlistFoodcode)
+		console.log(fdlistFoodcodes)
 
 	}
 	
@@ -96,5 +96,15 @@
 		<textarea rows="5" cols="40"></textarea>
 	</div>
 </main>
+
+<!-- <script> -->
+<!-- 	$.ajax({ -->
+<!-- 		type:'post', -->
+<!-- 		url:'/board/insertSelectFoods', -->
+<!-- 		data : { -->
+<!-- 			foodcode : fdlistFoodcodes -->
+<!-- 		} -->
+<!-- 	}) -->
+<!-- </script> -->
 
 <%@include file="../include/footer.jsp"%>

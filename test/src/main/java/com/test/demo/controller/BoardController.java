@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.DietBoard;
-import com.test.demo.model.FoodArr;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.SelectedFoods;
 import com.test.demo.repository.FoodRepository;
+import com.test.demo.repository.SelectedFoodsRepository;
 import com.test.demo.service.BoardService;
 
 @Controller
@@ -28,6 +29,9 @@ public class BoardController {
 	
 	@Autowired
 	private FoodRepository foodRepository;
+	
+//	@Autowired
+//	private SelectedFoodsRepository selectedFoodsRepository;
 	
 	@GetMapping("foodList")
 	@ResponseBody
@@ -70,6 +74,21 @@ public class BoardController {
 		boardService.dietInsert(board);
 		return "success";
 	}
+	
+//	@PostMapping("insertSelectFoods")
+//	@ResponseBody
+//	public String insertSelectFoods(
+//			@RequestParam(value = "fdlistFoodcodes") String[] fdlistFoodcodes) {
+//		
+//		SelectedFoods sf = new SelectedFoods();
+//		for(int i=0; i <fdlistFoodcodes.length; i++ ) {
+//			sf.setEx(1);
+//			sf.setFoodList(foodRepository.findByFoodcode(fdlistFoodcodes[i]));
+//			selectedFoodsRepository.save(sf);
+//		}
+//		
+//		return null;
+//	}
 	
 	@GetMapping("list")
 	public String boardList(DietBoard board) {

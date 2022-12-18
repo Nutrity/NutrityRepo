@@ -45,6 +45,14 @@
 				j = 0;
 			}
 		})
+		var JSONfdlist = JSON.parse(fdlist)
+		var JSONfdlistFoodcode = []
+		
+		$.each(JSONfdlist, function(key, val) {
+			JSONfdlistFoodcode.push(Object.values(val)[0])
+		});
+		
+		console.log(JSONfdlistFoodcode)
 
 	}
 	

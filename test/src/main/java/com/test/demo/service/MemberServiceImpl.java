@@ -28,10 +28,13 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	public void modify(Member member) {
+		Member m = memberRepository.findById(member.getNum()).get();
 		String rawPwd = member.getPassword();
 		String encPwd = encoder.encode(rawPwd);
-		member.setPassword(encPwd);
-		memberRepository.save(member);
+		m.setPassword(encPwd);
+		m.setAddress(member.getAddress());
+		m.setPhone(member.getPhone());
+		
 	}
 	
 	public Member detailMember(Long num) {

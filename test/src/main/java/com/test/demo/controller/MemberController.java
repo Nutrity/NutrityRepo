@@ -61,9 +61,8 @@ public class MemberController {
 	
 	@PutMapping("modify")
 	@ResponseBody
-	public String modify(@RequestBody Member member, @RequestBody Address address) {
-		System.out.println(address);
-		member.setAddress(new Address(address.getZipcode(), address.getAddress1(),address.getAddress2()));
+	public String modify(@RequestBody Member member, String zipcode, String address1, String address2) {
+		member.setAddress(new Address(member.getAddress().getZipcode(), member.getAddress().getAddress1(), member.getAddress().getAddress2()));
 		mService.modify(member);
 		return "success";
 	}

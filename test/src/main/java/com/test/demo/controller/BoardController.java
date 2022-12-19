@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -72,13 +73,12 @@ public class BoardController {
 	
 	@PostMapping("insert")
 	@ResponseBody
-	public DietBoard boardInsert(@RequestBody DietBoard board, @AuthenticationPrincipal Member principal) {
-		System.out.println(principal);
-		System.out.println("Aa :" + principal.getNum());
-		board.setMember(principal);
+	public String boardInsert(@RequestBody DietBoard board) {
+		 SecurityContextHolder.getContext().getAuthentication();
+		
 		boardService.dietInsert(board);
 		
-		return boardService.dietDetail(board.getMember().getNum());
+		return "success";
 	}
 	
 	@GetMapping("list/{num}")

@@ -20,8 +20,9 @@
     </div>
   </section><!-- End Hero Section -->
 <form action = "join" method = "post">
-아이디 : <input type = "text" id = "useremail" name = "useremail" placeholder = "abc@de.fg"><br/>
-이름: <input type = "text" id = "username" name = "username"><br/>
+아이디 : <input type = "text" id = "username" name = "username"><br/>
+이름: <input type = "text" id = "realname" name = "realname"><br/>
+이메일: <input type = "text" id = "useremail" name = "useremail"><br/>
 비밀번호 : <input type = "text" id = "password" name = "password"><br/>
 생일 : <input type = "text" id = "birth" name = "birth"><br/>
 나이 : <input type = "text" id = "age" name = "age"><br/>
@@ -41,12 +42,20 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 $("#JoinBtn").click(function(){		
-	if($("#useremail").val() == ""){
+	if($("#username").val() == ""){
 		alert("아이디를 입력해주세요.");
 		return false;
 	}	
 	if($("#password").val() == ""){
 		alert("비밀번호를 입력해주세요.");
+		return false;
+	}
+	if($("#realname").val() == ""){
+		alert("이름 입력해주세요.");
+		return false;
+	}
+	if($("#useremail").val() == ""){
+		alert("이메일을 입력해주세요.");
 		return false;
 	}
 	if($("#birth").val() == ""){
@@ -59,10 +68,6 @@ $("#JoinBtn").click(function(){
 	}
 	if($("#phone").val() == ""){
 		alert("번호를 입력해주세요.");
-		return false;
-	}
-	if($("#username").val() == ""){
-		alert("이름를 입력해주세요.");
 		return false;
 	}
 	if($("#zipcode").val() == ""){

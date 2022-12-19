@@ -25,13 +25,13 @@
     </section>
 
 <form action = "/login" method = "post">
-UserName : <input type = "text" id = "useremail" name = "useremail"><br/>
+UserName : <input type = "text" id = "username" name = "username"><br/>
 PassWord : <input type = "text" id = "password" name = "password"><br/>
 <button type = "submit" id = "LoginBtn">로그인</button>
 </form>
 <script>
 $("#LoginBtn").click(function(){	
-	if($("#useremail").val() == ""){
+	if($("#username").val() == ""){
 		alert("아이디를 입력해주세요")
 		return false;
 	}

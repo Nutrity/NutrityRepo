@@ -325,14 +325,9 @@
 
 		$("#dietInsertBtn").click(function() {
 
-			var member = {
-				num: $("#num").val()
-			}
-
 			var data = {
 				title: $("#title").val(),
 				memo: $("#memo").val(),
-				member: member,
 				foodcode: fdlistFoodcodes
 			}
 			console.log(JSON.stringify(data))
@@ -342,7 +337,9 @@
 				data: JSON.stringify(data),
 				contentType: "application/json;charset=utf-8"
 			}).done(function(resp) {
-					location.href = '/board/list/'+$("#num").val() 
+				if(resp=="success"){
+					location.href = '/board/list/'+$("#num").val()
+					} 
 			})
 		})
 

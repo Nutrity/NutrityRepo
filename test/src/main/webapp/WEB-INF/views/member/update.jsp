@@ -22,14 +22,18 @@
 <input type="text" id = "num" name = "num" value = "${p.user.num}">
 <table>
 	<tr>
+		<td>아이디</td>
+		<td><input type="text" id="username" name="username"			value="${p.user.username}"></td>
+	</tr>
+	<tr>
 		<td>이메일</td>
 		<td><input type="text" id="useremail" name="useremail"
-			value="${p.user.useremail}" readonly="readonly"></td>
+			value="${p.user.useremail}"></td>
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td><input type="text" id="username" name="username"
-			value="${p.user.username}" readonly="readonly"></td>
+		<td><input type="text" id="realname" name="realname"
+			value="${p.user.realname}" readonly="readonly"></td>
 	</tr>
 	<tr>
 		<td>비밀번호</td>
@@ -92,6 +96,7 @@ addr = {
 	
 data = {	
 		num : $("#num").val(),
+		useremail : $("#useremail").val(),
 		password : $("#password").val(),
 		phone : $("#phone").val(),
 		address : addr

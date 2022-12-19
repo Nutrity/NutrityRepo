@@ -32,9 +32,10 @@ public class Member {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Long num;
 	private String useremail;
+	private String username;
 	private String platform_type;
 	private String access_token;
-	private String username;
+	private String realname;
 	private String password;
 	private String gender;
 	private String phone;

@@ -32,6 +32,7 @@ public class MemberServiceImpl implements MemberService{
 		String rawPwd = member.getPassword();
 		String encPwd = encoder.encode(rawPwd);
 		m.setPassword(encPwd);
+		m.setUseremail(member.getUseremail());
 		m.setAddress(member.getAddress());
 		m.setPhone(member.getPhone());
 		

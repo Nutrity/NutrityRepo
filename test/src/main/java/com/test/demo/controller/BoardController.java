@@ -95,9 +95,15 @@ public class BoardController {
 	}
 	
 	@GetMapping("list/{num}")
-	public String boardList(@PathVariable Long num , Model model) {
-		model.addAttribute("diets", boardService.dietLists(num));
+	public String boardList() {
 		return "calendarTest";
+	}
+	
+	@GetMapping("calendar/{num}")
+	@ResponseBody
+	public List<DietBoard> boardList(@PathVariable Long num) {
+		
+		return boardService.dietLists(num);
 	}
 	
 	@GetMapping("selectfood")

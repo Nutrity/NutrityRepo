@@ -12,18 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
 	var sugar = 0;//7
 	var sodium = 0;//8
 	
-	var s_kcal =0; 
-	var s_car = 0;
-	var s_protein = 0;
-	var s_fat = 0;
-	var s_sugar = 0;
-	var s_sodium = 0;
+	var s_kcal =0; //2
+	var s_protein = 0; //3
+	var s_fat = 0; //4
+	var s_car = 0; //5
+	var s_sugar = 0; //6
+	var s_sodium = 0; //10
 	
 	$.ajax({
 		type:'get',
 		url :'/board/nGraph/${p.user.gender}',
 	})//ajax
 .done(function(resp){
+	
 	console.log("suggest : " + JSON.stringify(resp))
 	s_kcal += Object.values(resp)[2]
 	s_protein += Object.values(resp)[3]
@@ -32,10 +33,36 @@ document.addEventListener('DOMContentLoaded', function() {
 	s_sugar+= Object.values(resp)[6]
 	s_sodium+= Object.values(resp)[10]
 	
+	var str = "<div class='progress'>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='1' aria-valuemin='0' aria-valuemax='' id='kcal'></div>";
+	str += "</div>";
+	str += "<div class='progress'>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='' id='car'></div>";
+	str += "</div>";
+	str += "<div class='progress'>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='' id='protein'></div>";
+	str += "</div>";
+	str += "<div class='progress'>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='' id='fat'></div>";
+	str += "</div>";
+	str += "<div class='progress'>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='5' aria-valuemin='0' aria-valuemax='' id='sugar'></div>";
+	str += "</div>";
+	str += "<div class='progress'>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='6' aria-valuemin='0' aria-valuemax='' id='sodium'></div>";
+	str += "</div>";
 	
+	$("#nutrents").html(str);
 	
-})
+	$("#kcal").prop("aria-valuemax", s_kcal);
+	$("#car").prop("aria-valuemax", s_car);
+	$("#protein").prop("aria-valuemax", s_protein);
+	$("#fat").prop("aria-valuemax", s_fat);
+	$("#sugar").prop("aria-valuemax", s_sugar);
+	$("#sodium").prop("aria-valuemax", s_sodium);
+	
 	console.log("kcal : " + s_kcal)
+})//done
 	
 	$.ajax({
 		type:'get',
@@ -136,11 +163,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	<div id="selectedfoods"></div>
 
 
-	<label>영양 그래프</label>
-	<div class="progress">
-		<div class="progress-bar" role="progressbar" aria-valuenow="100"
-			aria-valuemin="0" aria-valuemax="" id="kcal"></div>
+	<label for="nutrents">영양 그래프</label>
+	<div id="nutrents">
+	
 	</div>
+<!-- 	<div class="progress"> -->
+<!-- 		<div class="progress-bar" role="progressbar" aria-valuenow="100" -->
+<!-- 			aria-valuemin="0" aria-valuemax="" id="kcal"></div> -->
+<!-- 	</div> -->
 
 
 </main>

@@ -342,16 +342,4 @@
 				alert(resp)
 			})
 		})
-
-		//		$.ajax({
-		//			type: 'post',
-		//			url: '/board/insertSelectedFoods',
-		//			data: { fdlistFoodcodes: fdlistFoodcodes },
-		//			dataType: 'json',
-		//			traditional: true
-		//		}).done(function(resp) {
-		//			alert(resp)
-		//		})
-
-
 	});

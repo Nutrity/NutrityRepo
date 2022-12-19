@@ -16,8 +16,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <!-- Favicons -->
-<link href="../img/Nutrity-favicon.png" rel="icon">
-<link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/img/Nutrity-favicon.png" rel="icon">
+<link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,16 +27,16 @@
 	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../vendor/bootstrap-icons/bootstrap-icons.css"
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/vendor/bootstrap-icons/bootstrap-icons.css"
 	rel="stylesheet">
-<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-<link href="../vendor/aos/aos.css" rel="stylesheet">
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="/vendor/aos/aos.css" rel="stylesheet">
 
 <!-- Template Main CSS File -->
-<link href="../css/main.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
 
 <!-- =======================================================
   * Template Name: Logis - v1.2.1
@@ -64,7 +64,7 @@
 					<!--           <li><a href="about">About</a></li> -->
 					<sec:authentication property="principal" var="p" />
 					<sec:authorize access="isAuthenticated()">
-						<li><a href="/list/${p.user.num}">Diet</a></li>
+						<li><a href="/board/list/${p.user.num}">Diet</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
 						<li><a href="/board/list">Diet</a></li>

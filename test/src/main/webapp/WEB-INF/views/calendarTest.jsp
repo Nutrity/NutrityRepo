@@ -48,7 +48,7 @@
 
  <main id="main">
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('../img/month-cal-bg-1.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('/img/month-cal-bg-1.jpg');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">

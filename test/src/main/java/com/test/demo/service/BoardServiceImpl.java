@@ -7,14 +7,19 @@ import org.springframework.stereotype.Service;
 
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.Member;
 import com.test.demo.repository.BoardRepository;
 import com.test.demo.repository.FoodRepository;
+import com.test.demo.repository.MemberRepository;
 
 @Service
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
 	private BoardRepository boardRepository;
+	
+	@Autowired
+	private MemberRepository memberRepository;
 	
 	@Autowired
 	private FoodRepository foodRepository;
@@ -42,25 +47,22 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<FoodList> foodLists(String foodname) {
-		
 		return foodRepository.findByFoodname(foodname);
 	}
 	
 	@Override
 	public List<FoodList> foodListsDesc(String foodname) {
-		
 		return foodRepository.findByFoodnameDesc(foodname);
 	}
 
 	@Override
 	public List<DietBoard> dietLists(Long num) {
-		return boardRepository.findAllByMemberNum(num);
+		return boardRepository.findAllByMember(num);
 	}
 
 	@Override
 	public List<FoodList> foodList(Long foodcode) {
 		boardRepository.findById(foodcode);
-	
 		return null;
 	}
 

@@ -76,7 +76,7 @@
 	</div>
 	
 	<div>
-		<input type="hidden" id="num">
+		<input type="hidden" id="num" value="${p.user.num}">
 	</div>
 
 	<div>

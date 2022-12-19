@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import com.test.demo.model.FoodList;
 import com.test.demo.model.Member;
 import com.test.demo.repository.FoodRepository;
 import com.test.demo.service.BoardService;
+import com.test.demo.service.MemberService;
 
 @Controller
 @RequestMapping("/board/*")
@@ -69,10 +71,14 @@ public class BoardController {
 	}
 	
 	@PostMapping("insert")
-	public String boardInsert(@RequestBody DietBoard board) {
-		System.out.println(board.toString());
+	@ResponseBody
+	public DietBoard boardInsert(@RequestBody DietBoard board, @AuthenticationPrincipal Member principal) {
+		System.out.println(principal);
+		System.out.println("Aa :" + principal.getNum());
+		board.setMember(principal);
 		boardService.dietInsert(board);
-		return "redirect:/board/list/";
+		
+		return boardService.dietDetail(board.getMember().getNum());
 	}
 	
 	@GetMapping("list/{num}")

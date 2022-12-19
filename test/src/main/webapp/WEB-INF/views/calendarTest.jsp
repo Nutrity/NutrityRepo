@@ -29,12 +29,12 @@
 		        location.href = "detail"
 		      },
               events: [
-//             	  $.each(diets)
-//                   {
-//                     title: '음식 이름',
-//                     start: '2020-09-03',
-//                     constraint: 'businessHours',
-//                   }
+            	  $.each(diets,function(key,val){
+                  {
+                    title: val.title,
+                    start: val.regdate,
+                  }
+            	  })
                   ]
 		});
 

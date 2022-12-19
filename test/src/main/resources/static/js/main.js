@@ -324,22 +324,26 @@
 		})
 
 		$("#dietInsertBtn").click(function() {
-	
-			var data = {
-				title: $("#title").val(),
-					memo : $("#memo").val(),
-					num : $("#num").val(),
-					foodcode : fdlistFoodcodes
+
+			var member = {
+				num: $("#num").val()
 			}
 
+			var data = {
+				title: $("#title").val(),
+				memo: $("#memo").val(),
+				member: member,
+				foodcode: fdlistFoodcodes
+			}
 			console.log(JSON.stringify(data))
 			$.ajax({
-				type:"post",
-				url:"/board/insert",
+				type: "post",
+				url: "/board/insert",
 				data: JSON.stringify(data),
-				contentType:"application/json;charset=utf-8"
-			}).done(function(resp){
-				alert(resp)
+				contentType: "application/json;charset=utf-8"
+			}).done(function(resp) {
+					location.href = '/board/list/'+$("#num").val() 
 			})
 		})
+
 	});

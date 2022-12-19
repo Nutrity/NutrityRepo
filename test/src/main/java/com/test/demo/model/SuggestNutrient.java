@@ -13,8 +13,7 @@ public class SuggestNutrient {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long snum;
-	private int age_range;
-	private int gender;
+	private String gender;
 	private double sg_kcal;
 	private double sg_protein;
 	private double sg_fat;

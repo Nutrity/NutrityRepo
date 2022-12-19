@@ -43,7 +43,7 @@ public class BoardServiceImpl implements BoardService{
 		DietBoard b = boardRepository.findById(board.getBnum()).get();
 		Set<String> updateSet = b.getFoodcode();
 		updateSet.addAll(board.getFoodcode());
-		b.setFoodcode(board.getFoodcode());
+		b.setFoodcode(updateSet);
 		b.setTitle(board.getTitle());
 		b.setMemo(board.getMemo());
 	}

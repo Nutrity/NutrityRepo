@@ -23,7 +23,7 @@
 <table>
 	<tr>
 		<td>아이디</td>
-		<td><input type="text" id="username" name="username"			value="${p.user.username}"></td>
+		<td><input type="text" id="username" name="username" value="${p.user.username}"></td>
 	</tr>
 	<tr>
 		<td>이메일</td>
@@ -83,6 +83,7 @@
 	</tr>	
 </table>
 <button id = "modifyBtn">수정</button>
+<button id = "delBtn">삭제</button>
 <script>
 
 $("#modifyBtn").click(function(){
@@ -113,6 +114,23 @@ $.ajax({
 	alert(resp)
 })
 
+})
+
+$("#delBtn").click(function(){
+	if(!confirm("정말 탈퇴하시겠습니까")){
+		return false;
+	}
+	$.ajax({
+		type : 'delete',
+		url : "/userDelete/${p.user.num}"
+	})
+	.done(function(){
+		alert("탈퇴가 완료되었습니다.")
+		location.href = "/logout"
+	})
+	.fail(function(){
+		alert("오류로 인하여 탈퇴 실패하셨습니다.")
+	})
 })
 
 </script>

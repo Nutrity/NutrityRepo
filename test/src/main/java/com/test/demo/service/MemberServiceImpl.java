@@ -59,9 +59,11 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public Member login(Member member) {
-		return memberRepository.findByUsername(member.getUsername());
+	public Member findByUsername(String username) {
+		
+		return memberRepository.findByUsername(username);
 	}
+
 	
 	
 	

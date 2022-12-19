@@ -9,8 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.test.demo.model.Member;
 
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
+@Getter @Setter
 public class PrincipalUser implements UserDetails{
 	
 	private Member user;

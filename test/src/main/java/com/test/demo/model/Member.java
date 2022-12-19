@@ -57,8 +57,8 @@ public class Member {
 	@Embedded
 	private Job job;
 	
-	@OneToMany(mappedBy = "member")
-	private List<DietBoard> dietBoard;
+//	@OneToMany(mappedBy = "member")
+//	private List<DietBoard> dietBoard;
 	
 	
 }

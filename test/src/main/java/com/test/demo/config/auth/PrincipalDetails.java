@@ -22,6 +22,7 @@ public class PrincipalDetails implements UserDetailsService{
 			return null;
 		}
 		PrincipalUser pmember = new PrincipalUser(member);
+		System.out.println("pmember : " + pmember);
 		return pmember;
 	}
 

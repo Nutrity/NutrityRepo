@@ -20,8 +20,7 @@ public interface MemberService {
 	//회원 탈퇴
 	public void userDelete(Long num);
 	
-	//로그인 
-	public Member login(Member member);
-	
+	//회원 찾기
+	public Member findByUsername(String username);
 
 }

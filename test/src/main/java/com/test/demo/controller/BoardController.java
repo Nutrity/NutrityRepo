@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.catalina.authenticator.SpnegoAuthenticator.AuthenticateAction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +20,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
 import com.test.demo.model.Member;
 import com.test.demo.repository.FoodRepository;
+import com.test.demo.repository.MemberRepository;
 import com.test.demo.service.BoardService;
 import com.test.demo.service.MemberService;
 
@@ -34,6 +39,8 @@ public class BoardController {
 	@Autowired
 	private FoodRepository foodRepository;
 	
+	@Autowired
+	private MemberService memberService;
 
 	
 	@GetMapping("foodList")
@@ -74,10 +81,16 @@ public class BoardController {
 	@PostMapping("insert")
 	@ResponseBody
 	public String boardInsert(@RequestBody DietBoard board) {
-		 SecurityContextHolder.getContext().getAuthentication();
-		
+		SecurityContext context = SecurityContextHolder.getContext();
+		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
+//		String user = auth.getName();
+//		Member m =memberService.findByUsername(user)
+		System.out.println(context);
+		System.out.println("p : " + p);
+		System.out.println("getUser : " + p.getUser());
+		board.setMember(p.getUser());
 		boardService.dietInsert(board);
-		
+		System.out.println(board);
 		return "success";
 	}
 	

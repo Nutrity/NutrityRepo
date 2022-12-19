@@ -26,42 +26,42 @@ document.addEventListener('DOMContentLoaded', function() {
 .done(function(resp){
 	
 	console.log("suggest : " + JSON.stringify(resp))
-	s_kcal += Object.values(resp)[2]
-	s_protein += Object.values(resp)[3]
-	s_fat+= Object.values(resp)[4]
-	s_car+= Object.values(resp)[5]
-	s_sugar+= Object.values(resp)[6]
-	s_sodium+= Object.values(resp)[10]
+// 	s_kcal += Object.values(resp)[2]
+// 	s_protein += Object.values(resp)[3]
+// 	s_fat+= Object.values(resp)[4]
+// 	s_car+= Object.values(resp)[5]
+// 	s_sugar+= Object.values(resp)[6]
+// 	s_sodium+= Object.values(resp)[10]
 	
 	var str = "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='1' aria-valuemin='0' aria-valuemax='' id='kcal'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='1' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[2]+"' id='kcal'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='' id='car'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[3]+"' id='car'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='' id='protein'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[4]+"' id='protein'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='' id='fat'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[5]+"' id='fat'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='5' aria-valuemin='0' aria-valuemax='' id='sugar'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='5' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[6]+"' id='sugar'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='6' aria-valuemin='0' aria-valuemax='' id='sodium'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='6' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[10]+"' id='sodium'></div>";
 	str += "</div>";
 	
 	$("#nutrents").html(str);
 	
-	$("#kcal").prop("aria-valuemax", s_kcal);
-	$("#car").prop("aria-valuemax", s_car);
-	$("#protein").prop("aria-valuemax", s_protein);
-	$("#fat").prop("aria-valuemax", s_fat);
-	$("#sugar").prop("aria-valuemax", s_sugar);
-	$("#sodium").prop("aria-valuemax", s_sodium);
+// 	$("#kcal").prop("aria-valuemax", s_kcal);
+// 	$("#car").prop("aria-valuemax", s_car);
+// 	$("#protein").prop("aria-valuemax", s_protein);
+// 	$("#fat").prop("aria-valuemax", s_fat);
+// 	$("#sugar").prop("aria-valuemax", s_sugar);
+// 	$("#sodium").prop("aria-valuemax", s_sodium);
 	
-	console.log("kcal : " + s_kcal)
+// 	console.log("kcal : " + s_kcal)
 })//done
 	
 	$.ajax({

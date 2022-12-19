@@ -102,6 +102,11 @@ public class BoardController {
 		return boardService.dietLists(num);
 	}
 	
+	@GetMapping("selectfood")		
+	public String selectfood(){	
+		return "/dietboard/selectfood";
+	}
+	
 	@GetMapping("selectfood/{bnum}")
 	@ResponseBody
 	public List<FoodList> selectfood(@PathVariable Long bnum){

@@ -133,6 +133,13 @@ public class BoardController {
 		return boardService.findByGender(gender);
 	}
 
+	@PostMapping("update/{bnum}")
+	@ResponseBody
+	public String boardUpdate(@PathVariable Long bnum ,@RequestBody DietBoard board) {
+		board.setBnum(bnum);
+		boardService.dietUpdate(board);
+		return "success";
+	}
 	
 	
 }

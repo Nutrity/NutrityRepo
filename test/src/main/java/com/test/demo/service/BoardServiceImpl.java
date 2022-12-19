@@ -36,8 +36,10 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public void dietUpdate(DietBoard board) {
-		// TODO Auto-generated method stub
-		
+		DietBoard b = boardRepository.findById(board.getBnum()).get();
+		b.setFoodcode(board.getFoodcode());
+		b.setTitle(board.getTitle());
+		b.setMemo(board.getMemo());
 	}
 
 	@Override

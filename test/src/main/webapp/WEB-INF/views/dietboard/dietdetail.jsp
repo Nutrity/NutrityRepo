@@ -217,8 +217,8 @@ function getReturnObj(fdlist) {
 	</div>
 	<div></div>
 	<label>제목</label> <input type="text" value="${board.title}" id="title">
-	<br> <label>작성일</label> <input type="text"
-		value="${board.regdate}" id="regdate"><br> <label>메모</label>
+	<br> <label>작성일</label>
+	 <input type="text"	value="${board.regdate}" id="regdate"><br> <label>메모</label>
 	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea>
 	<br> <label>음식 리스트</label><br>
 	<div id="selectedfoods"></div>
@@ -231,7 +231,35 @@ function getReturnObj(fdlist) {
 	<label for="nutrents">영양 그래프</label>
 	<div id="nutrents">
 	</div>
+	
+	<div>
+	<input type="button" id="dietUpdateBtn" value="수정">
+	</div>
+<script>
+$("#dietUpdateBtn").click(function(){
+	
+	var data = {
+			title: $("#title").val(),
+			memo: $("#memo").val(),
+			foodcode: fdlistFoodcodes
+		}//data 
+		
+		console.log(JSON.stringify(data))
+		$.ajax({
+			type: "post",
+			url: "/board/update/"+$("#bnum").val(),
+			data: JSON.stringify(data),
+			contentType: "application/json;charset=utf-8"
+		})//ajax
+		.done(function(resp) {
+			if(resp=="success"){
+				location.href = '/board/list/'+${p.user.num}
+				} 
+		})
+	
+});//function
 
+</script>
 </main>
 
 

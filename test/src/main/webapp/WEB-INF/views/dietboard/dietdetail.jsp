@@ -26,24 +26,25 @@ document.addEventListener('DOMContentLoaded', function() {
 .done(function(resp){
 	
 	console.log("suggest : " + JSON.stringify(resp))
-// 	s_kcal += Object.values(resp)[2]
-// 	s_protein += Object.values(resp)[3]
-// 	s_fat+= Object.values(resp)[4]
-// 	s_car+= Object.values(resp)[5]
-// 	s_sugar+= Object.values(resp)[6]
-// 	s_sodium+= Object.values(resp)[10]
+	
+// 	s_kcal += Object.values(resp)[2];
+// 	s_protein += Object.values(resp)[3];
+// 	s_fat+= Object.values(resp)[4];
+// 	s_car+= Object.values(resp)[5];
+// 	s_sugar+= Object.values(resp)[6];
+// 	s_sodium+= Object.values(resp)[10];
 	
 	var str = "<div class='progress'>";
 		str += "<div class='progress-bar' role='progressbar' aria-valuenow='1' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[2]+"' id='kcal'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[3]+"' id='car'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[5]+"' id='car'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[4]+"' id='protein'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[3]+"' id='protein'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[5]+"' id='fat'></div>";
+		str += "<div class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[4]+"' id='fat'></div>";
 	str += "</div>";
 	str += "<div class='progress'>";
 		str += "<div class='progress-bar' role='progressbar' aria-valuenow='5' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[6]+"' id='sugar'></div>";
@@ -52,16 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		str += "<div class='progress-bar' role='progressbar' aria-valuenow='6' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[10]+"' id='sodium'></div>";
 	str += "</div>";
 	
+// 	$("#kcal").attr("aria-valuemax", s_kcal);
+// 	$("#car").attr("aria-valuemax", s_car);
+// 	$("#protein").attr("aria-valuemax", s_protein);
+// 	$("#fat").attr("aria-valuemax", s_fat);
+// 	$("#sugar").attr("aria-valuemax", s_sugar);
+// 	$("#sodium").attr("aria-valuemax", s_sodium);
+	
 	$("#nutrents").html(str);
 	
-// 	$("#kcal").prop("aria-valuemax", s_kcal);
-// 	$("#car").prop("aria-valuemax", s_car);
-// 	$("#protein").prop("aria-valuemax", s_protein);
-// 	$("#fat").prop("aria-valuemax", s_fat);
-// 	$("#sugar").prop("aria-valuemax", s_sugar);
-// 	$("#sodium").prop("aria-valuemax", s_sodium);
-	
-// 	console.log("kcal : " + s_kcal)
 })//done
 	
 	$.ajax({
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	})//ajax
 	.done(function(resp){
 		console.log(resp)
-		const listHeadr = ['음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
-			'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분']
+		const listHeadr = ['음식 이름', '카테고리', '칼로리(kcal)', '탄수화물(g)', '단백질(g)', '지방(g)', '당(g)',
+			'나트륨(mg)', '트랜스<br>지방(g)', '칼슘(mg)', '비타민C(mg)', '철분(mg)']
 		var str = '';
 		str += "<div class='container'>";
 		str += "<table data-aos='fade-up' class='table table-hover'>"
@@ -110,17 +110,29 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 			$.each(resp, function(key, val){
 				for(let i=3; i<9; i++){
-				switch(i){
-				case 3 : kcal += Object.values(val)[i];
-				case 4 : car += Object.values(val)[i];
-				case 5 : protein += Object.values(val)[i];
-				case 6 : fat += Object.values(val)[i];
-				case 7 : sugar += Object.values(val)[i];
-				default : sodium += Object.values(val)[i];
-				break;
-				}//switch
+					switch(i){
+						case 3 : kcal += Object.values(val)[i];
+						
+						case 4 : car += Object.values(val)[i];
+						
+						case 5 : protein += Object.values(val)[i];
+						
+						case 6 : fat += Object.values(val)[i];
+						
+						case 7 : sugar += Object.values(val)[i];
+						
+						default : sodium += Object.values(val)[i];
+							break;
+					}//switch
 				}//for		
 			})//each
+			
+			$("#kcal").attr("aria-valuenow", kcal);
+			$("#car").attr("aria-valuenow", car);
+			$("#protein").attr("aria-valuenow", protein);
+			$("#fat").attr("aria-valuenow", fat);
+			$("#sugar").attr("aria-valuenow", sugar);
+			$("#sodium").attr("aria-valuenow", sodium);
 		})//done
 
 		

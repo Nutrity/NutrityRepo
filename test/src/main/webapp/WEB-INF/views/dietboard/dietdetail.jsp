@@ -4,6 +4,39 @@
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
+	
+	var kcal =0; //3
+	var car = 0;//4
+	var protein = 0;//5
+	var fat = 0;//6
+	var sugar = 0;//7
+	var sodium = 0;//8
+	
+	var s_kcal =0; 
+	var s_car = 0;
+	var s_protein = 0;
+	var s_fat = 0;
+	var s_sugar = 0;
+	var s_sodium = 0;
+	
+	$.ajax({
+		type:'get',
+		url :'/board/nGraph/${p.user.gender}',
+	})//ajax
+.done(function(resp){
+	console.log("suggest : " + JSON.stringify(resp))
+	s_kcal += Object.values(resp)[2]
+	s_protein += Object.values(resp)[3]
+	s_fat+= Object.values(resp)[4]
+	s_car+= Object.values(resp)[5]
+	s_sugar+= Object.values(resp)[6]
+	s_sodium+= Object.values(resp)[10]
+	
+	
+	
+})
+	console.log("kcal : " + s_kcal)
+	
 	$.ajax({
 		type:'get',
 		url : '/board/selectfood/'+$("#bnum").val(),
@@ -48,18 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			}//if
 		});//tr,th/each
 		
-		$.ajax({
-			type:'get',
-			url :'/board/nGraph/'+${p.user.gender},
-)}//ajax
-.done(function(resp){
-	
-				var kcal =0; //3
-				var car = 0;//4
-				var protein = 0;//5
-				var fat = 0;//6
-				var sugar = 0;//7
-				var sodium = 0;//8
 			$.each(resp, function(key, val){
 				for(let i=3; i<9; i++){
 				switch(i){
@@ -74,7 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				}//for		
 			})//each
 		})//done
-	});//done
+
+		
 });//document
 
 

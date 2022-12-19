@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.SuggestNutrient;
 
 public interface BoardService {
 
@@ -21,7 +22,9 @@ public interface BoardService {
 	public List<FoodList> foodListsDesc(String foodname);
 	//전체보기(유저 자신의 것)
 	public List<DietBoard> dietLists(Long num);
-	
 	//음식리스트
 	public List<FoodList> foodList(Long foodcode);
+	//권장영양소(성별)
+	public SuggestNutrient findByGender(String gender);
+	
 }

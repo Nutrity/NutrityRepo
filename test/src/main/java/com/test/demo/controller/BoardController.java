@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.SuggestNutrient;
 import com.test.demo.repository.FoodRepository;
 import com.test.demo.service.BoardService;
 import com.test.demo.service.MemberService;
@@ -126,9 +127,12 @@ public class BoardController {
 		return "/dietboard/dietdetail";
 	}
 	
-	
-	
-	
-	
+	@GetMapping("nGraph/{gender}")
+	@ResponseBody
+	public SuggestNutrient suggestNutrient(@PathVariable String gender) {
+		return boardService.findByGender(gender);
+	}
 
+	
+	
 }

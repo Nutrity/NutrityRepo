@@ -34,8 +34,8 @@
 <span id="guide" style="color:#999;display:none"></span>
 <input type="text" id="address2"  name = "address2" placeholder="상세주소">
 <br>
-남 : <input type = "radio" id = "gender" name = "gender" value = "남" checked/>
-여 : <input type = "radio" id = "gender" name = "gender" value = "여" /><br/>       
+남 : <input type = "radio" id = "gender" name = "gender" value = "man" checked/>
+여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>       
 <button type = "submit" id = "JoinBtn">회원가입</button>
 </form>
 

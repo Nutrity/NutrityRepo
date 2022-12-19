@@ -4,7 +4,6 @@
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-	
 	$.ajax({
 		type:'get',
 		url : '/board/selectfood/'+$("#bnum").val(),
@@ -33,8 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				str += "<td class='col'>" + Object.values(val)[i] + "</td>"
 			}
 		});
-			str += '</tr>'; //row
-		
+		str += '</tr>'; //row
 		str += '</tbody>'; //slide-up
 		str += '</table>'; //list-text-content
 		
@@ -48,13 +46,38 @@ document.addEventListener('DOMContentLoaded', function() {
 			} else {
 				j = 0;
 			}//if
-			
-		});//done
+		});//tr,th/each
 		
+		$.ajax({
+			type:'get',
+			url :'/board/nGraph/'+${p.user.gender},
+)}//ajax
+.done(function(resp){
+	
+				var kcal =0; //3
+				var car = 0;//4
+				var protein = 0;//5
+				var fat = 0;//6
+				var sugar = 0;//7
+				var sodium = 0;//8
+			$.each(resp, function(key, val){
+				for(let i=3; i<9; i++){
+				switch(i){
+				case 3 : kcal += Object.values(val)[i];
+				case 4 : car += Object.values(val)[i];
+				case 5 : protein += Object.values(val)[i];
+				case 6 : fat += Object.values(val)[i];
+				case 7 : sugar += Object.values(val)[i];
+				default : sodium += Object.values(val)[i];
+				break;
+				}//switch
+				}//for		
+			})//each
+		})//done
+	});//done
+});//document
 
-	});//document
-});
-		
+
 	
 </script>
 
@@ -82,14 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
 	<div>
 		<input type="hidden" value="${board.bnum}" id="bnum">
 	</div>
-	<label>제목</label>
-	<input type="text" value="${board.title}" id="title"> <br>
-	<label>작성일</label>
-	<input type="text" value="${board.regdate}" id="regdate"><br>
-	<label>메모</label>
-	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea><br>
-	<label>음식 리스트</label><br>
+	<div></div>
+	<label>제목</label> <input type="text" value="${board.title}" id="title">
+	<br> <label>작성일</label> <input type="text"
+		value="${board.regdate}" id="regdate"><br> <label>메모</label>
+	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea>
+	<br> <label>음식 리스트</label><br>
 	<div id="selectedfoods"></div>
+
+
+	<label>영양 그래프</label>
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" aria-valuenow="100"
+			aria-valuemin="0" aria-valuemax="" id="kcal"></div>
+	</div>
+
 
 </main>
 

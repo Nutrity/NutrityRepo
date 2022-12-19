@@ -20,7 +20,8 @@
 		var events = list.map(function(diets){
 			return{
 				title : diets.title,
-				start : diets.regdate
+				start : diets.regdate,
+				url : "/board/detail/"+diets.bnum
 			}
 			
 		});
@@ -35,13 +36,13 @@
 			},
 			navLinks: true,
 			 navLinkDayClick: function(date, jsEvent) {
-				 location.href= '/board/detail'+{}
+				 location.href= '/board/insert'
 			 },
 			selectable: true,
 			editable : true,
 		      select: function(info) {
 		        alert('selected ' + info.startStr + ' to ' + info.endStr);
-		        location.href = "detail"
+		        location.href = "/board/insert"
 		      },
               events: events
 		});

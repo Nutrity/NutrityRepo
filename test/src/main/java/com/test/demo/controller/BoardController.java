@@ -2,12 +2,11 @@ package com.test.demo.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
-import org.apache.catalina.authenticator.SpnegoAuthenticator.AuthenticateAction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -23,9 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
-import com.test.demo.model.Member;
 import com.test.demo.repository.FoodRepository;
-import com.test.demo.repository.MemberRepository;
 import com.test.demo.service.BoardService;
 import com.test.demo.service.MemberService;
 
@@ -102,16 +99,31 @@ public class BoardController {
 	@GetMapping("calendar/{num}")
 	@ResponseBody
 	public List<DietBoard> boardList(@PathVariable Long num) {
-		
 		return boardService.dietLists(num);
 	}
 	
-	@GetMapping("selectfood")
-	public String selectfood(){
-		return "/dietboard/selectfood";
+	@GetMapping("selectfood/{bnum}")
+	@ResponseBody
+	public List<FoodList> selectfood(@PathVariable Long bnum){
+		DietBoard dboard = boardService.dietDetail(bnum);
+			Set<String> foodcode = dboard.getFoodcode();
+			Iterator<String> it = foodcode.iterator();
+			List<FoodList> fdlist = new ArrayList<>();
+			while(it.hasNext()) {
+			fdlist.add(foodRepository.findByFoodcode(it.next()));
+			}
+		return fdlist;
+	}
+	
+	@GetMapping("detail/{bnum}")
+	public String boardDetail(@PathVariable Long bnum, Model model) {
+		model.addAttribute("board", boardService.dietDetail(bnum));
+		return "/dietboard/dietdetail";
 	}
 	
 	
-
+	
+	
+	
 
 }

@@ -338,7 +338,6 @@
 				contentType: "application/json;charset=utf-8"
 			}).done(function(resp) {
 				if(resp=="success"){
-					
 					location.href = '/board/list/'+$("#num").val()
 					} 
 			})

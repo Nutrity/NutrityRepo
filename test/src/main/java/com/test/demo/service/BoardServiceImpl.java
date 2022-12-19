@@ -1,6 +1,9 @@
 package com.test.demo.service;
 
 import java.util.List;
+import java.util.Set;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,9 +38,12 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
+	@Transactional
 	public void dietUpdate(DietBoard board) {
 		DietBoard b = boardRepository.findById(board.getBnum()).get();
-		b.setFoodcode(board.getFoodcode());
+		Set<String> updateSet = b.getFoodcode();
+		updateSet.addAll(board.getFoodcode());
+		b.setFoodcode(updateSet);
 		b.setTitle(board.getTitle());
 		b.setMemo(board.getMemo());
 	}

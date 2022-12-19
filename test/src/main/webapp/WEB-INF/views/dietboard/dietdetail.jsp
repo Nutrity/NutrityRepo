@@ -82,10 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	<div>
 		<input type="hidden" value="${board.bnum}" id="bnum">
 	</div>
-	<input type="text" value="${board.title}" id="title"> <input
-		type="text" value="${board.regdate}" id="regdate">
-	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea>
-	<textarea rows="5" cols="50" id="foodcode">${board.foodcode}</textarea>
+	<label>제목</label>
+	<input type="text" value="${board.title}" id="title"> <br>
+	<label>작성일</label>
+	<input type="text" value="${board.regdate}" id="regdate"><br>
+	<label>메모</label>
+	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea><br>
+	<label>음식 리스트</label><br>
 	<div id="selectedfoods"></div>
 
 </main>

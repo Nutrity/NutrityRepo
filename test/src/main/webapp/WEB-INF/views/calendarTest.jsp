@@ -29,12 +29,7 @@
 		        location.href = "detail"
 		      },
               events: [
-            	  $.each(diets,function(key,val){
-                  {
-                    title: val.title,
-                    start: val.regdate,
-                  }
-            	  })
+            	  
                   ]
 		});
 

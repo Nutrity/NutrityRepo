@@ -112,15 +112,15 @@ document.addEventListener('DOMContentLoaded', function() {
 				for(let i=3; i<9; i++){
 					switch(i){
 						case 3 : kcal += Object.values(val)[i];
-						
+							break;
 						case 4 : car += Object.values(val)[i];
-						
+							break;
 						case 5 : protein += Object.values(val)[i];
-						
+							break;
 						case 6 : fat += Object.values(val)[i];
-						
+							break;
 						case 7 : sugar += Object.values(val)[i];
-						
+							break;
 						default : sodium += Object.values(val)[i];
 							break;
 					}//switch

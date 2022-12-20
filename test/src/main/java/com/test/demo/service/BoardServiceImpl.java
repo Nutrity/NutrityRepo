@@ -1,6 +1,7 @@
 package com.test.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.transaction.Transactional;
@@ -70,7 +71,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<DietBoard> dietLists(Long num) {
-		Member member = memberRepository.findById(num).get();
+		Optional<Member> member = memberRepository.findById(num);
 		return boardRepository.findAllByMember(member);
 	}
 

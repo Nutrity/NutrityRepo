@@ -7,13 +7,17 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -76,6 +80,8 @@ public class BoardController {
 		return "/dietboard/dietinsert";
 	}
 	
+	
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("insert")
 	@ResponseBody
 	public String boardInsert(@RequestBody DietBoard board) {
@@ -92,8 +98,13 @@ public class BoardController {
 		return "success";
 	}
 	
-	@GetMapping("list/{num}")
+	@GetMapping("list")
 	public String boardList() {
+		return "calendarTest(Anonymous)";
+	}
+	
+	@GetMapping("list/{num}")
+	public String boardListAuth() {
 		return "calendarTest";
 	}
 	
@@ -133,7 +144,7 @@ public class BoardController {
 		return boardService.findByGender(gender);
 	}
 
-	@PostMapping("update/{bnum}")
+	@PutMapping("update/{bnum}")
 	@ResponseBody
 	public String boardUpdate(@PathVariable Long bnum ,@RequestBody DietBoard board) {
 		board.setBnum(bnum);
@@ -141,5 +152,11 @@ public class BoardController {
 		return "success";
 	}
 	
+	@DeleteMapping("delete/{bnum}")
+	@ResponseBody
+	public String boardDelete(@PathVariable Long bnum) {
+		boardService.dietDelete(bnum);
+		return "success";
+	}
 	
 }

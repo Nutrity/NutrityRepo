@@ -324,7 +324,6 @@
 		})
 
 		$("#dietInsertBtn").click(function() {
-
 			var data = {
 				title: $("#title").val(),
 				memo: $("#memo").val(),
@@ -339,7 +338,10 @@
 			}).done(function(resp) {
 				if(resp=="success"){
 					location.href = '/board/list/'+$("#num").val()
-					} 
+					}else{
+						alert("회원전용 기능입니다. 로그인해주세요")
+						location.href = '/login'
+					}
 			})
 		})
 

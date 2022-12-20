@@ -234,8 +234,23 @@ function getReturnObj(fdlist) {
 	
 	<div>
 	<input type="button" id="dietUpdateBtn" value="수정">
+	<input type="button" id="boardDeleteBtn" value="삭제">
 	</div>
 <script>
+
+$("#boardDeleteBtn").click(function(){
+	$.ajax({
+		type:"delete",
+		url:"/board/delete/"+$("#bnum").val()
+	})
+	.done(function(resp){
+		alert("삭제 완료")
+		location.href='/board/list/'+${p.user.num}
+	})
+	
+})
+
+
 $("#dietUpdateBtn").click(function(){
 	
 	var data = {
@@ -246,7 +261,7 @@ $("#dietUpdateBtn").click(function(){
 		
 		console.log(JSON.stringify(data))
 		$.ajax({
-			type: "post",
+			type: "put",
 			url: "/board/update/"+$("#bnum").val(),
 			data: JSON.stringify(data),
 			contentType: "application/json;charset=utf-8"

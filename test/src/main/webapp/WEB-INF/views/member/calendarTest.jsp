@@ -6,43 +6,13 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-
+		
 		$.ajax({
 			type:'get',
 			url : '/board/calendar/'+${p.user.num},
 		})
 		.done(function(resp){
-			if(resp==null){
-				var Calendar = FullCalendar.Calendar;
-				var calendarEl = document.getElementById('calendar');
-
-			// initialize the calendar
-			// -----------------------------------------------------------------
-
-			var calendar = new Calendar(calendarEl, {
-				headerToolbar : {
-					
-					left : 'today prev',
-					center : 'title',
-					right : 'next'
-				},
-				navLinks: true,
-				 navLinkDayClick: function(date, jsEvent) {
-					 location.href= '/board/insert'
-				 },
-				selectable: true,
-				editable : true,
-			      select: function(info) {
-			        alert('selected ' + info.startStr + ' to ' + info.endStr);
-			        location.href = "/board/insert"
-			      },
-			});
-
-			calendar.render();
-
-			}	
-			else
-				{
+			
 			var list = resp;
 			console.log(list);
 
@@ -61,9 +31,9 @@
 
 		var calendar = new Calendar(calendarEl, {
 			headerToolbar : {
-				left : 'today prev',
+				left : 'prev,next today',
 				center : 'title',
-				right : 'next'
+				right : 'dayGridMonth'
 			},
 			navLinks: true,
 			 navLinkDayClick: function(date, jsEvent) {
@@ -77,9 +47,8 @@
 		      },
               events: events
 		});
-		
+
 		calendar.render();
-		}
 	});
 		});		
 </script>

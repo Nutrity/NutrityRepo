@@ -8,23 +8,23 @@
 	}
 	var fdlistFoodcodes = []
 	function getReturnObj(fdlist) {
-		const listHeadr = ['음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
-			'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분']
+		const listHeadr = [ '음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
+				'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분' ]
 		var str = '';
 		str += "<div class='container'>";
 		str += "<table data-aos='fade-up' class='table table-hover'>"
 		str += "<thead>"
 		str += "<tr>"
 		str += "<th class='col-3'>"
-		str += "</th>" 
+		str += "</th>"
 		for (let i = 0; i < 11; i++) {
 			str += "<th class='col'></th>"
 		}
-		str += "</tr>" 
-		str += "</thead>" 
+		str += "</tr>"
+		str += "</thead>"
 		str += "<tbody data-aos='fade-up'>";
 		$.each(JSON.parse(fdlist), function(key, val) {
-		str += "<tr>";
+			str += "<tr>";
 			str += "<td class='col-3'>" + Object.values(val)[1] + '</td> ';
 			for (let i = 2; i < 13; i++) {
 				str += "<td class='col'>" + Object.values(val)[i] + "</td>"
@@ -33,7 +33,7 @@
 		});
 		str += '</tbody>'; //slide-up
 		str += '</table>'; //list-text-content
-		
+
 		$("#resultFoodList").html(str);
 
 		let j = 0;
@@ -46,15 +46,13 @@
 			}
 		})
 		var JSONfdlist = JSON.parse(fdlist)
-		
-		
+
 		$.each(JSONfdlist, function(key, val) {
 			fdlistFoodcodes.push(Object.values(val)[0])
 		});
-		
 
 	}
-		console.log(fdlistFoodcodes)
+	console.log(fdlistFoodcodes)
 </script>
 
 <main id="main">
@@ -75,9 +73,12 @@
 		</div>
 	</div>
 	
-	<div>
-		<input type="hidden" id="num" value="${p.user.num}">
-	</div>
+	<sec:authorize access="isAuthenticated()">
+		<div>
+			<input type="hidden" id="num" value="${p.user.num}">
+		</div>
+	</sec:authorize>
+
 
 	<div>
 		<label>title</label> <input type="text" id="title">
@@ -93,7 +94,7 @@
 		<label>memo</label>
 		<textarea rows="5" cols="40" id="memo"></textarea>
 	</div>
-	
+
 	<button type="button" id="dietInsertBtn">저장</button>
 </main>
 

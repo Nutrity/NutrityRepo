@@ -236,6 +236,13 @@ function getReturnObj(fdlist) {
 	<input type="button" id="dietUpdateBtn" value="수정">
 	<input type="button" id="boardDeleteBtn" value="삭제">
 	</div>
+	
+	<!-- 댓글 -->
+	<div align = "center">
+	<textarea rows = "3" cols = "50" id = "msg"></textarea>
+	<button type = "button" class = "btn btn-secondary btn-sm" id = "btnComment">댓글쓰기</button>
+	</div>
+	<div id = "replyResult"></div>
 <script>
 
 $("#boardDeleteBtn").click(function(){
@@ -274,6 +281,22 @@ $("#dietUpdateBtn").click(function(){
 	
 });//function
 
+$("#btnComment").click(function(){
+	if($("#msg").val() == ""){
+		alert("댓글을 입력해주세요.")
+		return false;
+	}
+	data = {
+			"content" : $("#msg").val(),
+			"bnum" : $("#bnum").val()			
+	}
+	
+	$.ajax({
+		type : "post",
+		url : "/comment/insert/"+$("#bnum").val(),
+	})
+	
+})
 </script>
 </main>
 

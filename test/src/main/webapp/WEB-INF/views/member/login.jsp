@@ -19,7 +19,7 @@
 	</div>
 
 	<section>
-		<div class="container">
+		<div data-aos="fade-up" data-aos-delay="200" class="container">
 			<form action = "/login" method = "post">
 				<div>
 					<label for="username">아이디</label>

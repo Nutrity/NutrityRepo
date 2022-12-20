@@ -9,7 +9,7 @@
 			<div class="container position-relative">
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-6 text-center">
-						<h2 data-aos="fade-up">회원 가입</h2>
+						<h2 data-aos="fade-up">로그인</h2>
 						<p data-aos="fade-up" data-aos-delay="100">어서오세요! 오늘도 Nutrity를 찾아주셔서 감사합니다!
 						<br> 혹시 멤버가 아니신가요? <a href="/join">여기에서</a> Nutrity 멤버가 되어보세요!</p>
 					</div>

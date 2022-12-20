@@ -113,8 +113,8 @@
 	//controller 콜
 	addr = {
 			zipcode : $("#zipcode").val(),
-			address1 : $("#address2").val(),
-			address1 : $("#address2").val()
+			address1 : $("#address1").val(),
+			address2 : $("#address2").val()
 	}
 	
 	data = {

@@ -20,6 +20,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -59,7 +60,8 @@ public class Member {
 	@Embedded
 	private Job job;
 	
-	@OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@JsonIgnore
 	private List<DietBoard> dietBoard;
 	
 }

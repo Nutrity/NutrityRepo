@@ -22,6 +22,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -46,12 +47,13 @@ public class DietBoard {
 	
 	@ManyToOne
 	@JoinColumn(name = "num")
+	@JsonIgnore
 	private Member member;
 	
-	@OneToOne(cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "snum")
-	private SuggestNutrient snum;
-	
+//	@OneToOne(cascade = CascadeType.REMOVE)
+//	@JoinColumn(name = "snum")
+//	private SuggestNutrient snum;
+//	
 //	@OneToMany(mappedBy = "dietBoard")
 //	private List<SelectedFoods> sfoods;
 	

@@ -12,7 +12,7 @@
 					<div class="col-lg-6 text-center">
 						<h2 data-aos="fade-up">회원 가입</h2>
 						<p data-aos="fade-up" data-aos-delay="100">환영합니다! Nutrity의 새 멤버로 당신을 초대합니다!
-																	<br> 혹시 이미 멤버이신가요? <a href="/login">여기에서</a> 로그인 하세요!</p>
+						<br> 혹시 이미 멤버이신가요? <a href="/login">여기에서</a> 로그인 하세요!</p>
 					</div>
 				</div>
 			</div>
@@ -21,32 +21,88 @@
 	<section id="FormSignup">
 		<div data-aos="fade-up" class="container">
 			<form action = "join" method = "post" class="form-group">
-				<label for="username">아이디</label>
-				<input class="form-control" type = "text" id = "username" name = "username"><br/>
-				<label for="realname">이름</label>
-				<input class="form-control" type = "text" id = "realname" name = "realname"><br/>
-				<label for="useremail">이메일</label> 
-				<div class="input-group mb-3">
-  					<input type="text" class="form-control" placeholder="Useremail" id="usereamil" name="useremail">
-  					<span class="input-group-text">@</span>
-  					<input type="text" class="form-control" placeholder="example.com" id="server" name="server">
+				<div>
+					<label for="username">아이디</label>
+					<input class="form-control" type = "text" id = "username" name = "username" placeholder="아이디를 입력해주세요">
+					<div class="invalid-feedback">
+				    	올바른 아이디를 입력해주세요.
+				    </div>
 				</div>
-<!-- 				<input class="form-control" type = "text" id = "useremail" name = "useremail"><br/> -->
-				<label for="password">비밀번호</label> 
-				<input class="form-control" type = "password" id = "password" name = "password"><br/>
-				생일 : <input type = "text" id = "birth" name = "birth"><br/>
-				나이 : <input type = "text" id = "age" name = "age"><br/>
-				휴대전화 : <input type = "text" id = "phone" name = "phone"><br/>
-				주소 : 
-				<input type="text" id="zipcode" name = "zipcode" placeholder="우편번호">
-				<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-				<input type="text" id="address1"  name = "address1" placeholder="도로명주소">
-				<span id="guide" style="color:#999;display:none"></span>
-				<input type="text" id="address2"  name = "address2" placeholder="상세주소">
-				<br>
-				남 : <input type = "radio" id = "gender" name = "gender" value = "man" checked/>
-				여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>       
-				<button type = "submit" id = "JoinBtn">회원가입</button>
+				<br/>
+				<div>
+					<label for="realname">이름</label>
+					<input class="form-control" type = "text" id = "realname" name = "realname" placeholder="이름을 입력해주세요">
+					<div class="invalid-feedback">
+				    	이름을 입력해주세요.
+				    </div>
+				</div>
+				<br/>
+				<div>
+					<label for="useremail">이메일</label> 
+					<div>
+						<div class="input-group">
+		  					<input type="text" class="form-control" placeholder="example" id="usereamil" name="useremail">
+		  					<span class="input-group-text">@</span>
+		  					<input type="text" class="form-control" placeholder="example.example" id="server" name="server">
+						</div>
+						<div class="invalid-feedback">
+					    	올바른 이메일을 입력해주세요.
+					    </div>
+					</div>
+				</div>
+				<br/>
+				<div>
+					<label for="password">비밀번호</label> 
+					<input class="form-control" type = "password" id = "password" name = "password">
+				</div>
+				<br/>
+				<div>
+					<label for="birth">생일</label>
+					<input class="form-control" type = "text" id = "birth" name = "birth">
+				</div>
+				<br/>
+				<div>
+					<label for="age">나이</label>
+					<input class="form-control" type = "text" id = "age" name = "age">
+				</div>
+				<br/>
+				<div>
+					<label for="phone">휴대전화</label>
+					<input class="form-control" type = "text" id = "phone" name = "phone">
+				</div>
+				<br/>
+				<div>
+					<label>주소</label>
+					<div class="row">
+						<div class="col">
+							<input class="form-control" type="text" id="zipcode" name = "zipcode" placeholder="우편번호">
+						</div>
+						<div class="col-2">
+							<input class="form-control btn btn-primary" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col">
+							<input class="form-control" type="text" id="address1"  name = "address1" placeholder="도로명주소">
+						</div>
+						<div class="col" style="display: none;">
+							<span class="form-control" id="guide" style="color:#999;display:none"></span>
+						</div>
+						<div class="col">
+							<input class="form-control" type="text" id="address2"  name = "address2" placeholder="상세주소">
+						</div>
+					</div> 
+				</div>
+				<div>
+					<div>
+						남 : <input type = "radio" id = "gender" name = "gender" value = "man"/>
+						여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>
+					</div>
+					<div>
+						<button class="form-group btn btn-primary" type = "submit" id = "JoinBtn">회원가입</button>
+					</div>       
+				</div>
 			</form>
 		</div>
 	</section>
@@ -56,44 +112,104 @@
 <script>
 $("#JoinBtn").click(function(){		
 	if($("#username").val() == ""){
-		alert("아이디를 입력해주세요.");
+		$("#username").addClass("is-invalid");
+		$("#username").attr("required");
+		$("#username").focus()
 		return false;
+	} else {
+		$("#username").removeClass("is-invalid")
+		$("#username").addClass("is-valid");
+		$("#username").removeAttr("required");
 	}	
-	if($("#password").val() == ""){
-		alert("비밀번호를 입력해주세요.");
-		return false;
-	}
 	if($("#realname").val() == ""){
-		alert("이름 입력해주세요.");
+		$("#realname").addClass("is-invalid");
+		$("#realname").attr("required");
+		$("#realname").focus()
 		return false;
-	}
+	} else {
+		$("#realname").removeClass("is-invalid")
+		$("#realname").addClass("is-valid");
+		$("#realname").removeAttr("required");
+	}	
 	if($("#useremail").val() == ""){
-		alert("이메일을 입력해주세요.");
+		$("#useremail").addClass("is-invalid");
+		$("#useremail").attr("required");
+		$("#useremail").focus()
 		return false;
+	} else {
+		$("#useremail").removeClass("is-invalid")
+		$("#useremail").addClass("is-valid");
+		$("#useremail").removeAttr("required");
 	}
 	if($("#server").val() == ""){
-		alert("이메일을 입력해주세요.");
+		$("#server").addClass("is-invalid");
+		$("#server").attr("required");
+		$("#server").focus()
 		return false;
+	} else {
+		$("#server").removeClass("is-invalid")
+		$("#server").addClass("is-valid");
+		$("#server").removeAttr("required");
+	}
+	if($("#password").val() == ""){
+		$("#password").addClass("is-invalid");
+		$("#password").attr("required");
+		$("#password").focus()
+		return false;
+	} else {
+		$("#password").removeClass("is-invalid")
+		$("#password").addClass("is-valid");
+		$("#password").removeAttr("required");
 	}
 	if($("#birth").val() == ""){
-		alert("생년월일을 입력해주세요.");
+		$("#birth").addClass("is-invalid");
+		$("#birth").attr("required");
+		$("#birth").focus()
 		return false;
+	} else {
+		$("#birth").removeClass("is-invalid")
+		$("#birth").addClass("is-valid");
+		$("#birth").removeAttr("required");
 	}
 	if($("#age").val() == ""){
-		alert("나이를 입력해주세요.");
+		$("#age").addClass("is-invalid");
+		$("#age").attr("required");
+		$("#age").focus()
 		return false;
+	} else {
+		$("#age").removeClass("is-invalid")
+		$("#age").addClass("is-valid");
+		$("#age").removeAttr("required");
 	}
 	if($("#phone").val() == ""){
-		alert("번호를 입력해주세요.");
+		$("#phone").addClass("is-invalid");
+		$("#phone").attr("required");
+		$("#phone").focus()
 		return false;
+	} else {
+		$("#phone").removeClass("is-invalid")
+		$("#phone").addClass("is-valid");
+		$("#phone").removeAttr("required");
 	}
 	if($("#zipcode").val() == ""){
-		alert("우편번호를 입력해주세요.");
+		$("#zipcode").addClass("is-invalid");
+		$("#zipcode").attr("required");
+		$("#zipcode").focus()
 		return false;
+	} else {
+		$("#zipcode").removeClass("is-invalid")
+		$("#zipcode").addClass("is-valid");
+		$("#zipcode").removeAttr("required");
 	}
 	if($("#address1").val() == ""){
-		alert("주소를 입력해주세요.");
+		$("#address1").addClass("is-invalid");
+		$("#address1").attr("required");
+		$("#address1").focus()
 		return false;
+	} else {
+		$("#address1").removeClass("is-invalid")
+		$("#address1").addClass("is-valid");
+		$("#address1").removeAttr("required");
 	}
 })
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -127,14 +243,17 @@ $("#JoinBtn").click(function(){
                     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
                     guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
                     guideTextBox.style.display = 'block';
+                    guideTextBox.parentNode.style.display = 'block';
 
                 } else if(data.autoJibunAddress) {
                     var expJibunAddr = data.autoJibunAddress;
                     guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
                     guideTextBox.style.display = 'block';
+                    guideTextBox.parentNode.style.display = 'block';
                 } else {
                     guideTextBox.innerHTML = '';
                     guideTextBox.style.display = 'none';
+                    guideTextBox.parentNode.style.display = 'none';
                 }
             }
         }).open();      

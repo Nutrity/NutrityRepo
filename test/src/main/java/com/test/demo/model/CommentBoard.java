@@ -36,5 +36,5 @@ public class CommentBoard {
 	
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "bnum")
-	private DietBoard bnum;
+	private DietBoard dietboard;
 }

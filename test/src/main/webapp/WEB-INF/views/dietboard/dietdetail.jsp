@@ -240,11 +240,28 @@ function getReturnObj(fdlist) {
 	<!-- 댓글 -->
 	<div align = "center">
 	<textarea rows = "3" cols = "50" id = "msg"></textarea>
-	<button type = "button" class = "btn btn-secondary btn-sm" id = "btnComment">댓글쓰기</button>
+	<button type = "button" class = "btn btn-secondary btn-sm" id = "comment">댓글쓰기</button>
 	</div>
-	<div id = "replyResult"></div>
+	<div id = "ResultComment"></div>
 <script>
-
+var init = function(){
+	$.ajax({
+		type : "get",
+		url : "/comment/list/"+$("#bnum").val(),
+	})
+	.done(function(resp){
+		var str = "<table class = 'table table-hover'>"
+		$.each(resp, function(key, val){
+			str += "<tr>"
+			str += "<td>" + val.member.username + "</td>"
+			str += "<td>" + val.content + "</td>"
+			str += "<td>" + val.c_regdate + "</td>"
+			str +="</tr>"
+		})
+		str +="</table>"
+		$("#ResultComment").html(str)
+	})	
+}
 $("#boardDeleteBtn").click(function(){
 	$.ajax({
 		type:"delete",
@@ -281,22 +298,33 @@ $("#dietUpdateBtn").click(function(){
 	
 });//function
 
-$("#btnComment").click(function(){
+$("#comment").click(function(){
 	if($("#msg").val() == ""){
 		alert("댓글을 입력해주세요.")
 		return false;
 	}
 	data = {
 			"content" : $("#msg").val(),
-			"bnum" : $("#bnum").val()			
 	}
 	
 	$.ajax({
 		type : "post",
 		url : "/comment/insert/"+$("#bnum").val(),
+		contentType : "application/json;charset=utf-8",
+		data : JSON.stringify(data)
+	})
+	.done(function(resp){
+		if(resp == "success"){
+			alert("댓글이 삽입되었습니다.")
+			init();
+		}		
+	})
+	.fail(function(){
+		alert("댓글이 삽입되지 않았습니다.")
 	})
 	
 })
+init();
 </script>
 </main>
 

@@ -271,7 +271,7 @@ var init = function(){
 			str += "<td>" + val.member.username + "</td>"
 			str += "<td>" + val.content + "</td>"
 			str += "<td>" + val.c_regdate + "</td>"
-			str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"
+			str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"			
 			str +="</tr>"
 		})
 		str +="</table>"

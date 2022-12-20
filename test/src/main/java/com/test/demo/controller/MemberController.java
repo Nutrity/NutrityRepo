@@ -42,9 +42,12 @@ public class MemberController {
 	@PostMapping("join")	
 	public String join(Member member, String zipcode, 
 			String address1, String address2, 
+//			@RequestParam(name = "useremail") String useremail
+//			, @RequestParam(name = "server") String server,
 			HttpServletRequest request) {			
 				member.setIp(request.getRemoteAddr());	 	
 				member.setAddress(new Address(address1,address2,zipcode));
+//				member.setUseremail(useremail+"@"+server);
 				mService.join(member);
 				return "redirect:/";			 	
 	}

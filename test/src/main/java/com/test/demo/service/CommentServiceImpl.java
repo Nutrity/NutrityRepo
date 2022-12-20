@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.demo.model.CommentBoard;
+import com.test.demo.model.DietBoard;
 import com.test.demo.repository.CommentRepository;
 
 @Service
@@ -20,8 +21,9 @@ public class CommentServiceImpl implements CommentService{
 	}
 
 	@Override
-	public List<CommentBoard> list(Long bnum) {
-		return commentRepository.findByBnum(bnum);
+	public List<CommentBoard> list(DietBoard dietBoard) {
+		commentRepository.findByDietBoard(dietBoard);
+		return null;
 	}
 
 }

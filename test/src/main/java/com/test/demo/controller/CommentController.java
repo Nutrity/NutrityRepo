@@ -45,7 +45,8 @@ public class CommentController {
 	@GetMapping("list/{bnum}")
 	@ResponseBody
 	public List<CommentBoard> list(@PathVariable Long bnum, CommentBoard comment){
-		List<CommentBoard> clist = commentService.list(bnum);
+		DietBoard db = boardRepository.findById(bnum).get();
+		List<CommentBoard> clist = commentService.list(db);
 		return clist;
 	}
 

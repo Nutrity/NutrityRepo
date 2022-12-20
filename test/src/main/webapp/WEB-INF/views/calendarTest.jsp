@@ -30,10 +30,11 @@
 				 navLinkDayClick: function(date, jsEvent) {
 					 location.href= '/board/insert'
 				 },
+				 droppable: false,
 				selectable: true,
 				editable : true,
 			      select: function(info) {
-			        alert('selected ' + info.startStr + ' to ' + info.endStr);
+			       	start: 'Date'
 			        location.href = "/board/insert"
 			      },
 			});
@@ -70,9 +71,10 @@
 				 location.href= '/board/insert'
 			 },
 			selectable: true,
+			droppable: false,
 			editable : true,
 		      select: function(info) {
-		        alert('selected ' + info.startStr + ' to ' + info.endStr);
+		    	start: Date,
 		        location.href = "/board/insert"
 		      },
               events: events

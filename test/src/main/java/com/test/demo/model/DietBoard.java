@@ -64,7 +64,7 @@ public class DietBoard {
     @Column(name = "foodcode")//String인 경우에 한해서 예외적으로 허용, 이외 타입은 @AttributeOverride를 사용해서 테이블 속성을 재정의한다.
     private Set<String> foodcode = new HashSet<String>();
     
-    @OneToMany(mappedBy = "dietboard")
+    @OneToMany(mappedBy = "dietboard", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<CommentBoard> commentBoard;
 	

@@ -100,12 +100,12 @@ public class BoardController {
 	
 	@GetMapping("list")
 	public String boardList() {
-		return "calendarTest(Anonymous)";
+		return "/dietboard/calendarTest(Anonymous)";
 	}
 	
 	@GetMapping("list/{num}")
 	public String boardListAuth() {
-		return "calendarTest";
+		return "/dietboard/calendarTest";
 	}
 	
 	@GetMapping("calendar/{num}")

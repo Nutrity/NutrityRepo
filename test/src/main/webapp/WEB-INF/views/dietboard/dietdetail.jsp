@@ -238,12 +238,26 @@ function getReturnObj(fdlist) {
 	</div>
 	
 	<!-- 댓글 -->
-	<div align = "center">
+	<div align = "center">	
 	<textarea rows = "3" cols = "50" id = "msg"></textarea>
 	<button type = "button" class = "btn btn-secondary btn-sm" id = "comment">댓글쓰기</button>
 	</div>
 	<div id = "ResultComment"></div>
 <script>
+function commentDel(){
+	$.ajax({
+		type : "delete",
+		url : "/comment/delete/"+$("#cnum").val()
+	})
+	.done(function(resp){
+		alert(resp + "번 댓글이 삭제되었습니다.")
+		location.href = "/board/detail/"+$("#bnum").val()
+	})
+	.fail(function(){
+		alert("댓글 삭제에 실패하셨습니다.")
+	})
+}
+
 var init = function(){
 	$.ajax({
 		type : "get",
@@ -252,10 +266,12 @@ var init = function(){
 	.done(function(resp){
 		var str = "<table class = 'table table-hover'>"
 		$.each(resp, function(key, val){
+			str += "<input type = 'hidden' id = 'cnum' name ='cnum' value = '"+val.cnum+"'/>"
 			str += "<tr>"
 			str += "<td>" + val.member.username + "</td>"
 			str += "<td>" + val.content + "</td>"
 			str += "<td>" + val.c_regdate + "</td>"
+			str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"
 			str +="</tr>"
 		})
 		str +="</table>"

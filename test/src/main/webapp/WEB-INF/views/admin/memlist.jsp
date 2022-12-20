@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
 
-<script type="text/javascript">
+<script>
 
 </script>
 
@@ -20,8 +20,8 @@
 			</div>
 		</div>
 	</div>
-	<section>
 
+	<section>
 	<div class="container">
 	
 			<table class="table table-hover" style="text-align: center;">
@@ -31,7 +31,6 @@
 			    <th>platform_type</th>
 			    <th>access_token</th>
 			    <th>realname</th>
-<!-- 			    <th>password</th> -->
 			    <th>gender</th>
 			    <th>phone</th>
 			    <th>birth</th>
@@ -40,10 +39,6 @@
 			    <th>ip</th>
 			    <th>수정</th>
 			    <th>삭제</th>
-<!-- 			    <th>zipcode</th> -->
-<!-- 			    <th>address</th> -->
-<!-- 			    <th>job</th> -->
-<!-- 			    <th>dietBoard</th> -->
 			  </tr>
 
 			<c:forEach items="${member }" var="mem">
@@ -53,17 +48,12 @@
 					<td>${mem.platform_type }</td>
 					<td>${mem.access_token }</td>
 					<td>${mem.realname }</td>
-<%-- 					<td>${mem.password }</td> --%>
 					<td>${mem.gender }</td>
 					<td>${mem.phone }</td>
 					<td>${mem.birth }</td>
 					<td>${mem.age }</td>
 					<td>${mem.user_regdate }</td>
 					<td>${mem.ip }</td>
-<%-- 					<td>${mem.address.zipcode }</td> --%>
-<%-- 					<td>${mem.address.address1 }<br>${mem.address.address2 }</td> --%>
-<%-- 					<td>${mem.job }</td> --%>
-<%-- 					<td>${mem.dietBoard }</td> --%>
 					<td><button id="BtnModiMember" class="btn btn-primary">수정</button></td>
 					<td><button id="BtnDelMember" class="btn btn-danger">삭제</button></td>
 				</tr>

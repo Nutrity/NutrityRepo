@@ -2,42 +2,55 @@
     pageEncoding="UTF-8"%>
 <%@ include file = "../include/header.jsp" %>
 
-<section id="hero" class="hero hero-bg-anime d-flex align-items-center">
-    <div class="container">
-      <div class="row gy-4 d-flex justify-content-between">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h2 data-aos="fade-up">나의 식단을
-            <br>  
-            더욱 건강하게!</h2>
-          <p data-aos="fade-up" data-aos-delay="100">역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! </p>
 
-          <form class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-            <input type="text" class="form-control" placeholder="오늘 먹은 음식을 검색" id="foodname">
-            <button type="button" class="btn btn-primary" id="foodBtn">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Hero Section -->
-<form action = "join" method = "post">
-아이디 : <input type = "text" id = "username" name = "username"><br/>
-이름: <input type = "text" id = "realname" name = "realname"><br/>
-이메일: <input type = "text" id = "useremail" name = "useremail"><br/>
-비밀번호 : <input type = "text" id = "password" name = "password"><br/>
-생일 : <input type = "text" id = "birth" name = "birth"><br/>
-나이 : <input type = "text" id = "age" name = "age"><br/>
-휴대전화 : <input type = "text" id = "phone" name = "phone"><br/>
-주소 : 
-<input type="text" id="zipcode" name = "zipcode" placeholder="우편번호">
-<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="address1"  name = "address1" placeholder="도로명주소">
-<span id="guide" style="color:#999;display:none"></span>
-<input type="text" id="address2"  name = "address2" placeholder="상세주소">
-<br>
-남 : <input type = "radio" id = "gender" name = "gender" value = "man" checked/>
-여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>       
-<button type = "submit" id = "JoinBtn">회원가입</button>
-</form>
+<main id="main">
+	<div class="breadcrumbs">
+		<div class="page-header d-flex align-items-center"
+			style="background-image: url('/img/month-cal-bg-2.jpg');">
+			<div class="container position-relative">
+				<div class="row d-flex justify-content-center">
+					<div class="col-lg-6 text-center">
+						<h2 data-aos="fade-up">회원 가입</h2>
+						<p data-aos="fade-up" data-aos-delay="100">환영합니다! Nutrity의 새 멤버로 당신을 초대합니다!
+																	<br> 혹시 이미 멤버이신가요? <a href="/login">여기에서</a> 로그인 하세요!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id="FormSignup">
+		<div data-aos="fade-up" class="container">
+			<form action = "join" method = "post" class="form-group">
+				<label for="username">아이디</label>
+				<input class="form-control" type = "text" id = "username" name = "username"><br/>
+				<label for="realname">이름</label>
+				<input class="form-control" type = "text" id = "realname" name = "realname"><br/>
+				<label for="useremail">이메일</label> 
+				<div class="input-group mb-3">
+  					<input type="text" class="form-control" placeholder="Useremail" id="usereamil" name="useremail">
+  					<span class="input-group-text">@</span>
+  					<input type="text" class="form-control" placeholder="example.com" id="server" name="server">
+				</div>
+<!-- 				<input class="form-control" type = "text" id = "useremail" name = "useremail"><br/> -->
+				<label for="password">비밀번호</label> 
+				<input class="form-control" type = "password" id = "password" name = "password"><br/>
+				생일 : <input type = "text" id = "birth" name = "birth"><br/>
+				나이 : <input type = "text" id = "age" name = "age"><br/>
+				휴대전화 : <input type = "text" id = "phone" name = "phone"><br/>
+				주소 : 
+				<input type="text" id="zipcode" name = "zipcode" placeholder="우편번호">
+				<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+				<input type="text" id="address1"  name = "address1" placeholder="도로명주소">
+				<span id="guide" style="color:#999;display:none"></span>
+				<input type="text" id="address2"  name = "address2" placeholder="상세주소">
+				<br>
+				남 : <input type = "radio" id = "gender" name = "gender" value = "man" checked/>
+				여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>       
+				<button type = "submit" id = "JoinBtn">회원가입</button>
+			</form>
+		</div>
+	</section>
+</main>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -55,6 +68,10 @@ $("#JoinBtn").click(function(){
 		return false;
 	}
 	if($("#useremail").val() == ""){
+		alert("이메일을 입력해주세요.");
+		return false;
+	}
+	if($("#server").val() == ""){
 		alert("이메일을 입력해주세요.");
 		return false;
 	}

@@ -60,19 +60,19 @@
 				class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 			<nav id="navbar" class="navbar">
 				<ul>
-					<li><a href="/" class="active">Home</a></li>
+					<li><a href="/" class="active">홈</a></li>
 					<!--           <li><a href="about">About</a></li> -->
 					<sec:authentication property="principal" var="p" />
 					<sec:authorize access="isAuthenticated()">
-						<li><a href="/board/list/${p.user.num}">Diet</a></li>
+						<li><a href="/board/list/${p.user.num}">내 식단</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAnonymous()">
-						<li><a href="/board/list">Diet</a></li>
+						<li><a href="/board/list">내 식단</a></li>
 					</sec:authorize>
 					<sec:authorize access="hasRole('ADMIN')">
-						<li><a href="/admin/memlist">Member List</a></li>
+						<li><a href="/admin/memlist">회원 목록</a></li>
 					</sec:authorize>
-					<li><a href="/board/insert">DietInsert</a></li>
+					<li><a href="/board/insert">식단 입력</a></li>
 					<!--           <li><a href="pricing.html">Subscribe</a></li> -->
 					<!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -94,12 +94,12 @@
 					<!--           <li><a href="#">???</a></li> -->
 					
 					<sec:authorize access="isAnonymous()">
-						<li><a href="/login">Sign In</a></li>
-						<li><a class="get-a-quote" href="/join">Sign Up</a></li>
+						<li><a href="/login">로그인</a></li>
+						<li><a class="get-a-quote" href="/join">회원 가입</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
-						<li><a href="/modify">Modify</a></li>
-						<li><a href="/logout">LogOut</a></li>
+						<li><a href="/modify">내 정보 수정</a></li>
+						<li><a href="/logout">로그아웃</a></li>
 					</sec:authorize>
 
 				</ul>

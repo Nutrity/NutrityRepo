@@ -93,14 +93,21 @@
 						</div>
 					</div> 
 				</div>
+				<br>
 				<div>
-					<div>
-						남 : <input type = "radio" id = "gender" name = "gender" value = "man"/>
-						여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>
+					<label>성별</label>
+					<div class="row justify-content-between">
+						<div class="col-4">
+							남 : <input type = "radio" id = "gender" name = "gender" value = "man"/>
+							여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>
+						</div>
+						<div class="invalid-feedback">
+					    	성별을 선택해주세요.
+						</div>
+						<div class="col-2">
+							<input class="form-control btn btn-primary" type = "button" id = "JoinBtn" value="회원가입"></input>
+						</div>
 					</div>
-					<div>
-						<button class="form-group btn btn-primary" type = "button" id = "JoinBtn">회원가입</button>
-					</div>       
 				</div>
 		</div>
 	</section>
@@ -208,6 +215,10 @@ $("#JoinBtn").click(function(){
 		$("#address1").removeClass("is-invalid")
 		$("#address1").addClass("is-valid");
 		$("#address1").removeAttr("required");
+	}
+	if($("input[name=gender]:radio:checked").length < 1) {
+		alert("성별을 선택해주세요")
+		return false;
 	}
 	
 	addr = {

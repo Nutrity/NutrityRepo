@@ -1,5 +1,7 @@
 package com.test.demo.service;
 
+import java.util.List;
+
 import com.test.demo.model.Address;
 import com.test.demo.model.Member;
 
@@ -22,5 +24,8 @@ public interface MemberService {
 	
 	//회원 찾기
 	public Member findByUsername(String username);
-
+	
+	//관리자 용 회원 전체 찾기
+	public List<Member> findAll();
+	
 }

@@ -69,6 +69,9 @@
 					<sec:authorize access="isAnonymous()">
 						<li><a href="/board/list">Diet</a></li>
 					</sec:authorize>
+					<sec:authorize access="hasRole('ADMIN')">
+						<li><a href="/admin/memlist">Member List</a></li>
+					</sec:authorize>
 					<li><a href="/board/insert">DietInsert</a></li>
 					<!--           <li><a href="pricing.html">Subscribe</a></li> -->
 					<!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>

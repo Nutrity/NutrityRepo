@@ -1,5 +1,7 @@
 package com.test.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -62,6 +64,11 @@ public class MemberServiceImpl implements MemberService{
 	public Member findByUsername(String username) {
 		
 		return memberRepository.findByUsername(username);
+	}
+
+	@Override
+	public List<Member> findAll() {
+		return memberRepository.findAll();
 	}
 
 	

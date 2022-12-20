@@ -18,7 +18,7 @@
 		</div>
 	</div>
 	<section id="FormSignup">
-		<div data-aos="fade-up" class="container">
+		<div data-aos="fade-up" data-aos-delay="200" class="container">
 				<div>
 					<label for="username">아이디</label>
 					<input class="form-control" type = "text" id = "username" name = "username" placeholder="아이디를 입력해주세요">

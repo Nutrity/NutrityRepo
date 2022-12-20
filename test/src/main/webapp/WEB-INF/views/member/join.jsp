@@ -41,7 +41,7 @@
 					<label for="useremail">이메일</label> 
 					<div>
 						<div class="input-group">
-		  					<input type="text" class="form-control" placeholder="example" id="usereamil" name="useremail">
+		  					<input type="text" class="form-control" placeholder="example" id="useremail" name="useremail">
 		  					<span class="input-group-text">@</span>
 		  					<input type="text" class="form-control" placeholder="example.example" id="server" name="server">
 						</div>
@@ -211,6 +211,38 @@ $("#JoinBtn").click(function(){
 		$("#address1").addClass("is-valid");
 		$("#address1").removeAttr("required");
 	}
+	
+	addr = {
+			zipcode : $("#zipcode").val(),
+			address1 : $("#address2").val(),
+			address1 : $("#address2").val()
+	}
+	
+	data = {
+			phone : $("#phone").val(),
+			age : $("#age").val(),
+			birth : $("#birth").val(),
+			useremail : $("#useremail").val()+"@"+$("#server").val(),
+			realname : $("#realname").val(),
+			password : $("#password").val(),
+			username : $("#username").val(),
+			gender : $("#gender").val(),
+			address : addr			
+	}
+	
+	$.ajax({
+		type : "post",
+		url : "/join",
+		contentType : "application/json;charset=utf-8",
+		data : JSON.stringify(data)
+	})
+	.done(function(resp){
+		if(resp == "success"){
+			location.href = "/"
+		} else{
+			alert("아이디가 중복됩니다.")
+		}
+	})
 })
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {

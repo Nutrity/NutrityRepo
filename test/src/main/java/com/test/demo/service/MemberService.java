@@ -2,7 +2,10 @@ package com.test.demo.service;
 
 import java.util.List;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+
 import com.test.demo.model.Address;
+import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 
 public interface MemberService {
@@ -27,5 +30,8 @@ public interface MemberService {
 	
 	//관리자 용 회원 전체 찾기
 	public List<Member> findAll();
+	
+	//자격 인증 파일 업로드
+	public void fileInsert (Job job, Member principal);
 	
 }

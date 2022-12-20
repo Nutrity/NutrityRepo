@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../include/header.jsp"%>
+<%@include file="include/header.jsp"%>
 
 <main id="main">
 	<div class="breadcrumbs">
@@ -23,15 +23,19 @@
 	<!-- 	카드를 만들고 그안에서 처리하게 부탁 -->
 	<div class="card">
 		<div class="card-body">
+		<form action="qual" method="get">
 			<h5 class="card-title">자격 인증</h5>
-			<input type="file" id="qualify" placeholder="자격증을 업로드 해 주세요">
+			
+			<input type="file" id="upload" placeholder="자격증을 업로드 해 주세요">
 			<!-- 			본인인증 구현 예정 -->
 			<!-- 				<button class="btn btn-danger" id="identiry">본인 인증</button> -->
 			<!-- 			<div id="identify"></div> -->
 
-			<button type="button" id="qualifyBtn"></button>
+			<button>보내기</button>
+			</form>
 		</div>
 	</div>
-
 </main>
-<%@include file="../include/footer.jsp"%>
+
+
+<%@include file="include/footer.jsp"%>

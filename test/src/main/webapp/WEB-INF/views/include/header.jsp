@@ -73,32 +73,35 @@
 						<li><a href="/admin/memlist">회원 목록</a></li>
 					</sec:authorize>
 					<li><a href="/board/insert">식단 입력</a></li>
-					<!--           <li><a href="pricing.html">Subscribe</a></li> -->
-					<!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
+<!-- 					<li class="dropdown"><a href="#"><span>Drop Down</span> <i -->
+<!-- 							class="bi bi-chevron-down dropdown-indicator"></i></a> -->
+<!-- 						<ul> -->
+<!-- 							<li><a href="#">Drop Down 1</a></li> -->
+							<!--               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a> -->
+							<!--                 <ul> -->
+							<!--                   <li><a href="#">자격검증</a></li> -->
+							<!--                   <li><a href="#">Deep Drop Down 2</a></li> -->
+							<!--                   <li><a href="#">Deep Drop Down 3</a></li> -->
+							<!--                   <li><a href="#">Deep Drop Down 4</a></li> -->
+							<!--                   <li><a href="#">Deep Drop Down 5</a></li> -->
+							<!--                 </ul> -->
+							<!--               </li> -->
+<!-- 							<li><a href="#">Drop Down 2</a></li> -->
+<!-- 							<li><a href="#">Drop Down 3</a></li> -->
+<!-- 							<li><a href="#">Drop Down 4</a></li> -->
+<!-- 						</ul></li> -->
 					<!--           <li><a href="#">???</a></li> -->
-					
+
 					<sec:authorize access="isAnonymous()">
 						<li><a href="/login">로그인</a></li>
 						<li><a class="get-a-quote" href="/join">회원 가입</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
-						<li><a href="/modify">내 정보 수정</a></li>
+						<li class="dropdown"><a href="/modify"><span>내 정보수정</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
+							<ul>
+								<li><a href="/qualify">전문가 자격 인증</a></li>
+							</ul>
+						</li>
 						<li><a href="/logout">로그아웃</a></li>
 					</sec:authorize>
 

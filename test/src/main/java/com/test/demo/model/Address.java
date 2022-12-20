@@ -4,6 +4,7 @@ import javax.persistence.Embeddable;
 
 import org.springframework.lang.Nullable;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 

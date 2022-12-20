@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.demo.model.Address;
 import com.test.demo.model.Member;
+import com.test.demo.repository.MemberRepository;
 import com.test.demo.service.MemberServiceImpl;
 
 @Controller
@@ -23,6 +24,9 @@ public class MemberController {
 	
 	@Autowired
 	private MemberServiceImpl mService;	
+	
+	@Autowired
+	private MemberRepository mRepository;
 		
 	@GetMapping("/")
 	public String main() {
@@ -39,17 +43,20 @@ public class MemberController {
 		return "member/join";
 	}
 	
-	@PostMapping("join")	
-	public String join(Member member, String zipcode, 
-			String address1, String address2, 
+	@PostMapping("join")
+	@ResponseBody
+	public String join(@RequestBody Member member, 
 //			@RequestParam(name = "useremail") String useremail
 //			, @RequestParam(name = "server") String server,
-			HttpServletRequest request) {			
+			HttpServletRequest request) {
+		if(mRepository.findByUsername(member.getUsername()) != null) {
+			return "fail";
+		}
 				member.setIp(request.getRemoteAddr());	 	
-				member.setAddress(new Address(address1,address2,zipcode));
+				
 //				member.setUseremail(useremail+"@"+server);
 				mService.join(member);
-				return "redirect:/";			 	
+				return "success";			 	
 	}
 	
 	@GetMapping("login")

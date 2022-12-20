@@ -20,7 +20,6 @@
 	</div>
 	<section id="FormSignup">
 		<div data-aos="fade-up" class="container">
-			<form action = "join" method = "post" class="form-group">
 				<div>
 					<label for="username">아이디</label>
 					<input class="form-control" type = "text" id = "username" name = "username" placeholder="아이디를 입력해주세요">
@@ -100,10 +99,9 @@
 						여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>
 					</div>
 					<div>
-						<button class="form-group btn btn-primary" type = "submit" id = "JoinBtn">회원가입</button>
+						<button class="form-group btn btn-primary" type = "button" id = "JoinBtn">회원가입</button>
 					</div>       
 				</div>
-			</form>
 		</div>
 	</section>
 </main>
@@ -233,7 +231,7 @@ $("#JoinBtn").click(function(){
 	$.ajax({
 		type : "post",
 		url : "/join",
-		contentType : "application/json;charset=utf-8",
+		contentType : "application/json",
 		data : JSON.stringify(data)
 	})
 	.done(function(resp){

@@ -9,6 +9,6 @@ public interface CommentService {
 	
 	public void insert(CommentBoard comment);
 	
-	public List<CommentBoard> list(DietBoard dietBoard);
+	public List<CommentBoard> list(DietBoard db);
 
 }

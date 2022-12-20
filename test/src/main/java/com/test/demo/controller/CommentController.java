@@ -2,6 +2,7 @@ package com.test.demo.controller;
 
 import java.util.List;
 
+import org.aspectj.weaver.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -33,18 +34,16 @@ public class CommentController {
 	public String insert(@PathVariable Long bnum, @
 			RequestBody CommentBoard comment,
 			@AuthenticationPrincipal PrincipalUser principal) {
-		DietBoard db = boardRepository.findById(bnum).get();
-		comment.setDietboard(db);
 		comment.setMember(principal.getUser());
-		System.out.println("member : " + comment.getMember().toString());
-		System.out.println("board : " + comment.getDietboard().toString());
+		comment.setDietboard(boardRepository.findById(bnum).get());
+		
 		commentService.insert(comment);
 		return "success";
 	}
 	
 	@GetMapping("list/{bnum}")
 	@ResponseBody
-	public List<CommentBoard> list(@PathVariable Long bnum, CommentBoard comment){
+	public List<CommentBoard> list(@PathVariable Long bnum){
 		DietBoard db = boardRepository.findById(bnum).get();
 		List<CommentBoard> clist = commentService.list(db);
 		return clist;

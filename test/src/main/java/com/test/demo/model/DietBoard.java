@@ -2,6 +2,7 @@ package com.test.demo.model;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -61,5 +63,9 @@ public class DietBoard {
     @ElementCollection(fetch = FetchType.LAZY)
     @Column(name = "foodcode")//String인 경우에 한해서 예외적으로 허용, 이외 타입은 @AttributeOverride를 사용해서 테이블 속성을 재정의한다.
     private Set<String> foodcode = new HashSet<String>();
+    
+    @OneToMany(mappedBy = "dietboard")
+    @JsonIgnore
+    private List<CommentBoard> commentBoard;
 	
 }

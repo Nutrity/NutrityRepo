@@ -21,9 +21,8 @@ public class CommentServiceImpl implements CommentService{
 	}
 
 	@Override
-	public List<CommentBoard> list(DietBoard dietBoard) {
-		commentRepository.findByDietBoard(dietBoard);
-		return null;
+	public List<CommentBoard> list(DietBoard db) {
+		return commentRepository.findByBnum(db.getBnum());
 	}
 
 }

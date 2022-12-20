@@ -44,7 +44,7 @@ public class DietBoard {
 	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
 	private Date updatedate;
 	
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "num")
 	private Member member;
 	

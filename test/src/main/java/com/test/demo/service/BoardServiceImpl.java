@@ -32,8 +32,9 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
 	private SuggestNutrientRepository suggestNutrientRepository;
-
+	
 	@Override
+	@Transactional
 	public void dietInsert(DietBoard board) {
 		 boardRepository.save(board);
 	}
@@ -85,5 +86,7 @@ public class BoardServiceImpl implements BoardService{
 	public SuggestNutrient findByGender(String gender) {
 		return suggestNutrientRepository.findByGender(gender);
 	}
-
+	
+	
+	
 }

@@ -25,4 +25,9 @@ public class CommentServiceImpl implements CommentService{
 		return commentRepository.findByBnum(db.getBnum());
 	}
 
+	@Override
+	public void delete(Long cnum) {
+		commentRepository.deleteById(cnum);		
+	}
+
 }

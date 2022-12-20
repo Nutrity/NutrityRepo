@@ -10,5 +10,7 @@ public interface CommentService {
 	public void insert(CommentBoard comment);
 	
 	public List<CommentBoard> list(DietBoard db);
+	
+	public void delete(Long cnum);
 
 }

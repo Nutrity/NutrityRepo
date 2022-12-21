@@ -64,4 +64,6 @@ public class Member {
 	@JsonIgnore
 	private List<DietBoard> dietBoard;
 	
+	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	private List<PayInfo> payInfo;
 }

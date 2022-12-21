@@ -2,6 +2,10 @@ package com.test.demo.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,7 +18,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
+import com.test.demo.model.PayInfo;
+import com.test.demo.model.Product;
 import com.test.demo.repository.MemberRepository;
+import com.test.demo.repository.PayRepository;
 
 @Service
 @Transactional
@@ -25,6 +32,9 @@ public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	private MemberRepository memberRepository;
+	
+	@Autowired
+	private PayRepository payRepository;
 		
 	@Transactional
 	public void join(Member member) {
@@ -97,5 +107,25 @@ public class MemberServiceImpl implements MemberService{
 		}
 		member.setJob(job);
 	}
+
+	@Override
+	@Transactional
+	public void savePayInfo(PayInfo payInfo) {
+		Calendar time = Calendar.getInstance();
+		time.setTime(new Date());
+		if(payInfo.getProduct().getName().contains("week")) {
+			time.add(Calendar.DATE, 7);
+		} else if(payInfo.getProduct().getName().contains("month")) {
+			time.add(Calendar.MONTH, 1);
+		} else {
+			time.add(Calendar.YEAR, 1);
+		}       
+        Date expiredTime = new Date(time.getTimeInMillis());
+        payInfo.setExpiredDate(expiredTime);
+		payInfo.getMember().getJob().setRole("ROLE_SUBCRIBE");
+		payRepository.save(payInfo);		
+	}
+
+
 }
 

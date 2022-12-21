@@ -19,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
+import com.test.demo.model.PayInfo;
+import com.test.demo.model.Product;
 import com.test.demo.repository.MemberRepository;
 import com.test.demo.service.MemberServiceImpl;
 
@@ -104,6 +106,21 @@ public class MemberController {
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
 		Member principal = (Member)p.getUser();
 		mService.fileInsert(job, principal);
+		return "success";
+	}
+	
+	@GetMapping("pay")
+	public String pay() {
+		return "member/payplan";
+	}
+	
+	@PostMapping("pay/{num}")
+	@ResponseBody
+	public String pay(@PathVariable Long num, @RequestBody Product product) {
+		PayInfo payInfo = new PayInfo();
+		payInfo.setMember(mRepository.findById(num).get());
+		payInfo.setProduct(product);
+		mService.savePayInfo(payInfo);
 		return "success";
 	}
 

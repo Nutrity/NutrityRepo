@@ -131,6 +131,13 @@ public class MemberServiceImpl implements MemberService{
 		return memberRepository.findRequest();
 	}
 
+	@Override
+	public void subscribeCheck(Member member) {
+		Date date = member.getPayInfo();
+		
+		
+	}
+
 
 }
 

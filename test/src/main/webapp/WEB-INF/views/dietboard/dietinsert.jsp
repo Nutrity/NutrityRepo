@@ -1,3 +1,4 @@
+<%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
@@ -78,7 +79,7 @@
 			<input type="hidden" id="num" value="${p.user.num}">
 		</div>
 	</sec:authorize>
-
+	<input type="text" value="2022/12/23">
 
 	<div>
 		<label>title</label> <input type="text" id="title">

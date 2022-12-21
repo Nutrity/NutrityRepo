@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.Job;
@@ -96,7 +97,7 @@ public class MemberController {
 	public void qualify() {
 	}
 	
-	@GetMapping("qual")
+	@PostMapping("qual")
 	@ResponseBody
 	public String qualify(Job job) {
 		SecurityContext context = SecurityContextHolder.getContext();

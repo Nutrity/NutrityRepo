@@ -20,16 +20,17 @@
 		</div>
 	</div>
 
-	<!-- 	카드를 만들고 그안에서 처리하게 부탁 -->
+	<!-- 	카드를 만들고 그안에서 처리하게 -->
 	<div class="card">
 		<div class="card-body">
-		<form action="qual" method="get">
+		<form action="qual" method="post" enctype="multipart/form-data">
 			<h5 class="card-title">자격 인증</h5>
+			<input type="text" name="job" value="111">
+			<input type="file" name="upload" placeholder="자격증을 업로드 해 주세요">
 			
-			<input type="file" id="upload" placeholder="자격증을 업로드 해 주세요">
 			<!-- 			본인인증 구현 예정 -->
-			<!-- 				<button class="btn btn-danger" id="identiry">본인 인증</button> -->
-			<!-- 			<div id="identify"></div> -->
+<!-- 							<button class="btn btn-danger" id="identiry">본인 인증</button> -->
+<!-- 						<div id="identify"></div> -->
 
 			<button>보내기</button>
 			</form>

@@ -89,9 +89,8 @@ public class MemberServiceImpl implements MemberService{
 			File saveFile =new File(uploadFileName);
 			try {
 				qual.transferTo(saveFile);
-				Job upJob  = Job.builder()
-					.qualName(uploadFileName)
-					.build();
+				job.setQualName(uploadFileName);
+				job.setRole(member.getJob().getRole());
 			} catch (IllegalStateException | IOException e) {
 				e.printStackTrace();
 			}//파일 업로드 됨

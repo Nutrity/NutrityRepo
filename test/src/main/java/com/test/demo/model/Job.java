@@ -9,9 +9,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@Builder
+@Setter
 @Embeddable
 @DynamicInsert
 public class Job {
@@ -23,18 +24,6 @@ public class Job {
 	@Transient
 	private MultipartFile upload;
 	private String qualName;
-	
-	
-	public Job() {
-		
-	}
-	
-	public Job(String role, String job, MultipartFile upload, String qualName) {
-		this.role = role;
-		this.job = job;
-		this.upload = upload;
-		this.qualName = qualName;
-	}
 	
 	
 

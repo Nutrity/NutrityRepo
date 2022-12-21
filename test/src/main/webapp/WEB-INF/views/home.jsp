@@ -23,7 +23,7 @@
 
   <main id="main">
     <!-- ======= Result Foodlists Section ======= -->
-    <section id="foodlists" style="display: none;">
+    <section id="foodlists">
     </section>
 
     <!-- ======= About Us Section ======= -->

@@ -181,7 +181,7 @@
 			realname : $("#realname").val(),
 			password : $("#password").val(),
 			username : $("#username").val(),
-			gender : $("#gender").val(),
+			gender : $("input[name=gender]:radio:checked").val(),
 			address : addr			
 	}
 	

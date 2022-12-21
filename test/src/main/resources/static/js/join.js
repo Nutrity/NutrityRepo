@@ -2,9 +2,25 @@
  * 
  */
  
+// function validateForm(x) {
+//	if($(x).val() == ""){
+//		$(x).removeClass("is-valid")
+//		$(x).addClass("is-invalid");
+//		$(x).attr("required");
+//		$(x).focus();
+//		return false;
+//	} else {
+//		$(x).removeClass("is-invalid");
+//		$(x).addClass("is-valid");
+//		$(x).removeAttr("required");
+//		return true;
+//	}	
+//}
+ 
  //회원가입 버튼
- $("#JoinBtn").click(function(){		
+ $("#JoinBtn").click(function(){
 	if($("#username").val() == ""){
+		$("#username").removeClass("is-valid")
 		$("#username").addClass("is-invalid");
 		$("#username").attr("required");
 		$("#username").focus()
@@ -15,6 +31,7 @@
 		$("#username").removeAttr("required");
 	}	
 	if($("#realname").val() == ""){
+		$("#realname").removeClass("is-valid")
 		$("#realname").addClass("is-invalid");
 		$("#realname").attr("required");
 		$("#realname").focus()
@@ -25,26 +42,37 @@
 		$("#realname").removeAttr("required");
 	}	
 	if($("#useremail").val() == ""){
+		$("#useremail").removeClass("is-valid")
 		$("#useremail").addClass("is-invalid");
 		$("#useremail").attr("required");
+		$("#server").addClass("is-invalid");
+		$("#server").attr("required");
 		$("#useremail").focus()
 		return false;
 	} else {
 		$("#useremail").removeClass("is-invalid")
 		$("#useremail").addClass("is-valid");
+		$("#server").removeClass("is-invalid")
 		$("#useremail").removeAttr("required");
+		$("#server").removeAttr("required");
 	}
 	if($("#server").val() == ""){
+		$("#server").removeClass("is-valid")
 		$("#server").addClass("is-invalid");
 		$("#server").attr("required");
+		$("#useremail").addClass("is-invalid");
+		$("#useremail").attr("required");
 		$("#server").focus()
 		return false;
 	} else {
 		$("#server").removeClass("is-invalid")
 		$("#server").addClass("is-valid");
 		$("#server").removeAttr("required");
+		$("#useremail").removeClass("is-invalid")
+		$("#useremail").removeAttr("required");
 	}
 	if($("#password").val() == ""){
+		$("#password").removeClass("is-valid")
 		$("#password").addClass("is-invalid");
 		$("#password").attr("required");
 		$("#password").focus()
@@ -54,7 +82,31 @@
 		$("#password").addClass("is-valid");
 		$("#password").removeAttr("required");
 	}
+	if($("#ConfPassword").val() == ""){
+		$("#ConfPassword").removeClass("is-valid")
+		$("#ConfPassword").addClass("is-invalid");
+		$("#ConfPassword").attr("required");
+		$("#ConfPwd-null").css("display", "block");
+		$("#ConfPwd-wrong").css("display", "block");
+		$("#ConfPassword").focus()
+		return false;
+	} else if ($("#ConfPassword").val() != $("#password").val()) {
+		$("#ConfPassword").removeClass("is-valid")
+		$("#ConfPassword").addClass("is-invalid");
+		$("#ConfPassword").attr("required");
+		$("#ConfPwd-null").css("display", "none");
+		$("#ConfPwd-wrong").css("display", "block");
+		$("#ConfPassword").focus()
+		return false;
+	} else {
+		$("#ConfPassword").removeClass("is-invalid")
+		$("#ConfPassword").addClass("is-valid");
+		$("#ConfPwd-null").css("display", "none");
+		$("#ConfPwd-wrong").css("display", "none");
+		$("#ConfPassword").removeAttr("required");
+	}
 	if($("#birth").val() == ""){
+		$("#birth").removeClass("is-valid")
 		$("#birth").addClass("is-invalid");
 		$("#birth").attr("required");
 		$("#birth").focus()
@@ -65,6 +117,7 @@
 		$("#birth").removeAttr("required");
 	}
 	if($("#age").val() == ""){
+		$("#age").removeClass("is-valid")
 		$("#age").addClass("is-invalid");
 		$("#age").attr("required");
 		$("#age").focus()
@@ -75,6 +128,7 @@
 		$("#age").removeAttr("required");
 	}
 	if($("#phone").val() == ""){
+		$("#phone").removeClass("is-valid")
 		$("#phone").addClass("is-invalid");
 		$("#phone").attr("required");
 		$("#phone").focus()
@@ -85,6 +139,7 @@
 		$("#phone").removeAttr("required");
 	}
 	if($("#zipcode").val() == ""){
+		$("#zipcode").removeClass("is-valid")
 		$("#zipcode").addClass("is-invalid");
 		$("#zipcode").attr("required");
 		$("#zipcode").focus()
@@ -95,6 +150,7 @@
 		$("#zipcode").removeAttr("required");
 	}
 	if($("#address1").val() == ""){
+		$("#address1").removeClass("is-valid")
 		$("#address1").addClass("is-invalid");
 		$("#address1").attr("required");
 		$("#address1").focus()

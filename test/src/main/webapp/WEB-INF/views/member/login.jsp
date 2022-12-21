@@ -24,11 +24,17 @@
 				<div>
 					<label for="username">아이디</label>
 					<input class="form-control" type = "text" id = "username" name = "username">
+					<div class="invalid-feedback">
+				    	아이디를 입력하세요.
+					</div>
 				</div>
 				<br/>
 				<div>
 					<label for="password">비밀번호</label>
-					<input class="form-control" type = "text" id = "password" name = "password">
+					<input class="form-control" type = "password" id = "password" name = "password">
+					<div class="invalid-feedback">
+				    	비밀번호를 입력하세요.
+					</div>
 				</div>
 				<br/>
 				<div class="row justify-content-end">

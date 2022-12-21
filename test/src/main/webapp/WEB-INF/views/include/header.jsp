@@ -73,6 +73,9 @@
 						<li><a href="/admin/memlist">회원 목록</a></li>
 					</sec:authorize>
 					<li><a href="/board/insert">식단 입력</a></li>
+					<sec:authorize access = "hasRole('USER')">
+					<li><a href="/pay">결제</a></li>
+					</sec:authorize>
 <!-- 					<li class="dropdown"><a href="#"><span>Drop Down</span> <i -->
 <!-- 							class="bi bi-chevron-down dropdown-indicator"></i></a> -->
 <!-- 						<ul> -->

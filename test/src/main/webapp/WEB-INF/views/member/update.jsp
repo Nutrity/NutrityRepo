@@ -84,6 +84,7 @@
 </table>
 <button id = "modifyBtn">수정</button>
 <button id = "delBtn">삭제</button>
+
 <script>
 
 $("#modifyBtn").click(function(){

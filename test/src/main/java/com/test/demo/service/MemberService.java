@@ -7,6 +7,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.test.demo.model.Address;
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
+import com.test.demo.model.PayInfo;
+import com.test.demo.model.Product;
 
 public interface MemberService {
 	
@@ -34,4 +36,6 @@ public interface MemberService {
 	//자격 인증 파일 업로드
 	public void fileInsert (Job job, Member principal);
 	
+	// 결제 정보 저장
+	public void savePayInfo(PayInfo payInfo);
 }

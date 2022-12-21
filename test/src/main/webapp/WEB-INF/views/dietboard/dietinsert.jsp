@@ -4,16 +4,17 @@
 <%@include file="../include/header.jsp"%>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../datepicker/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="../datepicker/css/rome.css">
+    <link rel="stylesheet" href="/datepicker/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/datepicker/css/rome.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../datepicker/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/datepicker/css/bootstrap.min.css">
     <!-- Style -->
-    <link rel="stylesheet" href="../datepicker/css/style.css">
+    <link rel="stylesheet" href="/datepicker/css/style.css">
 <script>
 	function foodFinder() {
-		window.open("selectfood", "", "width=700 height=400");
+		window.open("selectfood", "", "width=700 height=400")
 	}
+	
 	var fdlistFoodcodes = []
 	function getReturnObj(fdlist) {
 		const listHeadr = [ '음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',

@@ -29,13 +29,12 @@
 			    <th>num</th>
 			    <th>useremail</th>
 			    <th>platform_type</th>
-			    <th>access_token</th>
 			    <th>realname</th>
 			    <th>gender</th>
 			    <th>phone</th>
 			    <th>birth</th>
-			    <th>age</th>
 			    <th>user_regdate</th>
+			    <th>role</th>
 			    <th>ip</th>
 			    <th>수정</th>
 			    <th>삭제</th>
@@ -46,13 +45,12 @@
 					<td>${mem.num }</td>
 					<td>${mem.useremail }</td>
 					<td>${mem.platform_type }</td>
-					<td>${mem.access_token }</td>
 					<td>${mem.realname }</td>
 					<td>${mem.gender }</td>
 					<td>${mem.phone }</td>
 					<td>${mem.birth }</td>
-					<td>${mem.age }</td>
 					<td>${mem.user_regdate }</td>
+					<td>${mem.job.role }</td>
 					<td>${mem.ip }</td>
 					<td><button id="BtnModiMember" class="btn btn-primary">수정</button></td>
 					<td><button id="BtnDelMember" class="btn btn-danger">삭제</button></td>

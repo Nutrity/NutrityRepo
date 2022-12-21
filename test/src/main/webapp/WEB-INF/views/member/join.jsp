@@ -126,8 +126,8 @@
 					<label>성별</label>
 					<div class="row justify-content-between">
 						<div class="col-4">
-							남 : <input type = "radio" id = "gender" name = "gender" value = "man"/>
-							여 : <input type = "radio" id = "gender" name = "gender" value = "woman" /><br/>
+							남 : <input type = "radio" name = "gender" value = "man"/>
+							여 : <input type = "radio" name = "gender" value = "woman" /><br/>
 						</div>
 						<div class="invalid-feedback">
 					    	성별을 선택해주세요.

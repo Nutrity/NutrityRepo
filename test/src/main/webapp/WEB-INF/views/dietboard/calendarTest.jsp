@@ -15,6 +15,14 @@
 			if(resp==null){
 				var Calendar = FullCalendar.Calendar;
 				var calendarEl = document.getElementById('calendar');
+				var events = list.map(function(diets){
+					return{
+						title : diets.title,
+						start : diets.regdate,
+						url : "/board/detail/"+diets.bnum
+					}
+					
+				});
 
 			// initialize the calendar
 			// -----------------------------------------------------------------
@@ -26,16 +34,11 @@
 					center : 'title',
 					right : 'next'
 				},
-				navLinks: true,
-				 navLinkDayClick: function(date, jsEvent) {
-					 location.href= '/board/insert'
-				 },
-				 droppable: false,
+				navLinks: false,
 				selectable: true,
-				editable : true,
+				editable : false,
 			      select: function(info) {
 			       	start: 'Date'
-			        location.href = "/board/insert"
 			      },
 			});
 
@@ -66,16 +69,11 @@
 				center : 'title',
 				right : 'next'
 			},
-			navLinks: true,
-			 navLinkDayClick: function(date, jsEvent) {
-				 location.href= '/board/insert'
-			 },
+			navLinks: false,
 			selectable: true,
-			droppable: false,
-			editable : true,
+			editable : false,
 		      select: function(info) {
-		    	start: Date,
-		        location.href = "/board/insert"
+		    	start: Date
 		      },
               events: events
 		});
@@ -84,6 +82,8 @@
 		}
 	});
 		});		
+
+	
 </script>
 <style>
 </style>

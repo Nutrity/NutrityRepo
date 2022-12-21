@@ -71,6 +71,7 @@
 					</sec:authorize>
 					<sec:authorize access="hasRole('ADMIN')">
 						<li><a href="/admin/memlist">회원 목록</a></li>
+						<li><a href="/admin/requestQual">자격 요청 목록</a></li>
 					</sec:authorize>
 					<li><a href="/board/insert">식단 입력</a></li>
 					<sec:authorize access = "hasRole('USER')">

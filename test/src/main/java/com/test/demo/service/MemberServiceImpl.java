@@ -126,6 +126,11 @@ public class MemberServiceImpl implements MemberService{
 		payRepository.save(payInfo);		
 	}
 
+	@Override
+	public List<Member> qualList() {
+		return memberRepository.findRequest();
+	}
+
 
 }
 

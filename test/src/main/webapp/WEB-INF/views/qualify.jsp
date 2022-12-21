@@ -17,7 +17,7 @@
 		</div>
 	</div>
 
-<section>
+<section id="qualify">
 	<div class="container">
 	<!-- 	카드를 만들고 그안에서 처리하게 -->
 		<div class="card">

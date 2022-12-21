@@ -1974,6 +1974,47 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Member Join Section
+--------------------------------------------------------------*/
+
+#FormSignup .btn {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+#FormSignup .btn:hover {
+	background-color: #849635;
+	border-color: #849635;
+}
+
+/*--------------------------------------------------------------
+# Member Signin Section
+--------------------------------------------------------------*/
+
+#FormSignin .btn {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+#FormSignin .btn:hover {
+	background-color: #849635;
+	border-color: #849635;
+}
+
+/*--------------------------------------------------------------
+# Qualify Section
+--------------------------------------------------------------*/
+
+#qualify .btn {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+#qualify .btn:hover {
+	background-color: #849635;
+	border-color: #849635;
+}
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .footer {

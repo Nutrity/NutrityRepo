@@ -100,13 +100,12 @@ public class MemberController {
 	}
 	
 	@PostMapping("qual")
-	@ResponseBody
 	public String qualify(Job job) {
 		SecurityContext context = SecurityContextHolder.getContext();
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
 		Member principal = (Member)p.getUser();
 		mService.fileInsert(job, principal);
-		return "success";
+		return "redirect:/";
 	}
 	
 	@GetMapping("pay")
@@ -122,6 +121,15 @@ public class MemberController {
 		payInfo.setProduct(product);
 		mService.savePayInfo(payInfo);
 		return "success";
+	}
+	
+	@PostMapping("subcheck")
+	public String subcheck() {
+		SecurityContext context = SecurityContextHolder.getContext();
+		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
+		Member principal = (Member)p.getUser();
+		mService.subscribeCheck(principal);
+		return "redirect:/";
 	}
 
 	

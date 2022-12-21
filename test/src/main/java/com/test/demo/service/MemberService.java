@@ -36,6 +36,12 @@ public interface MemberService {
 	//자격 인증 파일 업로드
 	public void fileInsert (Job job, Member principal);
 	
+	//자격인증 요청 리스트
+	public List<Member> qualList();
+	
 	// 결제 정보 저장
 	public void savePayInfo(PayInfo payInfo);
+	
+	// 구독 날짜 계싼
+	public void subscribeCheck(Member member);
 }

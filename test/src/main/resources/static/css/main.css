@@ -2014,6 +2014,20 @@ section {
 	background-color: #849635;
 	border-color: #849635;
 }
+
+/*--------------------------------------------------------------
+# Member Update Form Section
+--------------------------------------------------------------*/
+
+#UpdateForm .btn-primary {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+#UpdateForm .btn-primary:hover {
+	background-color: #849635;
+	border-color: #849635;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

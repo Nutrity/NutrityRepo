@@ -139,7 +139,7 @@ public class MemberServiceImpl implements MemberService {
 		Member m = memberRepository.findById(num).get();
 		m.getJob().setRole("ROLE_EXPERT");
 	}
-	
+	 
 	@Override
 	@Transactional
 	public void subcheck(Member principal) {

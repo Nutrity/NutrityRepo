@@ -131,8 +131,9 @@ public class MemberController {
 		SecurityContext context = SecurityContextHolder.getContext();
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
 		Member principal = (Member)p.getUser();
+		if(principal.getJob().getRole()=="ROLE_SUBSCRIBE") {
 		mService.subcheck(principal);
-		
+		}
 		return "redirect:/";
 	}
 

@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.model.PayInfo;
@@ -133,15 +134,23 @@ public class MemberServiceImpl implements MemberService {
 		return memberRepository.findRequest();
 	}
 	
-	@Override
-	public void subscribeCheck(Member member) {
+	@Transactional
+	public void subscribeCheck(PrincipalUser p) {
+		Member member = (Member)p.getUser();
 		List<PayInfo> pListInfo = member.getPayInfo();
+		System.out.println("pListInfo :" + pListInfo);
 		ArrayList<PayInfo> arrPlist = new ArrayList<>(pListInfo);
 		int last = pListInfo.lastIndexOf(pListInfo);
 		PayInfo pInfo = pListInfo.get(last);
 		if (pInfo.getExpiredDate().before(new Date())) {
 			member.getJob().setRole("ROLE_USER");
 		}
+	}
+
+	@Override
+	public void subscribeCheck(Member member) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

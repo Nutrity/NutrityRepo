@@ -1,5 +1,6 @@
 package com.test.demo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -32,7 +33,7 @@ import lombok.ToString;
 @Entity
 @DynamicInsert
 @ToString
-public class Member {
+public class Member  implements Serializable{
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Long num;

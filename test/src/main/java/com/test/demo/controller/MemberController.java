@@ -127,14 +127,14 @@ public class MemberController {
 	
 	
 	@RequestMapping("subcheck")
-	@Transactional
 	public String subcheck() {
 		SecurityContext context = SecurityContextHolder.getContext();
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
-		Member principal = (Member)p.getUser();
-		mService.subscribeCheck(principal);
-		System.out.println("plistm : "+ principal);
-		return "/";
+		
+		//Member principal = (Member)p.getUser();
+		mService.subscribeCheck(p);
+		//System.out.println("plistm : "+ principal);
+		return"redirect:/";
 	}
 
 	

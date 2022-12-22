@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.UUID;
 
@@ -26,26 +28,26 @@ import com.test.demo.repository.PayRepository;
 
 @Service
 @Transactional
-public class MemberServiceImpl implements MemberService{
-	
+public class MemberServiceImpl implements MemberService {
+
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
 	@Autowired
 	private MemberRepository memberRepository;
-	
+
 	@Autowired
 	private PayRepository payRepository;
-		
+
 	@Transactional
 	public void join(Member member) {
-								
+
 		String rawPwd = member.getPassword();
 		String encPwd = encoder.encode(rawPwd);
 		member.setPassword(encPwd);
 		memberRepository.save(member);
 	}
-	
+
 	public void modify(Member member) {
 		Member m = memberRepository.findById(member.getNum()).get();
 		String rawPwd = member.getPassword();
@@ -54,19 +56,18 @@ public class MemberServiceImpl implements MemberService{
 		m.setUseremail(member.getUseremail());
 		m.setAddress(member.getAddress());
 		m.setPhone(member.getPhone());
-		
+
 	}
-	
+
 	public Member detailMember(Long num) {
 		return memberRepository.findById(num).get();
 	}
-	
-	
+
 	public void subscribe(Member member) {
 		Member subscribe = memberRepository.findById(member.getNum()).get();
 		subscribe.setSubscribe(1);
 	}
-	
+
 	public void userDelete(Long num) {
 		memberRepository.deleteById(num);
 	}
@@ -79,7 +80,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public Member findByUsername(String username) {
-		
+
 		return memberRepository.findByUsername(username);
 	}
 
@@ -93,18 +94,18 @@ public class MemberServiceImpl implements MemberService{
 	public void fileInsert(Job job, Member principal) {
 		UUID uuid = UUID.randomUUID();
 		MultipartFile qual = job.getUpload();
-		String uploadFileName="";
+		String uploadFileName = "";
 		Member member = memberRepository.findByUsername(principal.getUsername());
-		if(!qual.isEmpty()) {//파일이 선택됨
-			uploadFileName=uuid.toString()+"_"+qual.getOriginalFilename();
-			File saveFile =new File(uploadFileName);
+		if (!qual.isEmpty()) {// 파일이 선택됨
+			uploadFileName = uuid.toString() + "_" + qual.getOriginalFilename();
+			File saveFile = new File(uploadFileName);
 			try {
 				qual.transferTo(saveFile);
 				job.setQualName(uploadFileName);
 				job.setRole(member.getJob().getRole());
 			} catch (IllegalStateException | IOException e) {
 				e.printStackTrace();
-			}//파일 업로드 됨
+			} // 파일 업로드 됨
 		}
 		member.setJob(job);
 	}
@@ -114,17 +115,17 @@ public class MemberServiceImpl implements MemberService{
 	public void savePayInfo(PayInfo payInfo) {
 		Calendar time = Calendar.getInstance();
 		time.setTime(new Date());
-		if(payInfo.getProduct().getName().contains("week")) {
+		if (payInfo.getProduct().getName().contains("week")) {
 			time.add(Calendar.DATE, 7);
-		} else if(payInfo.getProduct().getName().contains("month")) {
+		} else if (payInfo.getProduct().getName().contains("month")) {
 			time.add(Calendar.MONTH, 1);
 		} else {
 			time.add(Calendar.YEAR, 1);
-		}       
-        Date expiredTime = new Date(time.getTimeInMillis());
-        payInfo.setExpiredDate(expiredTime);
+		}
+		Date expiredTime = new Date(time.getTimeInMillis());
+		payInfo.setExpiredDate(expiredTime);
 		payInfo.getMember().getJob().setRole("ROLE_SUBCRIBE");
-		payRepository.save(payInfo);		
+		payRepository.save(payInfo);
 	}
 
 	@Override
@@ -134,13 +135,14 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void subscribeCheck(Member member) {
-	List<PayInfo> pListInfo = member.getPayInfo();
-	int last = pListInfo.lastIndexOf(pListInfo);
-	PayInfo pInfo = pListInfo.get(last);
-	pInfo.getRegDate();
-	
+		LinkedHashSet<PayInfo> pListInfo = member.getPayInfo();
+		ArrayList<PayInfo> arrPlist = new ArrayList<>(pListInfo);
+		int last = arrPlist.lastIndexOf(arrPlist);
+		PayInfo pInfo = arrPlist.get(last);
+	    System.out.println("pinfo : " + pInfo.toString());
+		if (pInfo.getExpiredDate().before(new Date())) {
+			member.getJob().setRole("ROLE_USER");
+		}
 	}
 
-
 }
-

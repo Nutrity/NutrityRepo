@@ -41,6 +41,7 @@
 			  </tr>
 
 			<c:forEach items="${member }" var="mem">
+			<input type = "hidden" id = "num" name = "num" value = "${mem.num }"/>
 				<tr>
 					<td>${mem.num }</td>
 					<td>${mem.useremail }</td>
@@ -50,24 +51,28 @@
 					<td>${mem.phone }</td>
 					<td>${mem.birth }</td>
 					<td>${mem.user_regdate }</td>
-					<td>${mem.job.role }</td>
+					<td>${mem.job.role}</td>
 					<td>${mem.ip }</td>
 					<td><button id="BtnModiMember" class="btn btn-primary">수정</button></td>
-					<td><button id="BtnDelMember" class="btn btn-danger">삭제</button></td>
+					<td><button type = "button" id="BtnDelMember" class="btn btn-danger">삭제</button></td>
 				</tr>
 			</c:forEach>
 			</table>
 		</div>
-	</section>
+	</section>	
+</main>
 	<script>
 	$("#BtnDelMember").click(function(){
 		$.ajax({
 			type : 'delete',
-			url : ''
+			url : '/admin/deleteuser/'+$("#num").val()
 		})
-	})
-	
+		.done(function(resp){
+			if(resp == "success"){
+				alert("회원이 삭제 되었습니다.")
+				location.href = "/admin/memlist"
+			}						
+		})
+	})	
 	</script>
-	
-</main>
 <%@include file="../include/footer.jsp"%>

@@ -41,9 +41,9 @@ public class AdminController {
 		return "/admin/requestqual";
 	}
 	
-	@DeleteMapping("deleteuser")
+	@DeleteMapping("deleteuser/{num}")
 	@ResponseBody
-	public String deleteuser(Long num) {
+	public String deleteuser(@PathVariable Long num) {
 		mService.userDelete(num);
 		return "success";
 	}

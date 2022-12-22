@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.rsocket.PayloadInterceptorOrder;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -133,9 +134,11 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void subscribeCheck(Member member) {
-		Date date = member.getPayInfo();
-		
-		
+	List<PayInfo> pListInfo = member.getPayInfo();
+	int last = pListInfo.lastIndexOf(pListInfo);
+	PayInfo pInfo = pListInfo.get(last);
+	pInfo.getRegDate();
+	
 	}
 
 

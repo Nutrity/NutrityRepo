@@ -132,14 +132,13 @@ public class MemberServiceImpl implements MemberService {
 	public List<Member> qualList() {
 		return memberRepository.findRequest();
 	}
-
+	
 	@Override
 	public void subscribeCheck(Member member) {
-		LinkedHashSet<PayInfo> pListInfo = member.getPayInfo();
+		List<PayInfo> pListInfo = member.getPayInfo();
 		ArrayList<PayInfo> arrPlist = new ArrayList<>(pListInfo);
-		int last = arrPlist.lastIndexOf(arrPlist);
-		PayInfo pInfo = arrPlist.get(last);
-	    System.out.println("pinfo : " + pInfo.toString());
+		int last = pListInfo.lastIndexOf(pListInfo);
+		PayInfo pInfo = pListInfo.get(last);
 		if (pInfo.getExpiredDate().before(new Date())) {
 			member.getJob().setRole("ROLE_USER");
 		}

@@ -2,14 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/datepicker/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="/datepicker/css/rome.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/datepicker/css/bootstrap.min.css">
-    <!-- Style -->
-    <link rel="stylesheet" href="/datepicker/css/style.css">
 <script>
 	function foodFinder() {
 		window.open("selectfood", "", "width=700 height=400")
@@ -87,20 +79,10 @@
 			<input type="hidden" id="num" value="${p.user.num}">
 		</div>
 	</sec:authorize>
-  <div class="content">
-    <div class="container text-left">
-      <div class="row">
-        <div class="col-md-10 text-center">
-          <input type="text" class="form-control w-25 mx-auto mb-3" id="result" placeholder="Select date">
-          <form class="row">
-            <div class="col-md-12">
-              <div id="inline_cal"></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+
+	<div>
+	<label>Date</label> <input type="date" id="regdate" placeholder="날짜를 선택해주세요">
+	</div>
 
 	<div>
 		<label>title</label> <input type="text" id="title">
@@ -118,12 +100,6 @@
 	</div>
 
 	<button type="button" id="dietInsertBtn">저장</button>    
-	<script src="/datepicker/js/popper.min.js"></script>
-    <script src="/datepicker/js/bootstrap.min.js"></script>
-    <script src="/datepicker/js/rome.js"></script>
-    <script src="/datepicker/js/main.js"></script>
 </main>
-
-    
     
 <%@include file="../include/footer.jsp"%>

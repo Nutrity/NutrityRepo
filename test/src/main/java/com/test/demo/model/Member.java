@@ -1,6 +1,7 @@
 package com.test.demo.model;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -65,6 +66,7 @@ public class Member {
 	@JsonIgnore
 	private List<DietBoard> dietBoard;
 	
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private LinkedHashSet<PayInfo> payInfo;
+	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<PayInfo> payInfo;
 }

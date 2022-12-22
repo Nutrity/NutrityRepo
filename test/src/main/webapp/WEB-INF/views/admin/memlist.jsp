@@ -59,5 +59,15 @@
 			</table>
 		</div>
 	</section>
+	<script>
+	$("#BtnDelMember").click(function(){
+		$.ajax({
+			type : 'delete',
+			url : ''
+		})
+	})
+	
+	</script>
+	
 </main>
 <%@include file="../include/footer.jsp"%>

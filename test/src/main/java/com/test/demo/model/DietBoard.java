@@ -26,8 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
-@Data
-@Entity
+@Data@Entity
 public class DietBoard {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -80,10 +80,11 @@
 		    		url : "/board/sbmemo/"+info.startStr
 		    	})
 		    	.done(function(resp){
+		    		var str = <
 		    		console.log(resp);
-		    		$("#sd_date").html(resp.regdate);
-		    		$("#sd_diet").html(resp.foodcode);
-		    		$("#sd_memo").html(resp.memo)
+		    		$("#sd_date").html(resp.sideBoard.regdate);
+		    		$("#sd_diet").html(resp.fdlist.foodname);
+		    		$("#sd_memo").html(resp.sideBoard.memo)
 		    	})
 		      },
               events: events

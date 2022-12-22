@@ -5,12 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,10 +26,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.SideMemoBoardDTO;
 import com.test.demo.model.SuggestNutrient;
 import com.test.demo.repository.FoodRepository;
 import com.test.demo.service.BoardService;
@@ -160,10 +160,19 @@ public class BoardController {
 	
 	@GetMapping("sbmemo/{date}")
 	@ResponseBody
-	public DietBoard sbmemo(@PathVariable String date) throws ParseException {
+	public SideMemoBoardDTO sbmemo(@PathVariable String date) throws ParseException {
 		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		 Date formdate = formatter.parse(date);
-		return boardService.findByRegDate(formdate);
+		 DietBoard sideBoard = boardService.findByRegDate(formdate);//dietboard 값
+		 Set<String> foodArr = sideBoard.getFoodcode(); //foodcode set
+		 Iterator<String> codelist = foodArr.iterator();
+		 
+		 List<FoodList> fdlist = new ArrayList<>();//foodlist 값
+		 while(codelist.hasNext()) {
+			 fdlist.add(foodRepository.findByFoodcode(codelist.next()));
+		 }
+		 SideMemoBoardDTO sideMemo = new SideMemoBoardDTO(fdlist, sideBoard);
+		return sideMemo;
 	}
 	
 }

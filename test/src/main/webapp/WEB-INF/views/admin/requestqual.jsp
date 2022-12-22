@@ -43,7 +43,7 @@
 					<td>${req.realname }</td>
 					<td>${req.gender }</td>
 					<td>${req.birth }</td>
-					<td>${req.user_regdate }</td>
+					<td>${req.job.job}</td>
 					<td id="role">${req.job.role}</td>
 					<td>${req.ip }</td>
 					<td><button id="BtnModiRole" class="btn btn-primary">확인</button></td>

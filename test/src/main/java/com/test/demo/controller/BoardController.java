@@ -2,6 +2,7 @@ package com.test.demo.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -152,6 +153,13 @@ public class BoardController {
 	public String boardDelete(@PathVariable Long bnum) {
 		boardService.dietDelete(bnum);
 		return "success";
+	}
+	
+	@GetMapping("sbmemo")
+	@ResponseBody
+	public DietBoard sbmemo(@RequestBody DietBoard board) {
+		System.out.println("board : " + board.toString());
+		return boardService.findByRegDate(board.getRegdate());
 	}
 	
 }

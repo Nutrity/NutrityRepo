@@ -1,5 +1,6 @@
 package com.test.demo.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.test.demo.model.DietBoard;
@@ -26,5 +27,8 @@ public interface BoardService {
 	public List<FoodList> foodList(Long foodcode);
 	//권장영양소(성별)
 	public SuggestNutrient findByGender(String gender);
+	
+	// 사이드바 간략 표현
+	public DietBoard findByRegDate(Date date);
 	
 }

@@ -74,6 +74,16 @@
 			editable : false,
 		      select: function(info) {
 		    	start: Date
+		    	$.ajax({
+		    		type : "get",
+		    		url : "/boards/sbmemo",
+		    		data : {
+		    			regdate : Date
+		    		}		            
+		    	})
+		    	.done(function(resp){
+		    		console.log(resp)
+		    	})
 		      },
               events: events
 		});
@@ -105,11 +115,18 @@
 			</div>
 		</div>
 	</div>
-	<section>
+	<section class="row">
 		<h3>${p.user.username}의캘린더</h3>
-		<div id='calendar-container'>
+		<div class="col col-10" style="float: left;" id='calendar-container'>
 			<div id='calendar'></div>
 		</div>
+			<div class="col col-2" style="height:auto; ; float: left;"> 
+			<div id ="sd_date" class = "h-auto p-3">날짜</div>
+			<div id ="sd_diet" class="h-25 p-3">식단</div>
+			<div id ="sd_kcal" class = "h-auto p-3">칼로리</div>
+			<div id ="sd_memo" class = "h-25 p-3"><textarea rows="10" cols="25"></textarea></div>							    
+		    </div>
 	</section>
 </main>
+
 <%@ include file="../include/footer.jsp"%>

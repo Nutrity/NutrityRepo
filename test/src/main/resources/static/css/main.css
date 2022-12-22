@@ -688,8 +688,8 @@ section {
 
 #calendar {
 	max-width: 100vw;
-	margin-right: 20vw;
 	margin-left: 20px;
+	 margin-right: 10px;
 }
 
 /*--------------------------------------------------------------

@@ -1,5 +1,6 @@
 package com.test.demo.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -85,6 +86,11 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public SuggestNutrient findByGender(String gender) {
 		return suggestNutrientRepository.findByGender(gender);
+	}
+
+	@Override
+	public DietBoard findByRegDate(Date date) {
+		return boardRepository.findByRegdate(date);
 	}
 	
 	

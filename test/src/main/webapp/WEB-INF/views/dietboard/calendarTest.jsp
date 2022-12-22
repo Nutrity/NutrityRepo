@@ -73,16 +73,17 @@
 			selectable: true,
 			editable : false,
 		      select: function(info) {
+		    	  console.log(info)
 		    	start: Date
 		    	$.ajax({
 		    		type : "get",
-		    		url : "/boards/sbmemo",
-		    		data : {
-		    			regdate : Date
-		    		}		            
+		    		url : "/board/sbmemo/"+info.startStr
 		    	})
 		    	.done(function(resp){
-		    		console.log(resp)
+		    		console.log(resp);
+		    		$("#sd_date").html(resp.regdate);
+		    		$("#sd_diet").html(resp.foodcode);
+		    		$("#sd_memo").html(resp.memo)
 		    	})
 		      },
               events: events
@@ -120,11 +121,19 @@
 		<div class="col col-10" style="float: left;" id='calendar-container'>
 			<div id='calendar'></div>
 		</div>
-			<div class="col col-2" style="height:auto; ; float: left;"> 
-			<div id ="sd_date" class = "h-auto p-3">날짜</div>
-			<div id ="sd_diet" class="h-25 p-3">식단</div>
-			<div id ="sd_kcal" class = "h-auto p-3">칼로리</div>
-			<div id ="sd_memo" class = "h-25 p-3"><textarea rows="10" cols="25"></textarea></div>							    
+			<div class = "col col-2" style="height:auto; ; float: left;"> 
+			<div class = "h-auto p-3">날짜<br/>
+			<div id = "sd_date"></div>
+			</div>
+			<div class ="h-auto p-3">식단<br/>
+			<div id = "sd_diet"></div>
+			</div>
+			<div class = "h-auto p-3">칼로리<br/>
+			<div id = "sd_kcal"></div>
+			</div>
+			<div class = "h-25 p-3">메모<br/>
+			<textarea id = "sd_memo" rows="10" cols="25"></textarea>
+			</div>							    
 		    </div>
 	</section>
 </main>

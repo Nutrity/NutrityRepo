@@ -1,5 +1,7 @@
 package com.test.demo.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -24,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
@@ -155,11 +158,12 @@ public class BoardController {
 		return "success";
 	}
 	
-	@GetMapping("sbmemo")
+	@GetMapping("sbmemo/{date}")
 	@ResponseBody
-	public DietBoard sbmemo(@RequestBody DietBoard board) {
-		System.out.println("board : " + board.toString());
-		return boardService.findByRegDate(board.getRegdate());
+	public DietBoard sbmemo(@PathVariable String date) throws ParseException {
+		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		 Date formdate = formatter.parse(date);
+		return boardService.findByRegDate(formdate);
 	}
 	
 }

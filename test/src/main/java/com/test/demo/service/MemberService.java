@@ -17,12 +17,7 @@ public interface MemberService {
 	
 	//회원수정 
 	public void modify(Member member);
-	
-	//구독 추가
-	public void subscribe(Member member);
-	
-	//구독 삭제
-	public void unsubscribe(Member member);
+		
 	
 	//회원 탈퇴
 	public void userDelete(Long num);
@@ -32,6 +27,9 @@ public interface MemberService {
 	
 	//관리자 용 회원 전체 찾기
 	public List<Member> findAll();
+	
+	// 관리자 용 회원 수정
+	public void userUpdate(Member member);
 	
 	//자격 인증 파일 업로드
 	public void fileInsert (Job job, Member principal);

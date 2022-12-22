@@ -51,9 +51,16 @@
 					<td>${mem.phone }</td>
 					<td>${mem.birth }</td>
 					<td>${mem.user_regdate }</td>
-					<td>${mem.job.role}</td>
+					<td>
+					   <select id = "role(${mem.num })" name = "role${mem.num }">
+					   <option value = "ROLE_ADMIN" <c:if test="${mem.job.role eq 'ROLE_ADMIN'}">selected</c:if>>ROLE_ADMIN</option>
+					   <option value = "ROLE_EXPERT" <c:if test="${mem.job.role eq 'ROLE_EXPERT'}">selected</c:if>>ROLE_EXPERT</option>
+					   <option value = "ROLE_USER" <c:if test="${mem.job.role eq 'ROLE_USER'}">selected</c:if>>ROLE_USER</option>
+					   <option value = "ROLE_SUBSCRIBE" <c:if test="${mem.job.role eq 'ROLE_SUBSCRIBE'}">selected</c:if>>ROLE_SUBSCRIBE</option>
+					   </select>
+				    </td>
 					<td>${mem.ip }</td>
-					<td><button id="BtnModiMember" class="btn btn-primary">수정</button></td>
+					<td><button type = "button" id="BtnModiMember" onclick='memUpdate(${mem.num }, $("select[name=role${mem.num }]").val())' class="btn btn-primary">수정</button></td>
 					<td><button type = "button" id="BtnDelMember" onclick="memdel(${mem.num })" class="btn btn-danger">삭제</button></td>
 				</tr>
 			</c:forEach>
@@ -62,6 +69,10 @@
 	</section>	
 </main>
 	<script>
+	var selectVal = function(value){
+		$("role").val(value);
+	}
+	
 	var memdel = function(num){
 		$.ajax({
 			type : 'delete',
@@ -72,6 +83,27 @@
 				alert("회원이 삭제 되었습니다.")
 				location.href = "/admin/memlist"
 			}						
+		})
+	}
+	
+	var memUpdate = function(num, role){
+		
+		data = {
+				role : role
+		}
+		 
+		$.ajax({
+			type : "put",
+			url : "/admin/updateuser/"+num,
+			contentType : "application/json;charset=utf-8",
+			data :JSON.stringify(data)
+		})
+		
+		.done(function(resp){
+			if(resp =="success"){
+				alert("회원 정보가 수정되었습니다.")
+				location.href = "/admin/memlist"
+			}
 		})
 	}
 	</script>

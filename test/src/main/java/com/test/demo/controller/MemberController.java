@@ -83,13 +83,7 @@ public class MemberController {
 		mService.modify(member);
 		return "success";
 	}
-	
-	@PutMapping("subscribe")
-	public String subscribe(Member member) {
-		mService.subscribe(member);
-		return "";
-	}
-	
+		
 	@DeleteMapping("userDelete/{num}")
 	@ResponseBody
 	public String userDelete(@PathVariable Long num) {

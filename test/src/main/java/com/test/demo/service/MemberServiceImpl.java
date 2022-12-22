@@ -64,20 +64,18 @@ public class MemberServiceImpl implements MemberService {
 		return memberRepository.findById(num).get();
 	}
 
-	public void subscribe(Member member) {
-		Member subscribe = memberRepository.findById(member.getNum()).get();
-		subscribe.setSubscribe(1);
-	}
 
 	public void userDelete(Long num) {
 		memberRepository.deleteById(num);
 	}
-
+	
 	@Override
-	public void unsubscribe(Member member) {
-		Member subscribe = memberRepository.findById(member.getNum()).get();
-		subscribe.setSubscribe(0);
+	public void userUpdate(Member member) {
+		Member m = memberRepository.findById(member.getNum()).get();
+		System.out.println("m : " + m.toString());
+		m.getJob().setRole(member.getJob().getRole());
 	}
+
 
 	@Override
 	public Member findByUsername(String username) {
@@ -154,6 +152,8 @@ public class MemberServiceImpl implements MemberService {
 		}
 
 }
+
+
 	
 	
 }

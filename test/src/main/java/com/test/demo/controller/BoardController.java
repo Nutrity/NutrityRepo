@@ -87,11 +87,6 @@ public class BoardController {
 	public String boardInsert(@RequestBody DietBoard board) {
 		SecurityContext context = SecurityContextHolder.getContext();
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
-//		String user = auth.getName();
-//		Member m =memberService.findByUsername(user)
-		System.out.println(context);
-		System.out.println("p : " + p);
-		System.out.println("getUser : " + p.getUser());
 		board.setMember(p.getUser());
 		boardService.dietInsert(board);
 		System.out.println(board);

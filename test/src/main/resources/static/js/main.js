@@ -325,6 +325,7 @@
 
 		$("#dietInsertBtn").click(function() {
 			var data = {
+				regdate : $("#regdate").val(),
 				title: $("#title").val(),
 				memo: $("#memo").val(),
 				foodcode: fdlistFoodcodes

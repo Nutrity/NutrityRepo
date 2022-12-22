@@ -110,6 +110,14 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	@PutMapping("modiRole/{num}")
+	@ResponseBody
+	public String modiRole(@PathVariable Long num) {
+		mService.modiRole(num);
+		Member m = mRepository.findById(num).get();
+		return m.getJob().getRole();
+	}
+	
 	@GetMapping("pay")
 	public String pay() {
 		return "member/payplan";
@@ -132,7 +140,7 @@ public class MemberController {
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
 		
 		//Member principal = (Member)p.getUser();
-		mService.subscribeCheck(p);
+//		mService.subscribeCheck(p);
 		//System.out.println("plistm : "+ principal);
 		return"redirect:/";
 	}

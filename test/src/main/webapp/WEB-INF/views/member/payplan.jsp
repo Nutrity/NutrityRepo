@@ -96,7 +96,7 @@ function requestWeekPay() {
     IMP.request_pay({ // param    	
         pg: "html5_inicis.INIBillTst",
         pay_method: "card",
-        merchant_uid: "data.amount",
+        merchant_uid: "12",
         name: data.name,
         amount: data.amount,
         buyer_email: "${p.user.useremail}",
@@ -135,7 +135,7 @@ function requestMonthPay() {
     IMP.request_pay({ // param    	
         pg: "html5_inicis.INIBillTst",
         pay_method: "card",
-        merchant_uid: "data.amount",
+        merchant_uid: "13",
         name: data.name,
         amount: data.amount,
         buyer_email: "${p.user.useremail}",
@@ -174,7 +174,7 @@ function requestYearPay() {
     IMP.request_pay({ // param    	
         pg: "html5_inicis.INIBillTst",
         pay_method: "card",
-        merchant_uid: "data.amount",
+        merchant_uid: "14",
         name: data.name,
         amount: data.amount,
         buyer_email: "${p.user.useremail}",

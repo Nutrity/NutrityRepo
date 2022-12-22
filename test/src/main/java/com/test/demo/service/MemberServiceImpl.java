@@ -134,6 +134,12 @@ public class MemberServiceImpl implements MemberService {
 		return memberRepository.findRequest();
 	}
 	
+	@Override
+	public void modiRole(Long num) {
+		Member m = memberRepository.findById(num).get();
+		m.getJob().setRole("ROLE_EXPERT");
+	}
+	
 	@Transactional
 	public void subscribeCheck(PrincipalUser p) {
 		Member member = (Member)p.getUser();

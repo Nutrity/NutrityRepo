@@ -39,6 +39,9 @@ public interface MemberService {
 	//자격인증 요청 리스트
 	public List<Member> qualList();
 	
+	// 전문가 권한 부여
+	public void modiRole(Long num);
+	
 	// 결제 정보 저장
 	public void savePayInfo(PayInfo payInfo);
 	

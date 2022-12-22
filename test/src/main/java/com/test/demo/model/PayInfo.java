@@ -36,7 +36,7 @@ public class PayInfo {
 	private Date expiredDate;
 	
 	@ManyToOne
-	@JoinColumn(name = "member_id")
+	@JoinColumn(name = "member")
 	private Member member;
 	
 	@Embedded

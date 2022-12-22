@@ -1,10 +1,8 @@
 package com.test.demo.model;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
@@ -32,8 +30,7 @@ import lombok.ToString;
 @Setter @Getter
 @Entity
 @DynamicInsert
-@ToString
-public class Member  implements Serializable{
+public class Member {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Long num;
@@ -65,9 +62,9 @@ public class Member  implements Serializable{
 	
 	@OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	@JsonIgnore
-	private List<DietBoard> dietBoard;
+	private Set<DietBoard> dietBoard;
 	
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnore
 	private List<PayInfo> payInfo;
 }

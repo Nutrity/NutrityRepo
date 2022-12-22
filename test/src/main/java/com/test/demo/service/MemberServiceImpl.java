@@ -140,23 +140,20 @@ public class MemberServiceImpl implements MemberService {
 		m.getJob().setRole("ROLE_EXPERT");
 	}
 	
+	@Override
 	@Transactional
-	public void subscribeCheck(PrincipalUser p) {
-		Member member = (Member)p.getUser();
-		List<PayInfo> pListInfo = member.getPayInfo();
-		System.out.println("pListInfo :" + pListInfo);
-		ArrayList<PayInfo> arrPlist = new ArrayList<>(pListInfo);
-		int last = pListInfo.lastIndexOf(pListInfo);
+	public void subcheck(Member principal) {
+		List<PayInfo> pListInfo = principal.getPayInfo();
+		int last = pListInfo.size()-1;
 		PayInfo pInfo = pListInfo.get(last);
-		if (pInfo.getExpiredDate().before(new Date())) {
+		System.out.println("pListInfo:"+pListInfo);
+		System.out.println("last:"+last);
+		Member member = memberRepository.findById(principal.getNum()).get();
+		if (pInfo.getExpiredDate().before(new Date())){
 			member.getJob().setRole("ROLE_USER");
 		}
-	}
 
-	@Override
-	public void subscribeCheck(Member member) {
-		// TODO Auto-generated method stub
-		
-	}
-
+}
+	
+	
 }

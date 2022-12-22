@@ -45,6 +45,6 @@ public interface MemberService {
 	// 결제 정보 저장
 	public void savePayInfo(PayInfo payInfo);
 	
-	// 구독 날짜 계싼
-	public void subscribeCheck(Member member);
+	//구독 만료 확인
+	public void subcheck(Member principal);
 }

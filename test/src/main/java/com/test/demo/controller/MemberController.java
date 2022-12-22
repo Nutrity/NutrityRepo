@@ -130,11 +130,10 @@ public class MemberController {
 	public String subcheck() {
 		SecurityContext context = SecurityContextHolder.getContext();
 		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
+		Member principal = (Member)p.getUser();
+		mService.subcheck(principal);
 		
-		//Member principal = (Member)p.getUser();
-//		mService.subscribeCheck(p);
-		//System.out.println("plistm : "+ principal);
-		return"redirect:/";
+		return "redirect:/";
 	}
 
 	

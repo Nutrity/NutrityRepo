@@ -109,15 +109,7 @@ public class MemberController {
 		mService.fileInsert(job, principal);
 		return "redirect:/";
 	}
-	
-	@PutMapping("modiRole/{num}")
-	@ResponseBody
-	public String modiRole(@PathVariable Long num) {
-		mService.modiRole(num);
-		Member m = mRepository.findById(num).get();
-		return m.getJob().getRole();
-	}
-	
+		
 	@GetMapping("pay")
 	public String pay() {
 		return "member/payplan";

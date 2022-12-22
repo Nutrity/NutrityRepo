@@ -58,7 +58,7 @@
 $("#BtnModiRole").click(function(){
 	$.ajax({
 		type : "put",
-		url : "/modiRole/"+$("#num").val()
+		url : "/admin/modiRole/"+$("#num").val()
 	})
 	.done(function(resp){
 		alert("수정이 완료되었습니다.");

@@ -5,9 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.test.demo.model.Member;
+import com.test.demo.repository.MemberRepository;
 import com.test.demo.service.BoardService;
 import com.test.demo.service.MemberService;
 
@@ -20,6 +24,9 @@ public class AdminController {
 
 	@Autowired
 	private MemberService mService;
+	
+	@Autowired
+	private MemberRepository mRepository;
 	
 	@GetMapping("memlist")
 	public String memlist(Model model) {
@@ -39,6 +46,14 @@ public class AdminController {
 	public String deleteuser(Long num) {
 		mService.userDelete(num);
 		return "success";
+	}
+	
+	@PutMapping("modiRole/{num}")
+	@ResponseBody
+	public String modiRole(@PathVariable Long num) {
+		mService.modiRole(num);
+		Member m = mRepository.findById(num).get();
+		return m.getJob().getRole();
 	}
 	
 }

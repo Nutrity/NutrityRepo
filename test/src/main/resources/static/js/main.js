@@ -324,8 +324,22 @@
 		})
 
 		$("#dietInsertBtn").click(function() {
+			if ($("#regdate").val()=="") {
+				alert("날짜를 선택해 주세요")
+				return;
+			}
+			
+			if ($("#title").val()=="") {
+				alert("제목를 선택해 주세요")
+				return;
+			}
+
+			if (fdlistFoodcodes.length==0) {
+				alert("식단을 선택해 주세요")
+				return;
+			}
 			var data = {
-				regdate : $("#regdate").val(),
+				regdate: $("#regdate").val(),
 				title: $("#title").val(),
 				memo: $("#memo").val(),
 				foodcode: fdlistFoodcodes
@@ -337,12 +351,12 @@
 				data: JSON.stringify(data),
 				contentType: "application/json;charset=utf-8"
 			}).done(function(resp) {
-				if(resp=="success"){
-					location.href = '/board/list/'+$("#num").val()
-					}else{
-						alert("회원전용 기능입니다. 로그인해주세요")
-						location.href = '/login'
-					}
+				if (resp == "success") {
+					location.href = '/board/list/' + $("#num").val()
+				} else {
+					alert("회원전용 기능입니다. 로그인해주세요")
+					location.href = '/login'
+				}
 			})
 		})
 

@@ -244,7 +244,8 @@
 			})//ajax
 
 				.done(function(resp) {
-					if (resp != null) {
+					console.log(resp)
+					if (resp.content != null) {
 						var str = "<div class='container'  style='text-align: center;'>";
 						str += "<table class='table table-hover'>"
 						str += "<thead> <tr>"
@@ -255,7 +256,7 @@
 						str += "</tr>"
 						str += "</thead>"
 						str += "</tbody>"
-						$.each(resp, function(key, val) {
+						$.each(resp.content, function(key, val) {
 							str += "<tr>"
 							str += "<td><input type='checkbox' class='chckbox' value= '" + val.foodcode + "' name='fcode'></td>"
 							str += "<td id='fname'>" + val.foodname + "</td> "
@@ -265,6 +266,19 @@
 						})//each
 						str += "</tbody>"
 						str += "</table>"
+						str += "<ul class = 'pagination'>"
+							
+						if(resp.first == false){
+							str += "<li class = 'page-item'>"
+							str += "<a class = 'page-link' href = '?page="+parseInt(resp.number-1)+"&SelectFoodname="+$("#SelectFoodname").val()+"'>이전</a></li>"
+						}
+						
+						if(resp.last == false){
+							str += "<li class = 'page-item'>"
+							str += "<a class = 'page-link' href = '/board/foodList?    page="+parseInt(resp.number+1)+"&SelectFoodname="+$("#SelectFoodname").val()+"'>다음</a></li>"
+						}
+						
+						str += "</ul>"
 
 						$("#selectFood").html(str)
 						if ($("#selectFood").css("display") == "none") {
@@ -300,7 +314,8 @@
 					console.log(foodArr)
 				})//done
 				.fail(function(e) {
-					alert("error" + e)
+					console.log(e)
+					alert("error" + e )
 				})//fail
 		})//selectFoodBtn
 

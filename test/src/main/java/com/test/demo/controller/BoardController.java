@@ -3,9 +3,7 @@ package com.test.demo.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -33,6 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.Member;
 import com.test.demo.model.SideMemoBoardDTO;
 import com.test.demo.model.SuggestNutrient;
 import com.test.demo.repository.FoodRepository;
@@ -153,12 +152,15 @@ public class BoardController {
 		return "success";
 	}
 
-	@GetMapping("sbmemo/{date}")
+	@GetMapping("sbmemo/{num}/{date}")
 	@ResponseBody
-	public SideMemoBoardDTO sbmemo(@PathVariable String date) throws ParseException {
+	public SideMemoBoardDTO sbmemo(@PathVariable Long num ,@PathVariable String date) throws ParseException {
+		Member member =memberService.detailMember(num);
+		
+		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date formdate = formatter.parse(date);
-		DietBoard sideBoard = boardService.findByRegDate(formdate);// dietboard 값
+		DietBoard sideBoard = boardService.findByRegDatenMember(formdate, member);// dietboard 값
 		if (sideBoard != null) {
 			Set<String> foodArr = sideBoard.getFoodcode(); // foodcode set
 			Iterator<String> codelist = foodArr.iterator();

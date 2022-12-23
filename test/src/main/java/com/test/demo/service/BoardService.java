@@ -22,10 +22,7 @@ public interface BoardService {
 	public void dietDelete(Long bnum);
 	//상세보기
 	public DietBoard dietDetail(Long bnum);
-	
-	//음식리스트
-	public Page<FoodList> foodLists(String foodname, Pageable pageable);
-	
+		
 	//음식리스트
 	public List<FoodList> foodLists(String foodname);
 	//음식리스트(내림차순)

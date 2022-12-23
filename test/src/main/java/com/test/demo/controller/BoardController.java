@@ -54,11 +54,8 @@ public class BoardController {
 
 	@GetMapping("foodList")
 	@ResponseBody
-	public Page<FoodList> foodlist(@PageableDefault(size = 5, 
-            direction = Direction.DESC) Pageable pageable,
-			String foodname) {
-		System.out.println("page : " +pageable);
-		Page<FoodList> foodlists = boardService.foodLists(foodname,pageable);	
+	public List<FoodList> foodlist(String foodname) {
+		List<FoodList> foodlists = boardService.foodLists(foodname);	
 		return foodlists;
 	}
 

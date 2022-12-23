@@ -98,15 +98,5 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public int countByMember(Member member) {
 		return boardRepository.countByMember(member);
-	}
-	
-	@Override
-	public Page<FoodList> foodLists(String foodname, Pageable pageable) {
-		return foodRepository.findByFoodnameContaining(foodname, pageable);
-	}
-
-
-	
-	
-	
+	}	
 }

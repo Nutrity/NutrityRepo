@@ -127,7 +127,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		Date expiredTime = new Date(time.getTimeInMillis());
 		payInfo.setExpiredDate(expiredTime);
-		payInfo.getMember().getJob().setRole("ROLE_SUBCRIBE");
+		payInfo.getMember().getJob().setRole("ROLE_SUBSCRIBE");
 		payRepository.save(payInfo);
 	}
 

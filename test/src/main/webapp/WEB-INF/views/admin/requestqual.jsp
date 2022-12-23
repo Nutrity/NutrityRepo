@@ -62,7 +62,7 @@ $("#BtnModiRole").click(function(){
 	})
 	.done(function(resp){
 		alert("수정이 완료되었습니다.");
-		$("#role").html(resp);
+		location.href = '/admin/requestQual'
 	})
 })
 

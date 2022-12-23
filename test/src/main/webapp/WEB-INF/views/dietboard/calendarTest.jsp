@@ -10,56 +10,49 @@
 		$.ajax({
 			type:'get',
 			url : '/board/calendar/'+${p.user.num},
-		})
+		})//ajax
 		.done(function(resp){
 			if(resp==null){
 				var Calendar = FullCalendar.Calendar;
 				var calendarEl = document.getElementById('calendar');
-				var events = list.map(function(diets){
-					return{
-						title : diets.title,
-						start : diets.regdate,
-						url : "/board/detail/"+diets.bnum
-					}
-					
-				});
-
 			// initialize the calendar
 			// -----------------------------------------------------------------
-
 			var calendar = new Calendar(calendarEl, {
 				headerToolbar : {
 					
 					left : 'today prev',
 					center : 'title',
 					right : 'next'
-				},
+					
+				},//headerToolbar
 				navLinks: false,
 				selectable: true,
 				editable : false,
-			      select: function(info) {
-			       	start: 'Date'
-			      },
-			});
-
+			    select: function(info) {
+			      start: 'Date'
+			      },//select
+			      
+			});//calendar
+			
 			calendar.render();
-
-			}	
-			else
+			
+			}	//if
+			
+			else//!null
 				{
 			var list = resp;
-			console.log(list);
-
 			var Calendar = FullCalendar.Calendar;
 			var calendarEl = document.getElementById('calendar');
+			
 			var events = list.map(function(diets){
 			return{
 				title : diets.title,
 				start : diets.regdate,
 				url : "/board/detail/"+diets.bnum
-			}
+			}//return
 			
-		});
+		});//events
+		
 		// initialize the calendar
 		// -----------------------------------------------------------------
 
@@ -68,33 +61,40 @@
 				left : 'today prev',
 				center : 'title',
 				right : 'next'
-			},
+			},//headerToolbar
 			navLinks: false,
 			selectable: true,
 			editable : false,
 		      select: function(info) {
-		    	  console.log(info)
 		    	start: Date
 		    	$.ajax({
 		    		type : "get",
 		    		url : "/board/sbmemo/"+info.startStr
-		    	})
+		    	})//ajax
 		    	.done(function(resp){
-		    		var str = <
-		    		console.log(resp);
+					var foodname = "";		    		
+					var foodkcal = "";
+					
+		    		$.each(resp.flist, function(key, val) {
+					foodname += "<a>" + Object.values(val)[1] + '<a> ';
+		    		});//each
+		    		
 		    		$("#sd_date").html(resp.sideBoard.regdate);
-		    		$("#sd_diet").html(resp.fdlist.foodname);
+		    		$("#sd_diet").html(foodname);
 		    		$("#sd_memo").html(resp.sideBoard.memo)
-		    	})
-		      },
+		    		
+		    		})//in done
+		    		
+		      },//select
               events: events
-		});
-		
+              
+		    	})//calendar
+		    	
 		calendar.render();
-		}
-	});
-		});		
-
+				}//else
+					
+		});//1done
+	})//document
 	
 </script>
 <style>
@@ -122,20 +122,24 @@
 		<div class="col col-10" style="float: left;" id='calendar-container'>
 			<div id='calendar'></div>
 		</div>
-			<div class = "col col-2" style="height:auto; ; float: left;"> 
-			<div class = "h-auto p-3">날짜<br/>
-			<div id = "sd_date"></div>
+		<div class="col col-2" style="height: auto;; float: left;">
+			<div class="h-auto p-3">
+				날짜<br />
+				<div id="sd_date"></div>
 			</div>
-			<div class ="h-auto p-3">식단<br/>
-			<div id = "sd_diet"></div>
+			<div class="h-auto p-3">
+				식단<br />
+				<div id="sd_diet"></div>
 			</div>
-			<div class = "h-auto p-3">칼로리<br/>
-			<div id = "sd_kcal"></div>
+			<div class="h-auto p-3">
+				칼로리<br />
+				<div id="sd_kcal"></div>
 			</div>
-			<div class = "h-25 p-3">메모<br/>
-			<textarea id = "sd_memo" rows="10" cols="25"></textarea>
-			</div>							    
-		    </div>
+			<div class="h-25 p-3">
+				메모<br />
+				<textarea id="sd_memo" rows="10" cols="25"></textarea>
+			</div>
+		</div>
 	</section>
 </main>
 

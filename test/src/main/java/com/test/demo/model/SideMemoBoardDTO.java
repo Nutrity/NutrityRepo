@@ -9,6 +9,6 @@ import lombok.Setter;
 @Getter@Setter
 @AllArgsConstructor
 public class SideMemoBoardDTO {
-	private List<FoodList> fdlist;
+	private List<FoodList> flist;
 	private DietBoard sideBoard;
 }

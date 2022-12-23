@@ -38,21 +38,20 @@ import com.test.demo.service.MemberService;
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
-	
+
 	@Autowired
 	private BoardService boardService;
-	
+
 	@Autowired
 	private FoodRepository foodRepository;
-	
+
 	@Autowired
 	private MemberService memberService;
 
-	
 	@GetMapping("foodList")
 	@ResponseBody
 	public List<FoodList> foodlist(String foodname) {
-	//	System.out.println(flist.getFoodname());
+		// System.out.println(flist.getFoodname());
 		List<FoodList> foodlists = boardService.foodLists(foodname);
 		System.out.println(foodlists.size());
 		return foodlists;
@@ -60,10 +59,10 @@ public class BoardController {
 
 	@PostMapping("findfoods")
 	@ResponseBody
-	public List<FoodList> findfoods(@RequestParam(value = "foodArr") String[] foodArr){
+	public List<FoodList> findfoods(@RequestParam(value = "foodArr") String[] foodArr) {
 //		System.out.println(Arrays.toString(foodArr));
 		List<FoodList> fdlist = new ArrayList<>();
-		for(int i=0; i <foodArr.length; i++ ) {
+		for (int i = 0; i < foodArr.length; i++) {
 			fdlist.add(foodRepository.findByFoodcode(foodArr[i]));
 		}
 		System.out.println(Arrays.toString(foodArr));
@@ -73,70 +72,69 @@ public class BoardController {
 	@GetMapping("foodListDesc")
 	@ResponseBody
 	public List<FoodList> foodlistDesc(String foodname) {
-		//	System.out.println(flist.getFoodname());
+		// System.out.println(flist.getFoodname());
 		List<FoodList> foodlistsDesc = boardService.foodListsDesc(foodname);
 		System.out.println(foodlistsDesc.size());
 		return foodlistsDesc;
 	}
-	
+
 	@GetMapping("insert")
 	public String boardInsert() {
 		return "/dietboard/dietinsert";
 	}
-	
-	
+
 	@PreAuthorize("isAuthenticated()")
 	@PostMapping("insert")
 	@ResponseBody
 	public String boardInsert(@RequestBody DietBoard board) {
 		SecurityContext context = SecurityContextHolder.getContext();
-		PrincipalUser p = (PrincipalUser)context.getAuthentication().getPrincipal();
+		PrincipalUser p = (PrincipalUser) context.getAuthentication().getPrincipal();
 		board.setMember(p.getUser());
 		boardService.dietInsert(board);
 		System.out.println(board);
 		return "success";
 	}
-	
+
 	@GetMapping("list")
 	public String boardList() {
 		return "/dietboard/calendarTest(Anonymous)";
 	}
-	
+
 	@GetMapping("list/{num}")
 	public String boardListAuth() {
 		return "/dietboard/calendarTest";
 	}
-	
+
 	@GetMapping("calendar/{num}")
 	@ResponseBody
 	public List<DietBoard> boardList(@PathVariable Long num) {
 		return boardService.dietLists(num);
 	}
-	
-	@GetMapping("selectfood")		
-	public String selectfood(){	
+
+	@GetMapping("selectfood")
+	public String selectfood() {
 		return "/dietboard/selectfood";
 	}
-	
+
 	@GetMapping("selectfood/{bnum}")
 	@ResponseBody
-	public List<FoodList> selectfood(@PathVariable Long bnum){
+	public List<FoodList> selectfood(@PathVariable Long bnum) {
 		DietBoard dboard = boardService.dietDetail(bnum);
-			Set<String> foodcode = dboard.getFoodcode();
-			Iterator<String> it = foodcode.iterator();
-			List<FoodList> fdlist = new ArrayList<>();
-			while(it.hasNext()) {
+		Set<String> foodcode = dboard.getFoodcode();
+		Iterator<String> it = foodcode.iterator();
+		List<FoodList> fdlist = new ArrayList<>();
+		while (it.hasNext()) {
 			fdlist.add(foodRepository.findByFoodcode(it.next()));
-			}
+		}
 		return fdlist;
 	}
-	
+
 	@GetMapping("detail/{bnum}")
 	public String boardDetail(@PathVariable Long bnum, Model model) {
 		model.addAttribute("board", boardService.dietDetail(bnum));
 		return "/dietboard/dietdetail";
 	}
-	
+
 	@GetMapping("nGraph/{gender}")
 	@ResponseBody
 	public SuggestNutrient suggestNutrient(@PathVariable String gender) {
@@ -145,34 +143,37 @@ public class BoardController {
 
 	@PutMapping("update/{bnum}")
 	@ResponseBody
-	public String boardUpdate(@PathVariable Long bnum ,@RequestBody DietBoard board) {
+	public String boardUpdate(@PathVariable Long bnum, @RequestBody DietBoard board) {
 		board.setBnum(bnum);
 		boardService.dietUpdate(board);
 		return "success";
 	}
-	
+
 	@DeleteMapping("delete/{bnum}")
 	@ResponseBody
 	public String boardDelete(@PathVariable Long bnum) {
 		boardService.dietDelete(bnum);
 		return "success";
 	}
-	
+
 	@GetMapping("sbmemo/{date}")
 	@ResponseBody
 	public SideMemoBoardDTO sbmemo(@PathVariable String date) throws ParseException {
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		 Date formdate = formatter.parse(date);
-		 DietBoard sideBoard = boardService.findByRegDate(formdate);//dietboard 값
-		 Set<String> foodArr = sideBoard.getFoodcode(); //foodcode set
-		 Iterator<String> codelist = foodArr.iterator();
-		 
-		 List<FoodList> fdlist = new ArrayList<>();//foodlist 값
-		 while(codelist.hasNext()) {
-			 fdlist.add(foodRepository.findByFoodcode(codelist.next()));
-		 }
-		 SideMemoBoardDTO sideMemo = new SideMemoBoardDTO(fdlist, sideBoard);
-		return sideMemo;
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date formdate = formatter.parse(date);
+		DietBoard sideBoard = boardService.findByRegDate(formdate);// dietboard 값
+		if (sideBoard != null) {
+			Set<String> foodArr = sideBoard.getFoodcode(); // foodcode set
+			Iterator<String> codelist = foodArr.iterator();
+			List<FoodList> flist = new ArrayList<>();// foodlist 값
+			while (codelist.hasNext()) {
+				flist.add(foodRepository.findByFoodcode(codelist.next()));
+			}
+			SideMemoBoardDTO sideMemo = new SideMemoBoardDTO(flist, sideBoard);
+
+			return sideMemo;
+		} else {
+			return null;
+		}
 	}
-	
 }

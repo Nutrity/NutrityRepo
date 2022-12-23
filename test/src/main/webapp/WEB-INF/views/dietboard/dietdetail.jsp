@@ -64,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		url : '/board/selectfood/'+$("#bnum").val(),
 	})//ajax
 	.done(function(resp){
-		console.log(resp)
-		
 		const listHeadr = ['음식 이름', '카테고리', '칼로리(kcal)', '탄수화물(g)', '단백질(g)', '지방(g)', '당(g)',
 			'나트륨(mg)', '트랜스<br>지방(g)', '칼슘(mg)', '비타민C(mg)', '철분(mg)']
 		
@@ -246,6 +244,7 @@ function getReturnObj(fdlist) {
 	</sec:authorize>
 	<div id = "ResultComment"></div>
 <script>
+
 function commentDel(){
 	$.ajax({
 		type : "delete",
@@ -282,6 +281,8 @@ var init = function(){
 		$("#ResultComment").html(str)
 	})	
 }
+
+// 삭제
 $("#boardDeleteBtn").click(function(){
 	$.ajax({
 		type:"delete",
@@ -294,7 +295,7 @@ $("#boardDeleteBtn").click(function(){
 	
 })
 
-
+//업데이트
 $("#dietUpdateBtn").click(function(){
 	
 	var data = {
@@ -318,6 +319,7 @@ $("#dietUpdateBtn").click(function(){
 	
 });//function
 
+//댓글 
 $("#comment").click(function(){
 	if($("#msg").val() == ""){
 		alert("댓글을 입력해주세요.")

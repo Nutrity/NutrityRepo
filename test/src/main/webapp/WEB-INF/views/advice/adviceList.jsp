@@ -23,22 +23,18 @@
 
 	<section>
 	<div class="container">
-	
+	    <h3>의 게시글</h3>
 			<table class="table table-hover" style="text-align: center;">
 			  <tr>
-			    <th>username</th>
-			    <th>age</th>
-			    <th>gender</th>
-			    <th>count</th>
+			    <th>제목</th>
+			    <th>작성날짜</th>
+			    <th>메모</th>
 			  </tr>
-
-			<c:forEach items="${member}" var="mem" varStatus="status">
-			<input type = "hidden" id = "num" name = "num" value = "${mem.num}"/>
+			<c:forEach items="${board}" var="b">
 				<tr>
-					<td>${mem.username}</td>
-					<td>${mem.age }</td>
-					<td>${mem.gender }</td>
-					<td>${cmpBoardCnt[status.index]}</td>
+					<td><a href = "/board/detail/${b.bnum}">${b.title}</a></td>
+					<td>${b.regdate}</td>
+					<td>${b.memo}</td>
 				</tr>
 			</c:forEach>
 			</table>

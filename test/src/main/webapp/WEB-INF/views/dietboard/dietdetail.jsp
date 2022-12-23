@@ -236,12 +236,10 @@ function getReturnObj(fdlist) {
 	</div>
 	
 	<!-- 댓글 -->
-	<sec:authorize access = "hasAnyRole('ADMIN','EXPERT')">
 	<div align = "center">	
 	<textarea rows = "3" cols = "50" id = "msg"></textarea>
 	<button type = "button" class = "btn btn-secondary btn-sm" id = "comment">댓글쓰기</button>
 	</div>
-	</sec:authorize>
 	<div id = "ResultComment"></div>
 <script>
 
@@ -268,14 +266,12 @@ var init = function(){
 		var str = "<table class = 'table table-hover'>"
 		$.each(resp, function(key, val){
 			str += "<input type = 'hidden' id = 'cnum' name ='cnum' value = '"+val.cnum+"'/>"
-			if(${p.user.job.role} == "ROLE_EXPERT"&&${p.user.num == val.member.num}){
 				str += "<tr>"
 					str += "<td>" + val.member.username + "</td>"
 					str += "<td>" + val.content + "</td>"
 					str += "<td>" + val.c_regdate + "</td>"
 					str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"			
-					str +="</tr>"
-			}			
+					str +="</tr>"			
 		})
 		str +="</table>"
 		$("#ResultComment").html(str)

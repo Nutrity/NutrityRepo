@@ -72,18 +72,21 @@
 		    		url : "/board/sbmemo/"+info.startStr
 		    	})//ajax
 		    	.done(function(resp){
-		    			
-					var foodname = "";		    		
-					var foodkcal = "";
-					
-		    		$.each(resp.flist, function(key, val) {
-					foodname += "<a>" + Object.values(val)[1] + '<a> ';
-		    		});//each
+		    		if(resp != null){
+		    		    var foodname = "";
+		    		    var foodkcal = 0;
 		    		
-		    		$("#sd_date").html(resp.sideBoard.regdate);
-		    		$("#sd_diet").html(foodname);
-		    		$("#sd_memo").html(resp.sideBoard.memo)
-		    		
+		    		    $.each(resp.flist, function(key, val) {
+		    		        foodname += "<a>" + Object.values(val)[1] + '<a><br/>';
+		    		        foodname += "<div style ='font-size:15px'>kcal : "+ Object.values(val)[3] +"</div>"
+		    		        foodkcal += parseFloat(Object.values(val)[3]);
+		    		    });//each
+		    		                
+		    		    $("#sd_date").html(resp.sideBoard.regdate);
+		    		    $("#sd_diet").html(foodname);
+		    		    $("#sd_kcal").html(foodkcal);
+		    		    $("#sd_memo").html(resp.sideBoard.memo)
+		    		    }
 		    		})//in done
 		      },//select
               events: events

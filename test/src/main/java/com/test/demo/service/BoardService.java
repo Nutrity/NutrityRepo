@@ -31,7 +31,7 @@ public interface BoardService {
 	public SuggestNutrient findByGender(String gender);
 	
 	// 사이드바 간략 표현
-	public DietBoard findByRegDate(Date date);
+	public DietBoard findByRegDatenMember(Date date, Member member);
 	
 	//Member로 count
 	public int countByMember(Member member);

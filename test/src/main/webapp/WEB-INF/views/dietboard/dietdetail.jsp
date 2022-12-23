@@ -209,41 +209,59 @@ function getReturnObj(fdlist) {
 			</div>
 		</div>
 	</div>
+	<section id="FormSignin">
+		<div>
+			<input type="hidden" value="${board.bnum}" id="bnum">
+		</div>
+		<div class="container">
+	<h3>${board.regdate}</h3>
+			<div>
+				<label>제목</label>
+				<input class="form-control" type="text"	value="${board.title}" id="title"> <br>
+			</div>
+			
+<!-- 			<div> -->
+<!-- 				<label>작성일</label> -->
+<%-- 				<input  class="form-control" type="text" value="${board.regdate}"	id="regdate"><br> --%>
+<!-- 			</div> -->
+			
+			<div>
+				<label>메모</label>
+				<textarea  class="form-control" rows="5" cols="50" id="memo">${board.memo}</textarea>
+				<br>
+			</div>
+			
+			<div>
+				<label>음식 리스트</label><br>
+				<div id="selectedfoods"></div>
+			</div>
+			
+			<div>
+				<div id="resultFoodList"></div>
+				<button onclick="foodFinder()">검색</button>
+			</div>
+		
+			<label for="nutrents">영양 그래프</label>
+			<div id="nutrents"></div>
 
-	<div>
-		<input type="hidden" value="${board.bnum}" id="bnum">
-	</div>
-	<div></div>
-	<label>제목</label> <input type="text" value="${board.title}" id="title">
-	<br> <label>작성일</label>
-	 <input type="text"	value="${board.regdate}" id="regdate"><br> <label>메모</label>
-	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea>
-	<br> <label>음식 리스트</label><br>
-	<div id="selectedfoods"></div>
-	
-	<div>
-		<div id="resultFoodList"></div>
-		<button onclick="foodFinder()">검색</button>
-	</div>
+			<div>
+				<input type="button" id="dietUpdateBtn" value="수정"> <input
+					type="button" id="boardDeleteBtn" value="삭제">
+			</div>
+		</div>
+	</section>
 
-	<label for="nutrents">영양 그래프</label>
-	<div id="nutrents">
-	</div>
-	
-	<div>
-	<input type="button" id="dietUpdateBtn" value="수정">
-	<input type="button" id="boardDeleteBtn" value="삭제">
-	</div>
-	
 	<!-- 댓글 -->
-	<sec:authorize access="hasAnyRole({'EXPERT','SUBSCRIBE','ADMIN'})">
-	<div align = "center">	
-	<textarea rows = "3" cols = "50" id = "msg"></textarea>
-	<button type = "button" class = "btn btn-secondary btn-sm" id = "comment">댓글쓰기</button>
-	</div>
-	<div id = "ResultComment"></div>
-	</sec:authorize>
-<script>
+	<section>
+		<sec:authorize access="hasAnyRole({'EXPERT','SUBSCRIBE','ADMIN'})">
+			<div align="center">
+				<textarea rows="3" cols="50" id="msg"></textarea>
+				<button type="button" class="btn btn-secondary btn-sm" id="comment">댓글쓰기</button>
+			</div>
+			<div id="ResultComment"></div>
+		</sec:authorize>
+	</section>
+	<script>
 
 function commentDel(){
 	$.ajax({

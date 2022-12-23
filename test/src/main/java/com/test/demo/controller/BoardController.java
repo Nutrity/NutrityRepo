@@ -51,30 +51,24 @@ public class BoardController {
 	@GetMapping("foodList")
 	@ResponseBody
 	public List<FoodList> foodlist(String foodname) {
-		// System.out.println(flist.getFoodname());
 		List<FoodList> foodlists = boardService.foodLists(foodname);
-		System.out.println(foodlists.size());
 		return foodlists;
 	}
 
 	@PostMapping("findfoods")
 	@ResponseBody
 	public List<FoodList> findfoods(@RequestParam(value = "foodArr") String[] foodArr) {
-//		System.out.println(Arrays.toString(foodArr));
 		List<FoodList> fdlist = new ArrayList<>();
 		for (int i = 0; i < foodArr.length; i++) {
 			fdlist.add(foodRepository.findByFoodcode(foodArr[i]));
 		}
-		System.out.println(Arrays.toString(foodArr));
 		return fdlist;
 	}
 
 	@GetMapping("foodListDesc")
 	@ResponseBody
 	public List<FoodList> foodlistDesc(String foodname) {
-		// System.out.println(flist.getFoodname());
 		List<FoodList> foodlistsDesc = boardService.foodListsDesc(foodname);
-		System.out.println(foodlistsDesc.size());
 		return foodlistsDesc;
 	}
 
@@ -91,7 +85,6 @@ public class BoardController {
 		PrincipalUser p = (PrincipalUser) context.getAuthentication().getPrincipal();
 		board.setMember(p.getUser());
 		boardService.dietInsert(board);
-		System.out.println(board);
 		return "success";
 	}
 

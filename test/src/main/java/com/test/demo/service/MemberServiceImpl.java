@@ -76,7 +76,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void userUpdate(Member member) {
 		Member m = memberRepository.findById(member.getNum()).get();
-		System.out.println("m : " + m.toString());
 		m.getJob().setRole(member.getJob().getRole());
 	}
 
@@ -148,8 +147,6 @@ public class MemberServiceImpl implements MemberService {
 		List<PayInfo> pListInfo = principal.getPayInfo();
 		int last = pListInfo.size()-1;
 		PayInfo pInfo = pListInfo.get(last);
-		System.out.println("pListInfo:"+pListInfo);
-		System.out.println("last:"+last);
 		Member member = memberRepository.findById(principal.getNum()).get();
 		if (pInfo.getExpiredDate().before(new Date())){
 			member.getJob().setRole("ROLE_USER");

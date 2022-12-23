@@ -33,7 +33,6 @@ public class AdminController {
 	@GetMapping("memlist")
 	public String memlist(Model model) {
 		model.addAttribute("member", mService.findAll());
-		System.out.println(mService.findAll().toString());
 		return "/admin/memlist";
 	}
 	

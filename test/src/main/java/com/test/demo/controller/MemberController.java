@@ -79,7 +79,6 @@ public class MemberController {
 	@PutMapping("modify")
 	@ResponseBody
 	public String modify(@RequestBody Member member) {
-		System.out.println(member.toString());
 		mService.modify(member);
 		return "success";
 	}

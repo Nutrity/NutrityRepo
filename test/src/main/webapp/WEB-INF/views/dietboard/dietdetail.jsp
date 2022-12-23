@@ -302,7 +302,6 @@ $("#dietUpdateBtn").click(function(){
 			foodcode: fdlistFoodcodes
 		}//data 
 		
-		console.log(JSON.stringify(data))
 		$.ajax({
 			type: "put",
 			url: "/board/update/"+$("#bnum").val(),

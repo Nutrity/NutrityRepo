@@ -53,7 +53,6 @@
 		});
 
 	}
-	console.log(fdlistFoodcodes)
 </script>
 
 <main id="main">

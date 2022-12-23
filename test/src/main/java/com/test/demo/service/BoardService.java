@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
 import com.test.demo.model.Member;
@@ -19,6 +22,10 @@ public interface BoardService {
 	public void dietDelete(Long bnum);
 	//상세보기
 	public DietBoard dietDetail(Long bnum);
+	
+	//음식리스트
+	public Page<FoodList> foodLists(String foodname, Pageable pageable);
+	
 	//음식리스트
 	public List<FoodList> foodLists(String foodname);
 	//음식리스트(내림차순)

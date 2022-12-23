@@ -69,6 +69,9 @@
 					<sec:authorize access="isAnonymous()">
 						<li><a href="/board/list">내 식단</a></li>
 					</sec:authorize>
+					<sec:authorize access="hasRole('EXPERT')">
+						<li><a href="/expert/advicelist">구독자 목록</a></li>
+					</sec:authorize>
 					<sec:authorize access="hasRole('ADMIN')">
 						<li><a href="/admin/memlist">회원 목록</a></li>
 						<li><a href="/admin/requestQual">자격 요청 목록</a></li>

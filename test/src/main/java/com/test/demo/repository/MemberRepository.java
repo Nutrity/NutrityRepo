@@ -17,5 +17,8 @@ public interface MemberRepository extends JpaRepository<Member,Long>{
 	@Query(value = "select * from member where qual_name IS NOT NULL AND role = 'ROLE_USER'", nativeQuery = true)
 	public List<Member> findRequest();
 	
+	@Query(value = "SELECT * FROM member where role = 'ROLE_SUBSCRIBE'", nativeQuery = true)
+	public List<Member> findByRole();
+	
 
 }

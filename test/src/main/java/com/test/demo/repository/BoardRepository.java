@@ -18,4 +18,6 @@ public interface BoardRepository extends JpaRepository<DietBoard, Long>{
 	
 	DietBoard findByRegdate(Date regdate);
 	
+	Long countByNum(Long num);
+	
 }

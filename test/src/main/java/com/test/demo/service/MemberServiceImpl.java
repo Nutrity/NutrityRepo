@@ -24,6 +24,7 @@ import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.model.PayInfo;
 import com.test.demo.model.Product;
+import com.test.demo.repository.BoardRepository;
 import com.test.demo.repository.MemberRepository;
 import com.test.demo.repository.PayRepository;
 
@@ -36,6 +37,9 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberRepository memberRepository;
+	
+	@Autowired
+	private BoardRepository boardRepository;
 
 	@Autowired
 	private PayRepository payRepository;
@@ -152,6 +156,11 @@ public class MemberServiceImpl implements MemberService {
 		}
 
 }
+
+	@Override
+	public Long boardCount(Long num) {
+		return boardRepository.countByNum(num);
+	}
 
 
 	

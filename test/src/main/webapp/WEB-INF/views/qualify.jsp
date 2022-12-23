@@ -62,16 +62,14 @@
 							<div class="col-2">
 								<button class="form-control btn btn-primary">보내기</button>
 							</div>
-						</div>
-
-						<!-- 			본인인증 구현 예정 -->
-						<!-- 							<button class="btn btn-danger" id="identiry">본인 인증</button> -->
-						<!-- 						<div id="identify"></div> -->
-
+						</div>						
 					</form>
 				</div>
 			</div>
-		</div>
+			<c:if test="${not empty p.user.job.qualName}">
+			<div style = " float: right;'">자격 인증이 진행 중입니다.</div>
+			</c:if>
+		</div>		
 	</section>
 </main>
 

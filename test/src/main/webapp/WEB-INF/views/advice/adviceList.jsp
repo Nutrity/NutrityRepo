@@ -23,7 +23,7 @@
 
 	<section>
 	<div class="container">
-	    <h3>의 게시글</h3>
+	    <h3>${board[num].member.username}의 게시글</h3>
 			<table class="table table-hover" style="text-align: center;">
 			  <tr>
 			    <th>제목</th>

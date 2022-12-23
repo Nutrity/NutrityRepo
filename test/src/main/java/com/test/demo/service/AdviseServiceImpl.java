@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.demo.model.CommentBoard;
+import com.test.demo.model.DietBoard;
 import com.test.demo.model.Member;
 import com.test.demo.repository.AdviceRepository;
 import com.test.demo.repository.MemberRepository;
@@ -47,7 +48,6 @@ public class AdviseServiceImpl implements AdviceService{
 	public List<Member> sublist() {
 		return memberRepository.findByRole();
 	}
-	
 	
 
 }

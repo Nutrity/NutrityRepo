@@ -159,7 +159,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Long boardCount(Long num) {
-		return boardRepository.countByNum(num);
+		return null;
 	}
 
 

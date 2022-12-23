@@ -72,6 +72,7 @@
 		    		url : "/board/sbmemo/"+info.startStr
 		    	})//ajax
 		    	.done(function(resp){
+		    			
 					var foodname = "";		    		
 					var foodkcal = "";
 					
@@ -84,7 +85,6 @@
 		    		$("#sd_memo").html(resp.sideBoard.memo)
 		    		
 		    		})//in done
-		    		
 		      },//select
               events: events
               

@@ -13,11 +13,13 @@ import com.test.demo.model.Member;
 public interface BoardRepository extends JpaRepository<DietBoard, Long>{
 
 	List<DietBoard> findAllByMember(Optional<Member> member);
+	
+	int countByMember(Member member);
 
 	void save(Set<String> foodcode);
 	
 	DietBoard findByRegdate(Date regdate);
 	
-	Long countByNum(Long num);
+
 	
 }

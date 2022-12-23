@@ -2,9 +2,11 @@ package com.test.demo.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import com.test.demo.model.DietBoard;
 import com.test.demo.model.FoodList;
+import com.test.demo.model.Member;
 import com.test.demo.model.SuggestNutrient;
 
 public interface BoardService {
@@ -30,5 +32,8 @@ public interface BoardService {
 	
 	// 사이드바 간략 표현
 	public DietBoard findByRegDate(Date date);
+	
+	//Member로 count
+	public int countByMember(Member member);
 	
 }

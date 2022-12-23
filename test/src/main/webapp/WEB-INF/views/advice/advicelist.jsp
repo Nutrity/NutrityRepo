@@ -29,15 +29,16 @@
 			    <th>username</th>
 			    <th>age</th>
 			    <th>gender</th>
-
+			    <th>count</th>
 			  </tr>
 
-			<c:forEach items="${member }" var="mem">
+			<c:forEach items="${member}" var="mem" varStatus="status">
 			<input type = "hidden" id = "num" name = "num" value = "${mem.num}"/>
 				<tr>
 					<td>${mem.username}</td>
 					<td>${mem.age }</td>
 					<td>${mem.gender }</td>
+					<td>${cmpBoardCnt[status.index]}</td>
 				</tr>
 			</c:forEach>
 			</table>

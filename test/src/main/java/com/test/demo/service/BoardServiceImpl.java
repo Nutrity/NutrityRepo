@@ -92,6 +92,13 @@ public class BoardServiceImpl implements BoardService{
 	public DietBoard findByRegDate(Date date) {
 		return boardRepository.findByRegdate(date);
 	}
+
+	@Override
+	public int countByMember(Member member) {
+		return boardRepository.countByMember(member);
+	}
+
+
 	
 	
 	

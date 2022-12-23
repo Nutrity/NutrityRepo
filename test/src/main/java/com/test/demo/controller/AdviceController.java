@@ -46,7 +46,6 @@ public class AdviceController {
 	@GetMapping("adviceList/{num}")
 	public String advicelist(@PathVariable Long num, Model model) {
 		model.addAttribute("board", bService.dietLists(num));
-		System.out.println("type : " + bService.dietLists(num));
 		return "/advice/adviceList";
 	}
 

@@ -34,6 +34,7 @@
 
 			<c:forEach items="${member}" var="mem" varStatus="status">
 				<tr>
+<%-- 					<td><a href = "/expert/adviceList/${mem.num}">${mem.username}</a></td> --%>
 					<td><a href = "/expert/adviceList/${mem.num}">${mem.username}</a></td>
 					<td>${mem.age }</td>
 					<td>${mem.gender }</td>

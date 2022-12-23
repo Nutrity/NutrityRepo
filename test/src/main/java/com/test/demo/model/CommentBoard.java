@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -36,5 +37,6 @@ public class CommentBoard {
 	
 	@ManyToOne
 	@JoinColumn(name = "bnum")
+	@JsonIgnore
 	private DietBoard dietboard;
 }

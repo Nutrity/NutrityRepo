@@ -46,6 +46,6 @@ public interface MemberService {
 	//구독 만료 확인
 	public void subcheck(Member principal);
 	
-	//회원이 작성한 식단의 개수
-	public Long boardCount(Long num);
+	//자격 요청 거절 
+	public void delQualName(Long num);
 }

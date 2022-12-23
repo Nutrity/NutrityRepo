@@ -29,7 +29,7 @@
 			    <th>realname</th>
 			    <th>gender</th>
 			    <th>birth</th>
-			    <th>user_regdate</th>
+			    <th>Job</th>
 			    <th>Role</th>
 			    <th>ip</th>
 			    <th>수정</th>
@@ -61,10 +61,27 @@ $("#BtnModiRole").click(function(){
 		url : "/admin/modiRole/"+$("#num").val()
 	})
 	.done(function(resp){
-		alert("수정이 완료되었습니다.");
+		alert("승인이 완료되었습니다.");
 		location.href = '/admin/requestQual'
 	})
 })
+
+$("#RejectBtn").click(function(){
+	$.ajax({
+		type : 'put',
+		url : "/admin/rejectRequest/"+$("#num").val()
+	})
+	.done(function(resp){
+		if(resp=="success"){
+		alert("거절하였습니다")
+		location.href = '/admin/requestQual'
+		}
+	})
+	
+})
+
+
+
 
 </script>
 <%@include file="../include/footer.jsp"%>

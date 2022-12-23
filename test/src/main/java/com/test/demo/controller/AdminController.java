@@ -69,4 +69,11 @@ public class AdminController {
 		return m.getJob().getRole();
 	}
 	
+	@PutMapping("rejectRequest/{num}")
+	@ResponseBody
+	public String rejectRequest(@PathVariable Long num) {
+		mService.delQualName(num);
+		return "success";
+	}
+	
 }

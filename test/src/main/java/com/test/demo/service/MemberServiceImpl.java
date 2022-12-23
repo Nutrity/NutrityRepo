@@ -158,10 +158,10 @@ public class MemberServiceImpl implements MemberService {
 }
 
 	@Override
-	public Long boardCount(Long num) {
-		return null;
+	public void delQualName(Long num) {
+		memberRepository.rejectQual(num);
+		
 	}
-
 
 	
 	

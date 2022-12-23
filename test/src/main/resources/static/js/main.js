@@ -194,7 +194,7 @@
 							"<div data-aos='fade-up' data-aos-delay='100' class='link-sector'>";
 						str += "<div class='row justify-content-end'>";
 						str += "<div class='col-4'>";
-						str += "<a href='#'>";
+						str += "<a href='/login'>";
 						str += '<h3>';
 						str += '나만의 식단 만들기';
 						str += "<i class='bi bi-arrow-right'></i>";

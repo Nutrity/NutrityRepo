@@ -1,0 +1,19 @@
+serviceimpl
+
+@Override
+	public void modiRole(Long num) {
+		Member m = memberRepository.findById(num).get();
+		m.getJob().setRole("ROLE_EXPERT");
+	}
+
+service
+// 전문가 권한 부여
+	public void modiRole(Long num);
+
+@PutMapping("modiRole/{num}")
+	@ResponseBody
+	public String modiRole(@PathVariable Long num) {
+		mService.modiRole(num);
+		Member m = mRepository.findById(num).get();
+		return m.getJob().getRole();
+	}

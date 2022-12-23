@@ -48,4 +48,8 @@ public interface MemberService {
 	
 	//자격 요청 거절 
 	public void delQualName(Long num);
+	
+	//멤버 찾기
+	public Member detailMember(Long num);
+	
 }

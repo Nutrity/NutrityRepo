@@ -26,7 +26,6 @@
 			selectable: true,
 			editable : true,
 		      select: function(info) {
-		        alert('selected ' + info.startStr + ' to ' + info.endStr);
 		        location.href = "/board/insert"
 		      },
 		});

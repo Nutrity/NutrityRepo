@@ -69,10 +69,12 @@
 		    	start: Date
 		    	$.ajax({
 		    		type : "get",
-		    		url : "/board/sbmemo/"+info.startStr
+		    		url : "/board/sbmemo/"+${p.user.num}+"/"+info.startStr,
+		    		
 		    	})//ajax
 		    	.done(function(resp){
-		    		if(resp != null){
+		    		console.log( "resp:"+ resp)
+		    		if(resp != ""){
 		    		    var foodname = "";
 		    		    var foodkcal = 0;
 		    		
@@ -86,9 +88,12 @@
 		    		    $("#sd_diet").html(foodname);
 		    		    $("#sd_kcal").html(foodkcal);
 		    		    $("#sd_memo").html(resp.sideBoard.memo)
+		    		    }else if(resp==""){
+		    		    	 location.href = "/board/insert"
 		    		    }
 		    		})//in done
 		      },//select
+		      
               events: events
               
 		    	})//calendar
@@ -135,7 +140,7 @@
 				<div id="sd_diet"></div>
 			</div>
 			<div class="h-auto p-3">
-				칼로리<br />
+				칼로리(kcal)<br />
 				<div id="sd_kcal"></div>
 			</div>
 			<div class="h-25 p-3">

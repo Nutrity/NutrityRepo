@@ -63,12 +63,12 @@ public class MemberServiceImpl implements MemberService {
 		m.setPhone(member.getPhone());
 
 	}
-
+	@Override
 	public Member detailMember(Long num) {
 		return memberRepository.findById(num).get();
 	}
 
-
+	@Override
 	public void userDelete(Long num) {
 		memberRepository.deleteById(num);
 	}

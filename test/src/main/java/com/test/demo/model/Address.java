@@ -10,7 +10,6 @@ import lombok.ToString;
 
 @Getter
 @Embeddable
-@ToString
 public class Address {
 	 
 	private String address1;

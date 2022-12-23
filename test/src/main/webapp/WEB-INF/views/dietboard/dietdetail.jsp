@@ -236,11 +236,13 @@ function getReturnObj(fdlist) {
 	</div>
 	
 	<!-- 댓글 -->
+	<sec:authorize access="hasAnyRole({'EXPERT','SUBSCRIBE','ADMIN'})">
 	<div align = "center">	
 	<textarea rows = "3" cols = "50" id = "msg"></textarea>
 	<button type = "button" class = "btn btn-secondary btn-sm" id = "comment">댓글쓰기</button>
 	</div>
 	<div id = "ResultComment"></div>
+	</sec:authorize>
 <script>
 
 function commentDel(){

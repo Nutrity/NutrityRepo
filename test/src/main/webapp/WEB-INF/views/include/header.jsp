@@ -106,6 +106,7 @@
 					<sec:authorize access="isAuthenticated()">
 						<li class="dropdown"><a href="/modify"><span>내 정보수정</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
 							<ul>
+								<li><a href="/modify">회원정보수정</a></li>
 								<li><a href="/qualify">전문가 자격 인증</a></li>
 							</ul>
 						</li>

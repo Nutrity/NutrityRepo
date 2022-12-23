@@ -28,15 +28,36 @@
 						<h5 class="card-title">자격 인증</h5>
 						<div class="row">
 							<div class="col-3">
-								<select class="form-control" name="job">
+							<c:choose>
+							  <c:when test="${not empty p.user.job.job}">
+							    <select class="form-control" name="job" disabled>
 									<option value="Doctor">의사</option>
 									<option value="Nutritionist">영양사</option>
 									<option value="Trainer">PT 트레이너</option>
 								</select>
+							  </c:when>
+							<c:otherwise>
+							    <select class="form-control" name="job">
+									<option value="Doctor">의사</option>
+									<option value="Nutritionist">영양사</option>
+									<option value="Trainer">PT 트레이너</option>
+								</select>
+							</c:otherwise>
+							</c:choose>
+								
 							</div>
 							<div class="col-7">
-								<input class="form-control" type="file" name="upload"
+							<c:choose>
+							  <c:when test="${not empty p.user.job.qualName}">
+							    <input class="form-control" type="file" name="upload"
+									placeholder="자격증을 업로드 해 주세요" disabled>
+							  </c:when>
+							  <c:otherwise>
+							    <input class="form-control" type="file" name="upload"
 									placeholder="자격증을 업로드 해 주세요">
+							  </c:otherwise>
+							</c:choose>
+								
 							</div>
 							<div class="col-2">
 								<button class="form-control btn btn-primary">보내기</button>

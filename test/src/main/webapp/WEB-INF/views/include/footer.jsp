@@ -20,46 +20,34 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="/">홈</a></li>
-            <sec:authorize access="isAuthenticated()">
-				<li><a href="/modify">내 정보 수정</a></li>
-                <li><a href="/board/list/${p.user.num}">내 식단</a></li>
-			</sec:authorize>
-			<sec:authorize access="isAnonymous()">
-				<li><a href="/board/list">내 식단</a></li>
-			</sec:authorize>
-			    <li><a href="/board/insert">식단 입력</a></li>
-            <sec:authorize access = "hasRole('USER')">
-			    <li><a href="/pay">결제</a></li>
-			    <li><a href="/qualify">전문가 자격 인증</a></li>
-			 </sec:authorize>
-          </ul>
-        </div>
+<!--         <div class="col-lg-3 col-6 footer-links"> -->
+<!--           <h4>Useful Links</h4> -->
+<!--           <ul> -->
+<!--             <li><a href="/">홈</a></li> -->
+<%--             <sec:authorize access="isAuthenticated()"> --%>
+<!-- 				<li><a href="/modify">내 정보 수정</a></li> -->
+<%--                 <li><a href="/board/list/${p.user.num}">내 식단</a></li> --%>
+<%-- 			</sec:authorize> --%>
+<%-- 			<sec:authorize access="isAnonymous()"> --%>
+<!-- 				<li><a href="/board/list">내 식단</a></li> -->
+<%-- 			</sec:authorize> --%>
+<!-- 			    <li><a href="/board/insert">식단 입력</a></li> -->
+<%--             <sec:authorize access = "hasRole('USER')"> --%>
+<!-- 			    <li><a href="/pay">결제</a></li> -->
+<!-- 			    <li><a href="/qualify">전문가 자격 인증</a></li> -->
+<%-- 			 </sec:authorize> --%>
+<!--           </ul> -->
+<!--         </div> -->
 
-        <div class="col-lg-3 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-<!--         <div class="col-lg-2 col-6 "> -->
-<!--           <h4>Contact Us</h4> -->
-<!--           <p> -->
-<!--             A108 Adam Street <br> -->
-<!--             New York, NY 535022<br> -->
-<!--             United States <br><br> -->
-<!--             <strong>Phone:</strong> +1 5589 55488 55<br> -->
-<!--             <strong>Email:</strong> info@example.com<br> -->
-<!--           </p> -->
-
+<!--         <div class="col-lg-3 col-6 footer-links"> -->
+<!--           <h4>Our Services</h4> -->
+<!--           <ul> -->
+<!--             <li><a href="#">Web Design</a></li> -->
+<!--             <li><a href="#">Web Development</a></li> -->
+<!--             <li><a href="#">Product Management</a></li> -->
+<!--             <li><a href="#">Marketing</a></li> -->
+<!--             <li><a href="#">Graphic Design</a></li> -->
+<!--           </ul> -->
 <!--         </div> -->
 
       </div>

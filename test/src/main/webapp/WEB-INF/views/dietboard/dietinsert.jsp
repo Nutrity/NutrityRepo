@@ -9,14 +9,14 @@
 	
 	var fdlistFoodcodes = []
 	function getReturnObj(fdlist) {
-		const listHeadr = [ '음식 이름', '카테고리', '칼로리', '탄수화물', '단백질', '지방', '당',
-				'나트륨', '트랜스<br>지방', '칼슘', '비타민C', '철분' ]
+		const listHeadr = [ '음식 이름', '카테고리', '칼로리(kcal)', '탄수화물(g)', '단백질(g)', '지방(g)', '당(g)',
+				'나트륨(mg)', '트랜스<br>지방(g)', '칼슘(mg)', '비타민C(mg)', '철분(mg)' ]
 		var str = '';
 		str += "<div class='container'>";
 		str += "<table data-aos='fade-up' class='table table-hover'>"
 		str += "<thead>"
 		str += "<tr>"
-		str += "<th class='col-3'>"
+		str += "<th class='col-2'>"
 		str += "</th>"
 		for (let i = 0; i < 11; i++) {
 			str += "<th class='col'></th>"
@@ -26,7 +26,7 @@
 		str += "<tbody data-aos='fade-up'>";
 		$.each(JSON.parse(fdlist), function(key, val) {
 			str += "<tr>";
-			str += "<td class='col-3'>" + Object.values(val)[1] + '</td> ';
+			str += "<td class='col-2'>" + Object.values(val)[1] + '</td> ';
 			for (let i = 2; i < 13; i++) {
 				str += "<td class='col'>" + Object.values(val)[i] + "</td>"
 			}
@@ -72,33 +72,39 @@
 			</div>
 		</div>
 	</div>
-	
+	<section id = "FormSignin">
 	<sec:authorize access="isAuthenticated()">
 		<div>
 			<input type="hidden" id="num" value="${p.user.num}">
 		</div>
 	</sec:authorize>
+	
+	<div class="container">
 
 	<div>
-	<label>Date</label> <input type="date" id="regdate" placeholder="날짜를 선택해주세요">
+	<label>Date</label> 
+	<input type="date" class="form-control" id="regdate" placeholder="날짜를 선택해주세요"><br/>
 	</div>
 
 	<div>
-		<label>title</label> <input type="text" id="title">
+		<label>Title</label> 
+		<input type="text" class="form-control" id="title"><br/>
 	</div>
 
 	<div>
-		<label>foodlist</label>
+		<label>Foodlist</label>
 		<div id="resultFoodList"></div>
-		<button onclick="foodFinder()">검색</button>
+		<button onclick="foodFinder()">검색</button><br/>
 	</div>
 
 	<div>
-		<label>memo</label>
-		<textarea rows="5" cols="40" id="memo"></textarea>
+		<label>Memo</label>
+		<textarea class="form-control" rows="5" cols="40" id="memo"></textarea><br/>
 	</div>
 
-	<button type="button" id="dietInsertBtn">저장</button>    
+	<button type="button" class="btn btn-secondary btn-sm" id="dietInsertBtn">저장</button>
+	</div> 
+	</section>   
 </main>
     
 <%@include file="../include/footer.jsp"%>

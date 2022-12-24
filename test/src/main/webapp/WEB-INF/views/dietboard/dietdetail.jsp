@@ -320,19 +320,23 @@ var init = function(){
 	.done(function(resp){
 		var str = "<hr>"
 		str += "<table class = 'table' style='text-align: center;'>"
-		$.each(resp, function(key, val){
-			str += "<input type = 'hidden' id = 'cnum' name ='cnum' value = '"+val.cnum+"'/>"
 			str += "<tr>"
-			str += "<th>ID</th>"
-			str += "<th>내용</th>"
-			str += "<th>작성일</th>"
-			str += "<th>삭제</th>"
-			str += "</tr>"
+				str += "<th>ID</th>"
+				str += "<th>내용</th>"
+				str += "<th>작성일</th>"
+				if(${p.user.num} == resp[].member.num ){
+				  str += "<th>삭제</th>"
+				}
+				str += "</tr>"
+		$.each(resp, function(key, val){
+			str += "<input type = 'hidden' id = 'cnum' name ='cnum' value = '"+val.cnum+"'/>"			
 				str += "<tr>"
 					str += "<td>" + val.member.username + "</td>"
 					str += "<td>" + val.content + "</td>"
 					str += "<td>" + val.c_regdate + "</td>"
-					str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"			
+					if(${p.user.num} == val.member.num){
+					str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"
+					}
 					str +="</tr>"			
 		})
 		str +="</table>"

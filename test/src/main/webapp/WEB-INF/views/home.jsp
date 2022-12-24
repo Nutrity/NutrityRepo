@@ -98,7 +98,28 @@
                 <img src="../img/storage-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="service-details.html" class="stretched-link">식단 등록</a></h3>
-              <p>자신 만의 식단을 등록하여 그 날 먹은 음식에 대한 영양소를 확인하고 권장 영양소 섭취량과 비교해 보세요.</p>
+              <p>오늘 또는 미래의 식단을 기록하여 관리할 수 있습니다.</p>
+            </div>
+          </div><!-- End Card Item -->
+          
+          
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="card">
+              <div class="card-img">
+                <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">음식 검색</a></h3>
+              <p>음식을 검색하여 섭취가능한 영양소들을 확인해 보세요! 식약처에서 제공한 데이터를 토대로 찾아드립니다!</p>
+            </div>
+          </div><!-- End Card Item -->
+          
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="card">
+              <div class="card-img">
+                <img src="../img/packaging-service.jpg" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">월별 식단 확인</a></h3>
+              <p>식단 달력을 통해 한눈에 식단을 확인할 수 있습니다.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -108,7 +129,7 @@
                 <img src="../img/logistics-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="#" class="stretched-link">식단 확인</a></h3>
-              <p>자신이 등록한 식단을 확인 하면 등록한 음식과 권창 섭취량을 비교하여 그래프로 그 양을 표시하고 있습니다.</p>
+              <p>등록한 식단을 확인하여 음식의 영양소와 권장 영양소 섭취량을 그래프를 통해 비교해 볼 수 있습니다.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -118,7 +139,7 @@
                 <img src="../img/cargo-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="#" class="stretched-link">구독 시스템</a></h3>
-              <p>결제를 통해 저희 페이지에서 구독자가 될 수 있습니다. 구독자가 되어 전문가 분들과 소통을 진행햐여 보세요.</p>
+              <p>결제를 통해 저희 페이지에서 구독자가 될 수 있습니다. 구독자가 되어 전문가 분들과 소통을 진행해 보세요.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -128,27 +149,7 @@
                 <img src="../img/trucking-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="#" class="stretched-link">전문가 인증</a></h3>
-              <p>혹시 자신이 식단과 관련된 직종이시라면 저희 페이지를 이용하실 때 전문가 인증을 해주세요. 저희가 소정의 혜택을 드립니다.</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="card">
-              <div class="card-img">
-                <img src="../img/packaging-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="#" class="stretched-link">관리자</a></h3>
-              <p>관리자들은 회원들의 정보를 수정할 수 있습니다. 그러나 걱정하지 마세요. 홈페이지 운영에 해를 끼치는 유저가 아니라면 따로 건들진 않습니다.</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <div class="card-img">
-                <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="#" class="stretched-link">보안</a></h3>
-              <p>저희는 최상의 보안을 자랑합니다. 비밀번호는 암호화 되고 따로 인증이 되어 저희는 회원분들의 비밀번호를 절대 알 수가 없습니다.</p>
+              <p>혹시 식단 관리에 적합한 직업에 종사중이라면 저희 페이지를 이용하실 때 전문가 인증을 해주세요. 소정의 혜택을 드립니다.</p>
             </div>
           </div><!-- End Card Item -->
 

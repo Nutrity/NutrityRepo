@@ -87,16 +87,17 @@
 		<input type="text" class="form-control" id="title"><br/>
 	</div>
 	
-	<div>
-		<label>메모</label>
-		<textarea class="form-control" rows="5" cols="40" id="memo"></textarea><br/>
-	</div>
-	
 	<div id = "FormSignin">
 		<h3>음식 리스트</h3>
 		<div id="resultFoodList"></div>
 		<button class="btn btn-secondary" style="float: right;" onclick="foodFinder()">검색</button><br/>
 	</div>	
+<br><br><br>
+	<div>
+		<label>메모</label>
+		<textarea class="form-control" rows="5" cols="40" id="memo"></textarea><br/>
+	</div>
+	
 
 	<button type="button" class="btn btn-primary" style="float: right;" id="dietInsertBtn">저장</button>
 	</div> 

@@ -230,9 +230,9 @@
 		//	var checkbox = $("input[name=fcode]:checkbox");
 
 		var foodArr = new Array();
-
+					
 		$("#selectFoodBtn").click(function() {
-
+						
 			if ($("#SelectFoodname").val() == "") {
 				alert("음식 이름을 입력하세요")
 				return;
@@ -301,7 +301,7 @@
 				})//done
 				.fail(function(e) {
 					console.log(e)
-					alert("error" + e )
+					alert("error" + e)
 				})//fail
 		})//selectFoodBtn
 
@@ -325,17 +325,17 @@
 		})
 
 		$("#dietInsertBtn").click(function() {
-			if ($("#regdate").val()=="") {
+			if ($("#regdate").val() == "") {
 				alert("날짜를 선택해 주세요")
 				return;
 			}
-			
-			if ($("#title").val()=="") {
+
+			if ($("#title").val() == "") {
 				alert("제목를 선택해 주세요")
 				return;
 			}
 
-			if (fdlistFoodcodes.length==0) {
+			if (fdlistFoodcodes.length == 0) {
 				alert("식단을 선택해 주세요")
 				return;
 			}

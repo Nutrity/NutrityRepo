@@ -45,7 +45,6 @@
 		<div id="selectFood"></div>
 		<div style="float: right;">
 		<input type="button" value="확인" id="finBtn">
-		<input type="button" onclick="checkAll(false);" class="btn" value="선택취소">
 		<button type="button" id="closeBtn">창 닫기</button>
 		</div>
 		</div>

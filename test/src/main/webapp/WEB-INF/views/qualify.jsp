@@ -10,8 +10,7 @@
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-6 text-center">
 						<h2>전문가 인증</h2>
-						<p>너 전문가? 너너너 전문가? 혹시 아니면 돌아가~너 전문가? 너너너 전문가? 혹시 아니면 돌아가~너
-							전문가? 너너너 전문가? 혹시 아니면 돌아가~너 전문가? 너너너 전문가? 혹시 아니면 돌아가~</p>
+						<p>전문가 인증 요청</p>
 					</div>
 				</div>
 			</div>

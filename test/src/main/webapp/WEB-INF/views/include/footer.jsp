@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "sec" uri = "http://www.springframework.org/security/tags"  %>
 <!DOCTYPE html>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -10,7 +11,7 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span>Nutrity</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <p>저희 홈페이지에 오신 것을 환영합니다.</p>
           <div class="social-links d-flex mt-4">
             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -22,11 +23,19 @@
         <div class="col-lg-3 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="/">홈</a></li>
+            <sec:authorize access="isAuthenticated()">
+				<li><a href="/modify">내 정보 수정</a></li>
+                <li><a href="/board/list/${p.user.num}">내 식단</a></li>
+			</sec:authorize>
+			<sec:authorize access="isAnonymous()">
+				<li><a href="/board/list">내 식단</a></li>
+			</sec:authorize>
+			    <li><a href="/board/insert">식단 입력</a></li>
+            <sec:authorize access = "hasRole('USER')">
+			    <li><a href="/pay">결제</a></li>
+			    <li><a href="/qualify">전문가 자격 인증</a></li>
+			 </sec:authorize>
           </ul>
         </div>
 

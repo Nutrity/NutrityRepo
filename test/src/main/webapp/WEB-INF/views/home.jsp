@@ -10,7 +10,7 @@
           <h2 data-aos="fade-up">나의 식단을
             <br>  
             더욱 건강하게!</h2>
-          <p data-aos="fade-up" data-aos-delay="100">역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! 역시 먹는 게 최고야! </p>
+          <p data-aos="fade-up" data-aos-delay="100">식단을 등록하여 건강을 챙겨보세요!!</p>
 
           <form class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
             <input type="text" class="form-control" placeholder="오늘 먹은 음식을 검색" id="foodname">

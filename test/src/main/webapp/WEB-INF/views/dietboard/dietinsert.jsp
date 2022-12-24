@@ -62,17 +62,14 @@
 			<div class="container position-relative">
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-6 text-center">
-						<h2>Insert</h2>
-						<p>안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티
-							프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티
-							프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티
-							프레자일 후!</p>
+						<h2>식단 삽입</h2>
+						<p>식단 삽입 창</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<section id = "FormSignin">
+	<section>
 	<sec:authorize access="isAuthenticated()">
 		<div>
 			<input type="hidden" id="num" value="${p.user.num}">
@@ -80,29 +77,28 @@
 	</sec:authorize>
 	
 	<div class="container">
-
 	<div>
-	<label>Date</label> 
+	<label>날짜</label> 
 	<input type="date" class="form-control" id="regdate" placeholder="날짜를 선택해주세요"><br/>
 	</div>
-
+	
 	<div>
-		<label>Title</label> 
+		<label>제목</label> 
 		<input type="text" class="form-control" id="title"><br/>
 	</div>
-
+	
 	<div>
-		<label>Foodlist</label>
-		<div id="resultFoodList"></div>
-		<button onclick="foodFinder()">검색</button><br/>
-	</div>
-
-	<div>
-		<label>Memo</label>
+		<label>메모</label>
 		<textarea class="form-control" rows="5" cols="40" id="memo"></textarea><br/>
 	</div>
+	
+	<div id = "FormSignin">
+		<h3>음식 리스트</h3>
+		<div id="resultFoodList"></div>
+		<button class="btn btn-secondary" style="float: right;" onclick="foodFinder()">검색</button><br/>
+	</div>	
 
-	<button type="button" class="btn btn-secondary btn-sm" id="dietInsertBtn">저장</button>
+	<button type="button" class="btn btn-primary" style="float: right;" id="dietInsertBtn">저장</button>
 	</div> 
 	</section>   
 </main>

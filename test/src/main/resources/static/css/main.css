@@ -843,6 +843,11 @@ section {
   height: 100%;
 }
 
+.services .card .reg {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
 .services .card .card-img {
   overflow: hidden;
   margin-bottom: 15px;

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
 
+
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
 	
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		str += "<div class='container'>";
 		str += "<table data-aos='fade-up' class='table table-hover'>"
 		str += "<thead>"
-		str += "<tr>"
+		str += "<tr id='tr1'>"
 		str += "<th class='col-2'>"
 		str += "</th>" 
 		
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		$("#selectedfoods").html(str);
 
 		let j = 0;
-		$('tr > th').each(function(index, item) {
+		$('#tr1 > th').each(function(index, item) {
 			if (j < listHeadr.length) {
 				$(this).append(listHeadr[j])
 				j++
@@ -155,30 +156,49 @@ function foodFinder() {
 }
 var fdlistFoodcodes = []
 function getReturnObj(fdlist) {
-	var str = '';
+	
+	const listHeadr = ['음식 이름', '카테고리', '칼로리(kcal)', '탄수화물(g)', '단백질(g)', '지방(g)', '당(g)',
+		'나트륨(mg)', '트랜스<br>지방(g)', '칼슘(mg)', '비타민C(mg)', '철분(mg)']
+	
+	var str = '<br>';
+	str += "<h3>추가할 음식 리스트</h3>"
 	str += "<div class='container'>";
-	str += "<table data-aos='fade-up' class='table table-hover'>"
+	str += "<table data-aos='fade-up' class='table table-hover' id='revalTable'>"
 	str += "<thead>"
-	str += "<tr>"
-	str += "<th class='col-3'>수정할 식단</th>"
+	str += "<tr id='tr2'>"
+	str += "<th class='col-2'>"
+	str += "</th>" 
 	for (let i = 0; i < 11; i++) {
 		str += "<th class='col'></th>"
 	}
+	
 	str += "</tr>" 
 	str += "</thead>" 
 	str += "<tbody data-aos='fade-up'>";
+	
 	$.each(JSON.parse(fdlist), function(key, val) {
 	str += "<tr>";
-		str += "<td class='col-3'>" + Object.values(val)[1] + '</td> ';
+		str += "<td class='col-2'>" + Object.values(val)[1] + '</td> ';
 		for (let i = 2; i < 13; i++) {
-			str += "<td class='col'>" + Object.values(val)[i] + "</td>"
+			str += "<td class='col-1'>" + Object.values(val)[i] + "</td>"
 		}
 		str += '</tr>'; //row
 	});
 	str += '</tbody>'; //slide-up
 	str += '</table>'; //list-text-content
+	str += '<br><br>'
 	
 	$("#resultFoodList").html(str);
+	
+	let j = 0;
+	$('#tr2 > th').each(function(index, item) {
+		if (j < listHeadr.length) {
+			$(this).append(listHeadr[j])
+			j++
+		} else {
+			j = 0;
+		}//if
+	});//tr,th/each
 
 	var JSONfdlist = JSON.parse(fdlist)
 	
@@ -209,52 +229,72 @@ function getReturnObj(fdlist) {
 			</div>
 		</div>
 	</div>
-	<section id="FormSignin">
+	<section>
 		<div>
 			<input type="hidden" value="${board.bnum}" id="bnum">
 		</div>
 		<div class="container">
-		<h3><fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/></h3>
-			<div>
-				<label>제목</label>
-				<input class="form-control" type="text"	value="${board.title}" id="title"> <br>
+			<div class="card mb-2" style="padding: 20px; ">
+				<h3>
+					<fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일" />
+				</h3>
 			</div>
-			
+			<br> <br>
+			<div>
+				<label>제목</label> <input class="form-control" type="text"
+					value="${board.title}" id="title"> <br>
+			</div>
+
 			<div>
 				<label>메모</label>
-				<textarea  class="form-control" rows="5" cols="50" id="memo">${board.memo}</textarea>
+				<textarea class="form-control" rows="5" cols="50" id="memo">${board.memo}</textarea>
 				<br>
 			</div>
-			
+			<br> <br>
 			<div>
-				<label>음식 리스트</label><br>
+				<h3>음식 리스트</h3>
 				<div id="selectedfoods"></div>
 			</div>
-			
-			<div>
+			<div id="FormSignup">
 				<div id="resultFoodList"></div>
-				<button onclick="foodFinder()">검색</button>
+				<button class="btn btn-secondary" style="float: right;"
+					onclick="foodFinder()">검색</button>
+				<br> <br>
 			</div>
-		
-			<label for="nutrents">영양 그래프</label>
-			<div id="nutrents"></div>
+			<br> <br>
 
-			<div>
-				<input type="button" id="dietUpdateBtn" value="수정"> <input
-					type="button" id="boardDeleteBtn" value="삭제">
+			<h3>영양 그래프</h3>
+			<div id="nutrents"></div>
+			<br> <br>
+
+			<div style="float: right;">
+				<button type="button" id="dietUpdateBtn" class="btn btn-primary"
+					style="margin-right: 5px;">수정</button>
+				<button type="button" id="boardDeleteBtn" class="btn btn-danger">삭제</button>
+			</div>
+
+			<div id="FormSignup" style="margin-top: 7em;">
+				<sec:authorize access="hasAnyRole({'EXPERT','SUBSCRIBE','ADMIN'})">
+					<div class="card mb-2">
+						<div class="card-header bg-light">
+							<i class="fa fa-comment fa"></i> REPLY
+						</div>
+						<div class="card-body">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><textarea class="form-control"
+										id="msg" rows="3"></textarea>
+									<button type="button" class="btn btn-dark mt-3" id="comment">댓글쓰기</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div style="margin-top: 10px" id="ResultComment"></div>
+				</sec:authorize>
 			</div>
 		</div>
-	</section>
 
-	<!-- 댓글 -->
-	<section>
-		<sec:authorize access="hasAnyRole({'EXPERT','SUBSCRIBE','ADMIN'})">
-			<div align="center">
-				<textarea rows="3" cols="50" id="msg"></textarea>
-				<button type="button" class="btn btn-secondary btn-sm" id="comment">댓글쓰기</button>
-			</div>
-			<div id="ResultComment"></div>
-		</sec:authorize>
+
 	</section>
 	<script>
 
@@ -278,9 +318,16 @@ var init = function(){
 		url : "/comment/list/"+$("#bnum").val(),
 	})
 	.done(function(resp){
-		var str = "<table class = 'table table-hover'>"
+		var str = "<hr>"
+		str += "<table class = 'table' style='text-align: center;'>"
 		$.each(resp, function(key, val){
 			str += "<input type = 'hidden' id = 'cnum' name ='cnum' value = '"+val.cnum+"'/>"
+			str += "<tr>"
+			str += "<th>ID</th>"
+			str += "<th>내용</th>"
+			str += "<th>작성일</th>"
+			str += "<th>삭제</th>"
+			str += "</tr>"
 				str += "<tr>"
 					str += "<td>" + val.member.username + "</td>"
 					str += "<td>" + val.content + "</td>"
@@ -338,7 +385,6 @@ $("#comment").click(function(){
 	data = {
 			"content" : $("#msg").val(),
 	}
-	
 	$.ajax({
 		type : "post",
 		url : "/comment/insert/"+$("#bnum").val(),
@@ -354,7 +400,6 @@ $("#comment").click(function(){
 	.fail(function(){
 		alert("댓글이 삽입되지 않았습니다.")
 	})
-	
 })
 init();
 </script>

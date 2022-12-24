@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		str += "<table data-aos='fade-up' class='table table-hover'>"
 		str += "<thead>"
 		str += "<tr>"
-		str += "<th class='col-3'>"
+		str += "<th class='col-2'>"
 		str += "</th>" 
 		
 		for (let i = 0; i < 11; i++) {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		$.each(resp, function(key, val) {
 		str += "<tr>";
-			str += "<td class='col-3'>" + Object.values(val)[1] + '</td> ';
+			str += "<td class='col-2'>" + Object.values(val)[1] + '</td> ';
 			for (let i = 2; i < 13; i++) {
 				str += "<td class='col'>" + Object.values(val)[i] + "</td>"
 			}
@@ -214,16 +214,11 @@ function getReturnObj(fdlist) {
 			<input type="hidden" value="${board.bnum}" id="bnum">
 		</div>
 		<div class="container">
-	<h3>${board.regdate}</h3>
+		<h3><fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일"/></h3>
 			<div>
 				<label>제목</label>
 				<input class="form-control" type="text"	value="${board.title}" id="title"> <br>
 			</div>
-			
-<!-- 			<div> -->
-<!-- 				<label>작성일</label> -->
-<%-- 				<input  class="form-control" type="text" value="${board.regdate}"	id="regdate"><br> --%>
-<!-- 			</div> -->
 			
 			<div>
 				<label>메모</label>

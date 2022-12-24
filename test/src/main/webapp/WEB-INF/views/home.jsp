@@ -55,7 +55,7 @@
                 <i class="bi bi-broadcast"></i>
                 <div>
                   <h5>전문가와 상의해보세요!</h5>
-                  <p>구독을 해보세요! 의사, 영양사, PT트레이너 등 전문가에게 기록한 식단에 대한 조언을 받을 수 있어요!</p>
+                  <p>구독을 해보세요! 의사, 영양사, PT트레이너 등 전문가에게 <br> 기록한 식단에 대한 조언을 받을 수 있어요!</p>
                 </div>
               </li>
             </ul>
@@ -109,7 +109,7 @@
                 <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="#" class="stretched-link">음식 검색</a></h3>
-              <p>음식을 검색하여 섭취가능한 영양소들을 확인해 보세요! 식약처에서 제공한 데이터를 토대로 찾아드립니다!</p>
+              <p>음식을 검색하여 영양소들을 확인해 보세요! <br> 식약처에서 제공한 데이터를 토대로 찾아드립니다!</p>
             </div>
           </div><!-- End Card Item -->
           
@@ -149,7 +149,7 @@
                 <img src="../img/trucking-service.jpg" alt="" class="img-fluid">
               </div>
               <h3><a href="#" class="stretched-link">전문가 인증</a></h3>
-              <p>혹시 식단 관리에 적합한 직업에 종사중이라면 저희 페이지를 이용하실 때 전문가 인증을 해주세요. 소정의 혜택을 드립니다.</p>
+              <p>혹시 식단 관리에 적합한 직업에 종사중이라면 <br> 전문가 인증을 해주세요. 소정의 혜택을 드립니다.</p>
             </div>
           </div><!-- End Card Item -->
 

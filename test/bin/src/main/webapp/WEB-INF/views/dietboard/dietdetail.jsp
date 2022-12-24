@@ -210,22 +210,31 @@ function getReturnObj(fdlist) {
 		</div>
 	</div>
 
+<section id="FormSignup">
 	<div>
 		<input type="hidden" value="${board.bnum}" id="bnum">
 	</div>
-	<div></div>
-	<label>제목</label> <input type="text" value="${board.title}" id="title">
-	<br> <label>작성일</label>
-	 <input type="text"	value="${board.regdate}" id="regdate"><br> <label>메모</label>
-	<textarea rows="5" cols="50" id="memo">${board.memo}</textarea>
-	<br> <label>음식 리스트</label><br>
+	
+	<div id="container">
+	
+	<label>제목</label>
+	<input class="form-control" type="text" value="${board.title}" id="title"><br>
+	
+	<label>작성일</label>
+	<input class="form-control" type="text"	value="${board.regdate}" id="regdate"><br>
+	
+	<label>메모</label>
+	<textarea class="form-control" rows="5" cols="50" id="memo">${board.memo}</textarea><br>
+	
+	<label>음식 리스트</label><br>
 	<div id="selectedfoods"></div>
 	
 	<div>
 		<div id="resultFoodList"></div>
 		<button onclick="foodFinder()">검색</button>
 	</div>
-
+	
+	<div>
 	<label for="nutrents">영양 그래프</label>
 	<div id="nutrents">
 	</div>
@@ -233,6 +242,8 @@ function getReturnObj(fdlist) {
 	<div>
 	<input type="button" id="dietUpdateBtn" value="수정">
 	<input type="button" id="boardDeleteBtn" value="삭제">
+	</div>
+	
 	</div>
 	
 	<!-- 댓글 -->
@@ -243,6 +254,9 @@ function getReturnObj(fdlist) {
 	</div>
 	<div id = "ResultComment"></div>
 	</sec:authorize>
+	</div>
+	</section>
+	
 <script>
 
 function commentDel(){

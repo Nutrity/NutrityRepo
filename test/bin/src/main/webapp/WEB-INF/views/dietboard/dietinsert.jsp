@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
+
 <script>
 	function foodFinder() {
 		window.open("selectfood", "", "width=700 height=400")
@@ -80,26 +81,25 @@
 		</div>
 	</sec:authorize>
 
-	<div>
-	<label>Date</label> <input type="date" id="regdate" placeholder="날짜를 선택해주세요">
-	</div>
+	<section id="FormSignup">
+		<div class="container">
+	
+			<label>Date</label>
+			<input class="form-control" type="date" id="regdate" placeholder="날짜를 선택해주세요">
 
-	<div>
-		<label>title</label> <input type="text" id="title">
-	</div>
+			<label>title</label>
+			<input class="form-control" type="text" id="title">
 
-	<div>
-		<label>foodlist</label>
-		<div id="resultFoodList"></div>
-		<button onclick="foodFinder()">검색</button>
-	</div>
+			<label>foodlist</label>
+			<div id="resultFoodList"></div>
+			<button onclick="foodFinder()">검색</button>
 
-	<div>
-		<label>memo</label>
-		<textarea rows="5" cols="40" id="memo"></textarea>
-	</div>
+			<label>memo</label>
+			<textarea class="form-control" rows="5" cols="40" id="memo"></textarea>
 
-	<button type="button" id="dietInsertBtn">저장</button>    
+			<button type="button" id="dietInsertBtn">저장</button>   
+		</div>
+	</section> 
 </main>
     
 <%@include file="../include/footer.jsp"%>

@@ -85,8 +85,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>Our Services</span>
-          <h2>Our Services</h2>
+          <span>홈페이지 기능</span>
+          <h2>홈페이지 기능</h2>
 
         </div>
 
@@ -97,8 +97,8 @@
               <div class="card-img">
                 <img src="../img/storage-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">Storage</a></h3>
-              <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+              <h3><a href="service-details.html" class="stretched-link">식단 등록</a></h3>
+              <p>자신 만의 식단을 등록하여 그 날 먹은 음식에 대한 영양소를 확인하고 권장 영양소 섭취량과 비교해 보세요.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -107,8 +107,8 @@
               <div class="card-img">
                 <img src="../img/logistics-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">Logistics</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
+              <h3><a href="#" class="stretched-link">식단 확인</a></h3>
+              <p>자신이 등록한 식단을 확인 하면 등록한 음식과 권창 섭취량을 비교하여 그래프로 그 양을 표시하고 있습니다.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -117,8 +117,8 @@
               <div class="card-img">
                 <img src="../img/cargo-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">Cargo</a></h3>
-              <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
+              <h3><a href="#" class="stretched-link">구독 시스템</a></h3>
+              <p>결제를 통해 저희 페이지에서 구독자가 될 수 있습니다. 구독자가 되어 전문가 분들과 소통을 진행햐여 보세요.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -127,8 +127,8 @@
               <div class="card-img">
                 <img src="../img/trucking-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">Trucking</a></h3>
-              <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
+              <h3><a href="#" class="stretched-link">전문가 인증</a></h3>
+              <p>혹시 자신이 식단과 관련된 직종이시라면 저희 페이지를 이용하실 때 전문가 인증을 해주세요. 저희가 소정의 혜택을 드립니다.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -137,8 +137,8 @@
               <div class="card-img">
                 <img src="../img/packaging-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">Packaging</a></h3>
-              <p>Illo consequuntur quisquam delectus praesentium modi dignissimos facere vel cum onsequuntur maiores beatae consequatur magni voluptates</p>
+              <h3><a href="#" class="stretched-link">관리자</a></h3>
+              <p>관리자들은 회원들의 정보를 수정할 수 있습니다. 그러나 걱정하지 마세요. 홈페이지 운영에 해를 끼치는 유저가 아니라면 따로 건들진 않습니다.</p>
             </div>
           </div><!-- End Card Item -->
 
@@ -147,8 +147,8 @@
               <div class="card-img">
                 <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">Warehousing</a></h3>
-              <p>Quas assumenda non occaecati molestiae. In aut earum sed natus eatae in vero. Ab modi quisquam aut nostrum unde et qui est non quo nulla</p>
+              <h3><a href="#" class="stretched-link">보안</a></h3>
+              <p>저희는 최상의 보안을 자랑합니다. 비밀번호는 암호화 되고 따로 인증이 되어 저희는 회원분들의 비밀번호를 절대 알 수가 없습니다.</p>
             </div>
           </div><!-- End Card Item -->
 

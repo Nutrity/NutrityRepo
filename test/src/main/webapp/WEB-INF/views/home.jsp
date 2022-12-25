@@ -94,7 +94,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
               <div class="card-img">
-                <img src="../img/storage-service.jpg" alt="" class="img-fluid">
+                <img src="../img/insert.jpg" alt="" class="img-fluid">
               </div>
               <h3><a class="stretched-link">식단 등록</a></h3>
               <p>오늘 또는 미래의 식단을 기록하여 관리할 수 있습니다.</p>
@@ -105,7 +105,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="card">
               <div class="card-img">
-                <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
+                <img src="../img/home.jpg" alt="" class="img-fluid">
               </div>
               <h3><a class="stretched-link">음식 검색</a></h3>
               <p>음식을 검색하여 영양소들을 확인해 보세요! <br> 식약처에서 제공한 데이터를 토대로 찾아드립니다!</p>
@@ -115,7 +115,7 @@
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="card">
               <div class="card-img">
-                <img src="../img/packaging-service.jpg" alt="" class="img-fluid">
+                <img src="../img/calendar.jpg" alt="" class="img-fluid">
               </div>
               <h3><a class="stretched-link">월별 식단 확인</a></h3>
               <p>식단 달력을 통해 한눈에 식단을 확인할 수 있습니다.</p>
@@ -125,7 +125,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
               <div class="card-img">
-                <img src="../img/logistics-service.jpg" alt="" class="img-fluid">
+                <img src="../img/detail.jpg" alt="" class="img-fluid">
               </div>
               <h3><a class="stretched-link">식단 확인</a></h3>
               <p>등록한 식단을 확인하여 음식의 영양소와 권장 영양소 섭취량을 그래프를 통해 비교해 볼 수 있습니다.</p>
@@ -135,7 +135,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
               <div class="card-img">
-                <img src="../img/cargo-service.jpg" alt="" class="img-fluid">
+                <img src="../img/pay.jpg" alt="" class="img-fluid">
               </div>
               <h3><a class="stretched-link">구독 시스템</a></h3>
               <p>결제를 통해 저희 페이지에서 구독자가 될 수 있습니다. 구독자가 되어 전문가 분들과 소통을 진행해 보세요.</p>
@@ -145,7 +145,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="card">
               <div class="card-img">
-                <img src="../img/trucking-service.jpg" alt="" class="img-fluid">
+                <img src="../img/qual.jpg" alt="" class="img-fluid">
               </div>
               <h3><a class="stretched-link">전문가 인증</a></h3>
               <p>혹시 식단 관리에 적합한 직업에 종사중이라면 <br> 전문가 인증을 해주세요. 소정의 혜택을 드립니다.</p>

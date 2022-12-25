@@ -12,8 +12,6 @@
 
 		//food list 비동기화  
 
-
-
 		/**
 		 * Preloader
 		 */

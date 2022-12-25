@@ -1,22 +1,6 @@
 /**
  * 
  */
-
-// function validateForm(x) {
-//	if($(x).val() == ""){
-//		$(x).removeClass("is-valid")
-//		$(x).addClass("is-invalid");
-//		$(x).attr("required");
-//		$(x).focus();
-//		return false;
-//	} else {
-//		$(x).removeClass("is-invalid");
-//		$(x).addClass("is-valid");
-//		$(x).removeAttr("required");
-//		return true;
-//	}	
-//}
-
 //회원가입 버튼
 $("#JoinBtn").click(function() {
 	const date = new Date();

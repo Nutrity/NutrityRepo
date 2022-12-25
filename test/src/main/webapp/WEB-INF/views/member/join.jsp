@@ -86,7 +86,7 @@
 				<br/>
 				<div>
 					<label for="phone">휴대전화</label>
-					<input class="form-control" type = "number" id = "phone" name = "phone" placeholder="휴대전화를 입력해주세요">
+					<input class="form-control" type = "text" id = "phone" name = "phone" placeholder="휴대전화를 입력해주세요">
 					<div class="invalid-feedback">
 				    	휴대전화를 입력해주세요.
 					</div>

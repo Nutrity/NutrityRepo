@@ -263,12 +263,13 @@ function getReturnObj(fdlist) {
 			<h3>영양 그래프</h3>
 			<div id="nutrents"></div>
 			<br> <br>
-
+            <c:if test = "${p.user.num == board.member.num}">
 			<div style="float: right;">
 				<button type="button" id="dietUpdateBtn" class="btn btn-primary"
 					style="margin-right: 5px;">수정</button>
 				<button type="button" id="boardDeleteBtn" class="btn btn-danger">삭제</button>
 			</div>
+			</c:if>
 
 			<div id="FormSignup" style="margin-top: 7em;">
 				<sec:authorize access="hasAnyRole('EXPERT','SUBSCRIBE','ADMIN')">

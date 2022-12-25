@@ -11,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Setter @Getter
 @Entity
@@ -36,8 +34,6 @@ public class Member {
 	private Long num;
 	private String useremail;
 	private String username;
-	private String platform_type;
-	private String access_token;
 	private String realname;
 	private String password;
 	private String gender;

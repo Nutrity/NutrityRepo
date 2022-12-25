@@ -219,11 +219,8 @@ function getReturnObj(fdlist) {
 			<div class="container position-relative">
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-6 text-center">
-						<h2>Insert</h2>
-						<p>안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티
-							프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티
-							프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티 프레자일 후! 안티티 티티 프레자일 프레자일 안티티 티티
-							프레자일 후!</p>
+						<h2>식단 정보</h2>
+						<p>식단 상세 정보</p>
 					</div>
 				</div>
 			</div>
@@ -274,7 +271,7 @@ function getReturnObj(fdlist) {
 			</div>
 
 			<div id="FormSignup" style="margin-top: 7em;">
-				<sec:authorize access="hasAnyRole({'EXPERT','SUBSCRIBE','ADMIN'})">
+				<sec:authorize access="hasAnyRole('EXPERT','SUBSCRIBE','ADMIN')">
 					<div class="card mb-2">
 						<div class="card-header bg-light">
 							<i class="fa fa-comment fa"></i> REPLY
@@ -324,9 +321,7 @@ var init = function(){
 				str += "<th>ID</th>"
 				str += "<th>내용</th>"
 				str += "<th>작성일</th>"
-				if(${p.user.num} == resp[].member.num ){
-				  str += "<th>삭제</th>"
-				}
+				 str += "<th>삭제</th>"
 				str += "</tr>"
 		$.each(resp, function(key, val){
 			str += "<input type = 'hidden' id = 'cnum' name ='cnum' value = '"+val.cnum+"'/>"			
@@ -334,9 +329,11 @@ var init = function(){
 					str += "<td>" + val.member.username + "</td>"
 					str += "<td>" + val.content + "</td>"
 					str += "<td>" + val.c_regdate + "</td>"
+					str += "<td>"
 					if(${p.user.num} == val.member.num){
-					str += "<td><a href = 'javascript:commentDel()'>삭제</a></td>"
+					str += "<a href = 'javascript:commentDel()'>삭제</a>"
 					}
+					str += "</td>"
 					str +="</tr>"			
 		})
 		str +="</table>"

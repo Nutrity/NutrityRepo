@@ -25,12 +25,11 @@
 	<div class="container">	
 			<table class="table table-hover" style="text-align: center;">
 			  <tr>
-			    <th>num</th>
-			    <th>realname</th>
-			    <th>gender</th>
-			    <th>birth</th>
-			    <th>Job</th>
-			    <th>Role</th>
+			    <th>이름</th>
+			    <th>성별</th>
+			    <th>생년월일</th>
+			    <th>직업</th>
+			    <th>권한</th>
 			    <th>ip</th>
 			    <th>수정</th>
 			    <th>거절</th>
@@ -39,7 +38,6 @@
 			<c:forEach items="${request}" var="req">
 			<input type = "hidden" id = "num" name = "num" value = "${req.num}"/>
 				<tr>				
-					<td>${req.num }</td>
 					<td>${req.realname }</td>
 					<td>${req.gender }</td>
 					<td>${req.birth }</td>

@@ -14,15 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.repository.MemberRepository;
-import com.test.demo.service.BoardService;
 import com.test.demo.service.MemberService;
 
 @Controller
 @RequestMapping("/admin/*")
 public class AdminController {
-
-	@Autowired
-	private BoardService bService;
 
 	@Autowired
 	private MemberService mService;

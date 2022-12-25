@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.demo.model.Member;
-import com.test.demo.repository.MemberRepository;
 import com.test.demo.service.AdviceService;
 import com.test.demo.service.BoardService;
-import com.test.demo.service.MemberService;
 
 @Controller
 @RequestMapping("/expert/*")

@@ -26,15 +26,14 @@
 	
 			<table class="table table-hover" style="text-align: center;">
 			  <tr>
-			    <th>username</th>
-			    <th>age</th>
-			    <th>gender</th>
-			    <th>count</th>
+			    <th>이름</th>
+			    <th>나이</th>
+			    <th>성별</th>
+			    <th>게시글 수</th>
 			  </tr>
 
 			<c:forEach items="${member}" var="mem" varStatus="status">
 				<tr>
-<%-- 					<td><a href = "/expert/adviceList/${mem.num}">${mem.username}</a></td> --%>
 					<td><a href = "/expert/adviceList/${mem.num}">${mem.username}</a></td>
 					<td>${mem.age }</td>
 					<td>${mem.gender }</td>

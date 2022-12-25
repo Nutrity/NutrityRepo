@@ -244,7 +244,6 @@
 			})//ajax
 
 				.done(function(resp) {
-					console.log(resp)
 					if (resp != null) {
 						var str = "<div class='container'  style='text-align: center;'>";
 						str += "<table class='table table-hover'>"
@@ -296,11 +295,8 @@
 							}//for
 						}//else
 					})//.click
-
-					console.log(foodArr)
 				})//done
 				.fail(function(e) {
-					console.log(e)
 					alert("error" + e)
 				})//fail
 		})//selectFoodBtn
@@ -345,7 +341,6 @@
 				memo: $("#memo").val(),
 				foodcode: fdlistFoodcodes
 			}
-			console.log(JSON.stringify(data))
 			$.ajax({
 				type: "post",
 				url: "/board/insert",

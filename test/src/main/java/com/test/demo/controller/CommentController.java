@@ -2,7 +2,6 @@ package com.test.demo.controller;
 
 import java.util.List;
 
-import org.aspectj.weaver.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

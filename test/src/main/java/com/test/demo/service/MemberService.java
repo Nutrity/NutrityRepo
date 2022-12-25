@@ -2,13 +2,9 @@ package com.test.demo.service;
 
 import java.util.List;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-
-import com.test.demo.model.Address;
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.model.PayInfo;
-import com.test.demo.model.Product;
 
 public interface MemberService {
 	

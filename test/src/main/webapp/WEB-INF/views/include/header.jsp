@@ -81,25 +81,6 @@
 					<sec:authorize access = "hasRole('USER')">
 					<li><a href="/pay">결제</a></li>
 					</sec:authorize>
-<!-- 					<li class="dropdown"><a href="#"><span>Drop Down</span> <i -->
-<!-- 							class="bi bi-chevron-down dropdown-indicator"></i></a> -->
-<!-- 						<ul> -->
-<!-- 							<li><a href="#">Drop Down 1</a></li> -->
-							<!--               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a> -->
-							<!--                 <ul> -->
-							<!--                   <li><a href="#">자격검증</a></li> -->
-							<!--                   <li><a href="#">Deep Drop Down 2</a></li> -->
-							<!--                   <li><a href="#">Deep Drop Down 3</a></li> -->
-							<!--                   <li><a href="#">Deep Drop Down 4</a></li> -->
-							<!--                   <li><a href="#">Deep Drop Down 5</a></li> -->
-							<!--                 </ul> -->
-							<!--               </li> -->
-<!-- 							<li><a href="#">Drop Down 2</a></li> -->
-<!-- 							<li><a href="#">Drop Down 3</a></li> -->
-<!-- 							<li><a href="#">Drop Down 4</a></li> -->
-<!-- 						</ul></li> -->
-					<!--           <li><a href="#">???</a></li> -->
-
 					<sec:authorize access="isAnonymous()">
 						<li><a href="/login">로그인</a></li>
 						<li><a class="get-a-quote" href="/join">회원 가입</a></li>

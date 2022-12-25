@@ -126,9 +126,6 @@ $("#JoinBtn").click(function() {
 		$("#birth").removeClass("is-invalid")
 		$("#birth").addClass("is-valid");
 		$("#birth").removeAttr("required");
-		console.log("birth : " + $("#birth").val())
-		console.log("now : " + date)
-
 	}
 	if ($("#age").val() == "") {
 		$("#age").removeClass("is-valid")

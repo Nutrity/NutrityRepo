@@ -2,29 +2,20 @@ package com.test.demo.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.rsocket.PayloadInterceptorOrder;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.test.demo.config.auth.PrincipalUser;
 import com.test.demo.model.Job;
 import com.test.demo.model.Member;
 import com.test.demo.model.PayInfo;
-import com.test.demo.model.Product;
-import com.test.demo.repository.BoardRepository;
 import com.test.demo.repository.MemberRepository;
 import com.test.demo.repository.PayRepository;
 
@@ -38,9 +29,6 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberRepository memberRepository;
 	
-	@Autowired
-	private BoardRepository boardRepository;
-
 	@Autowired
 	private PayRepository payRepository;
 

@@ -22,54 +22,41 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>${p.user.num}의 결제창</span>
-          <h2>Pricing</h2>
+          <h2>${p.user.num}의 결제 창</h2>
 
         </div>       
         <div class="row gy-4">
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-item">
-              <h3>Weeks Plan</h3>
-              <h4><sup>$</sup>100<span> / weeks</span></h4>
+              <h3>7일</h3>
+              <h4><sup>$</sup>100<span> / 주</span></h4>
               <ul>
-                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+                <li><i class="bi bi-check"></i>일주일 치 결제</li>                
               </ul>
-              <a href="javascript:requestWeekPay()" class="buy-btn">Buy Now</a>
+              <a href="javascript:requestWeekPay()" class="buy-btn">구매</a>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="pricing-item">
-              <h3>Month Plan</h3>
-              <h4><sup>$</sup>101<span> / month</span></h4>
+              <h3>1달</h3>
+              <h4><sup>$</sup>101<span> / 월</span></h4>
               <ul>
-                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
+                <li><i class="bi bi-check"></i>한 달치 구매</li>
               </ul>
-              <a href="javascript:requestMonthPay()" class="buy-btn">Buy Now</a>
+              <a href="javascript:requestMonthPay()" class="buy-btn">구매</a>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="pricing-item">
-              <h3>Year Plan</h3>
-              <h4><sup>$</sup>102<span> / Year</span></h4>
+              <h3>1년</h3>
+              <h4><sup>$</sup>102<span> / 년</span></h4>
               <ul>
-                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
+                <li><i class="bi bi-check"></i>일 년치 구매</li>            
               </ul>
-              <a href="javascript:requestYearPay()" class="buy-btn">Buy Now</a>
+              <a href="javascript:requestYearPay()" class="buy-btn">구매</a>
             </div>
           </div><!-- End Pricing Item -->
 

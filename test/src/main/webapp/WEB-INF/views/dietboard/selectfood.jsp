@@ -41,11 +41,11 @@
 		<div>
 		<input type="text" class="form-control" placeholder="오늘 먹은 음식을 검색"
 			id="SelectFoodname">
-		<button type="button" class="btn btn-primary" id="selectFoodBtn">Search</button>
+		<button type="button" class="btn btn-primary" id="selectFoodBtn">검색</button>
 		<div id="selectFood"></div>
-		<div style="float: right;">
-		<input type="button" value="확인" id="finBtn">
-		<button type="button" id="closeBtn">창 닫기</button>
+		<div id = "FormSignin" style="float: right;">
+		<input type="button" class="btn btn-secondary" value="확인" id="finBtn">
+		<button type="button" class="btn btn-secondary" id="closeBtn">창 닫기</button>
 		</div>
 		</div>
 	</form>

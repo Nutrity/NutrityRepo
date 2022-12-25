@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>   
 <%@include file="../include/header.jsp"%>
 
 <script>
@@ -26,15 +26,13 @@
 	
 			<table class="table table-hover" style="text-align: center;">
 			  <tr>
-			    <th>num</th>
-			    <th>useremail</th>
-			    <th>platform_type</th>
-			    <th>realname</th>
-			    <th>gender</th>
-			    <th>phone</th>
-			    <th>birth</th>
-			    <th>user_regdate</th>
-			    <th>role</th>
+			    <th>이메일</th>
+			    <th>이름</th>
+			    <th>성별</th>
+			    <th>휴대전화</th>
+			    <th>생년월일</th>
+			    <th>가입일자</th>
+			    <th>권한</th>
 			    <th>ip</th>
 			    <th>수정</th>
 			    <th>삭제</th>
@@ -43,14 +41,12 @@
 			<c:forEach items="${member }" var="mem">
 			<input type = "hidden" id = "num" name = "num" value = "${mem.num }"/>
 				<tr>
-					<td>${mem.num }</td>
 					<td>${mem.useremail }</td>
-					<td>${mem.platform_type }</td>
 					<td>${mem.realname }</td>
 					<td>${mem.gender }</td>
 					<td>${mem.phone }</td>
 					<td>${mem.birth }</td>
-					<td>${mem.user_regdate }</td>
+					<td><fmt:formatDate value="${mem.user_regdate }" pattern="yyyy년 MM월 dd일" /></td>
 					<td>
 					   <select id = "role(${mem.num })" name = "role${mem.num }">
 					   <option value = "ROLE_ADMIN" <c:if test="${mem.job.role eq 'ROLE_ADMIN'}">selected</c:if>>ROLE_ADMIN</option>

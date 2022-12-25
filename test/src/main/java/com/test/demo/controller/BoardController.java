@@ -71,6 +71,7 @@ public class BoardController {
 		return foodlistsDesc;
 	}
 
+	@PreAuthorize("isAuthenticated()")
 	@GetMapping("insert")
 	public String boardInsert() {
 		return "/dietboard/dietinsert";

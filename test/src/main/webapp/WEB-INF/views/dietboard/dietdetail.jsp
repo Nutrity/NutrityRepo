@@ -163,7 +163,7 @@ function getReturnObj(fdlist) {
 	var str = '<br>';
 	str += "<h3>추가할 음식 리스트</h3>"
 	str += "<div class='container'>";
-	str += "<table data-aos='fade-up' class='table table-hover' id='revalTable'>"
+	str += "<table class='table table-hover' id='revalTable'>"
 	str += "<thead>"
 	str += "<tr id='tr2'>"
 	str += "<th class='col-2'>"
@@ -174,7 +174,7 @@ function getReturnObj(fdlist) {
 	
 	str += "</tr>" 
 	str += "</thead>" 
-	str += "<tbody data-aos='fade-up'>";
+	str += "<tbody>";
 	
 	$.each(JSON.parse(fdlist), function(key, val) {
 	str += "<tr>";
@@ -231,24 +231,24 @@ function getReturnObj(fdlist) {
 			<input type="hidden" value="${board.bnum}" id="bnum">
 		</div>
 		<div class="container">
-			<div class="card mb-2" style="padding: 20px; ">
+			<div data-aos="fade-up" class="mb-2">
 				<h3>
 					<fmt:formatDate value="${board.regdate}" pattern="yyyy년 MM월 dd일" />
 				</h3>
 			</div>
 			<br> <br>
-			<div>
+			<div data-aos="fade-up" data-aos-delay="100">
 				<label>제목</label> <input class="form-control" type="text"
 					value="${board.title}" id="title"> <br>
 			</div>
 
-			<div>
+			<div data-aos="fade-up" data-aos-delay="100">
 				<label>메모</label>
 				<textarea class="form-control" rows="5" cols="50" id="memo">${board.memo}</textarea>
 				<br>
 			</div>
 			<br> <br>
-			<div>
+			<div data-aos="fade-up" data-aos-delay="100">
 				<h3>음식 리스트</h3>
 				<div id="selectedfoods"></div>
 			</div>
@@ -259,9 +259,11 @@ function getReturnObj(fdlist) {
 				<br> <br>
 			</div>
 			<br> <br>
-
-			<h3>영양 그래프</h3>
-			<div id="nutrents"></div>
+			
+			<div data-aos="fade-up">
+				<h3>영양 그래프</h3>
+				<div data-aos="fade-up" data-aos-delay="100" id="nutrents"></div>
+			</div>
 			<br> <br>
             <c:if test = "${p.user.num == board.member.num}">
 			<div style="float: right;">

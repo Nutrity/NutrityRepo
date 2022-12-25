@@ -29,7 +29,7 @@
 				<br/>
 				<div>
 					<label for="realname">이름</label>
-					<input class="form-control" type = "text" id = "realname" name = "realname" value="${p.user.realname}">
+					<input class="form-control" type = "text" id = "realname" name = "realname" value="${p.user.realname}" readonly="readonly">
 					<div class="invalid-feedback">
 				    	이름을 입력해주세요.
 				    </div>

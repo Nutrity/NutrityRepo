@@ -22,7 +22,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>${p.user.num}의 결제 창</h2>
+          <h2>Nutrity 구독</h2>
 
         </div>       
         <div class="row gy-4">
@@ -30,7 +30,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-item">
               <h3>7일</h3>
-              <h4><sup>$</sup>100<span> / 주</span></h4>
+              <h4><sup>$</sup>14<span> / 주</span></h4>
               <ul>
                 <li><i class="bi bi-check"></i>일주일 치 결제</li>                
               </ul>
@@ -41,7 +41,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="pricing-item">
               <h3>1달</h3>
-              <h4><sup>$</sup>101<span> / 월</span></h4>
+              <h4><sup>$</sup>55<span> / 월</span></h4>
               <ul>
                 <li><i class="bi bi-check"></i>한 달치 구매</li>
               </ul>
@@ -52,7 +52,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="pricing-item">
               <h3>1년</h3>
-              <h4><sup>$</sup>102<span> / 년</span></h4>
+              <h4><sup>$</sup>450<span> / 년</span></h4>
               <ul>
                 <li><i class="bi bi-check"></i>일 년치 구매</li>            
               </ul>

@@ -28,6 +28,7 @@ $("#modifyBtn").click(function(){
 	})
 	.done(function(resp){
 		alert(resp)
+		location.href = "/logout"
 	})
 
 })

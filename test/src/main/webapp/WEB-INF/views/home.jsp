@@ -32,7 +32,7 @@
 
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-            <img src="../img/about.jpg" class="img-fluid" alt="">
+            <img src="../img/homeImage1.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 content order-last  order-lg-first">
             <h3>Nutrity에서 식단을 기록해보세요!</h3>
@@ -85,7 +85,6 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>홈페이지 기능</span>
           <h2>홈페이지 기능</h2>
 
         </div>
@@ -97,7 +96,7 @@
               <div class="card-img">
                 <img src="../img/storage-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="service-details.html" class="stretched-link">식단 등록</a></h3>
+              <h3><a class="stretched-link">식단 등록</a></h3>
               <p>오늘 또는 미래의 식단을 기록하여 관리할 수 있습니다.</p>
             </div>
           </div><!-- End Card Item -->
@@ -108,7 +107,7 @@
               <div class="card-img">
                 <img src="../img/warehousing-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="#" class="stretched-link">음식 검색</a></h3>
+              <h3><a class="stretched-link">음식 검색</a></h3>
               <p>음식을 검색하여 영양소들을 확인해 보세요! <br> 식약처에서 제공한 데이터를 토대로 찾아드립니다!</p>
             </div>
           </div><!-- End Card Item -->
@@ -118,7 +117,7 @@
               <div class="card-img">
                 <img src="../img/packaging-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="#" class="stretched-link">월별 식단 확인</a></h3>
+              <h3><a class="stretched-link">월별 식단 확인</a></h3>
               <p>식단 달력을 통해 한눈에 식단을 확인할 수 있습니다.</p>
             </div>
           </div><!-- End Card Item -->
@@ -128,7 +127,7 @@
               <div class="card-img">
                 <img src="../img/logistics-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="#" class="stretched-link">식단 확인</a></h3>
+              <h3><a class="stretched-link">식단 확인</a></h3>
               <p>등록한 식단을 확인하여 음식의 영양소와 권장 영양소 섭취량을 그래프를 통해 비교해 볼 수 있습니다.</p>
             </div>
           </div><!-- End Card Item -->
@@ -138,7 +137,7 @@
               <div class="card-img">
                 <img src="../img/cargo-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="#" class="stretched-link">구독 시스템</a></h3>
+              <h3><a class="stretched-link">구독 시스템</a></h3>
               <p>결제를 통해 저희 페이지에서 구독자가 될 수 있습니다. 구독자가 되어 전문가 분들과 소통을 진행해 보세요.</p>
             </div>
           </div><!-- End Card Item -->
@@ -148,7 +147,7 @@
               <div class="card-img">
                 <img src="../img/trucking-service.jpg" alt="" class="img-fluid">
               </div>
-              <h3><a href="#" class="stretched-link">전문가 인증</a></h3>
+              <h3><a class="stretched-link">전문가 인증</a></h3>
               <p>혹시 식단 관리에 적합한 직업에 종사중이라면 <br> 전문가 인증을 해주세요. 소정의 혜택을 드립니다.</p>
             </div>
           </div><!-- End Card Item -->

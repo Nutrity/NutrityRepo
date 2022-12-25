@@ -21,6 +21,7 @@ import com.test.demo.model.Member;
 import com.test.demo.model.PayInfo;
 import com.test.demo.model.Product;
 import com.test.demo.repository.MemberRepository;
+import com.test.demo.service.CommentService;
 import com.test.demo.service.MemberServiceImpl;
 
 @Controller
@@ -31,6 +32,9 @@ public class MemberController {
 	
 	@Autowired
 	private MemberRepository mRepository;
+	
+	@Autowired
+	private CommentService cService;
 		
 	@GetMapping("/")
 	public String main() {
@@ -83,6 +87,8 @@ public class MemberController {
 	@DeleteMapping("userDelete/{num}")
 	@ResponseBody
 	public String userDelete(@PathVariable Long num) {
+		Member member = mService.detailMember(num);
+		
 		mService.userDelete(num);
 		return "success";
 	}

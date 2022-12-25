@@ -38,7 +38,7 @@ $("#delBtn").click(function(){
 	}
 	$.ajax({
 		type : 'delete',
-		url : "/userDelete/${p.user.num}"
+		url : "/userDelete/"+$("#num").val()
 	})
 	.done(function(){
 		alert("탈퇴가 완료되었습니다.")

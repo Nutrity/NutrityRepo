@@ -63,4 +63,8 @@ public class Member {
 	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnore
 	private List<PayInfo> payInfo;
+	
+	@OneToMany(mappedBy = "member" ,cascade = CascadeType.REMOVE)
+	@JsonIgnore
+	private Set<CommentBoard> commentBoards;
 }

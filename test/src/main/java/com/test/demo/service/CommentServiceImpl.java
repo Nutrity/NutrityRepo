@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.test.demo.model.CommentBoard;
 import com.test.demo.model.DietBoard;
+import com.test.demo.model.Member;
 import com.test.demo.repository.CommentRepository;
 
 @Service
@@ -28,6 +29,11 @@ public class CommentServiceImpl implements CommentService{
 	@Override
 	public void delete(Long cnum) {
 		commentRepository.deleteById(cnum);		
+	}
+
+	@Override
+	public void deleteALL(Member member) {
+		commentRepository.deleteAllByMember(member);
 	}
 
 }

@@ -296,10 +296,10 @@ function getReturnObj(fdlist) {
 	</section>
 	<script>
 
-function commentDel(){
+function commentDel(cnum){
 	$.ajax({
 		type : "delete",
-		url : "/comment/delete/"+$("#cnum").val()
+		url : "/comment/delete/"+cnum
 	})
 	.done(function(resp){
 		alert(resp + "번 댓글이 삭제되었습니다.")
@@ -332,7 +332,7 @@ var init = function(){
 					str += "<td>" + val.c_regdate + "</td>"
 					str += "<td>"
 					if(${p.user.num} == val.member.num){
-					str += "<a href = 'javascript:commentDel()'>삭제</a>"
+					str += "<a href = 'javascript:commentDel("+val.cnum+")'>삭제</a>"
 					}
 					str += "</td>"
 					str +="</tr>"			

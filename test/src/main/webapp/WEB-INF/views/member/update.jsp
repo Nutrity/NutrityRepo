@@ -18,7 +18,7 @@
 	</div>
 	<section id="UpdateForm">
 		<div data-aos="fade-up" data-aos-delay="200" class="container">
-			<input type="text" id = "num" name = "num" value = "${p.user.num}" readonly="readonly" style="display: none">
+			<input type="number" id = "num" name = "num" value = "${p.user.num}" readonly="readonly" style="display: none">
 				<div>
 					<label for="username">아이디</label>
 					<input class="form-control" type = "text" id = "username" name = "username" value="${p.user.username}" readonly="readonly">
@@ -167,14 +167,6 @@
 					</div>
 				</c:otherwise>
 				</c:choose>		  
-			<table>
-				<tr>
-					<td>이메일</td>
-					<td><input type="text" id="useremail" name="useremail"
-						value="${p.user.useremail}"></td>
-				</tr>
-			</table>
-
 		</div>
 	</section>
 </main>

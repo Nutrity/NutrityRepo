@@ -69,18 +69,22 @@
 var IMP = window.IMP; // 생략 가능
 IMP.init("imp46400101"); // 예: imp00000000
 
+let uuid = self.crypto.randomUUID();
+console.log(uuid);
+
 // 주 별 결제
 function requestWeekPay() {
 	data = {
 			name : "subscribe(week)",
 			amount : 100	
 	}
+	
 	customer_uid : ${p.user.num}
     // IMP.request_pay(param, callback) 결제창 호출
     IMP.request_pay({ // param    	
         pg: "html5_inicis.INIBillTst",
         pay_method: "card",
-        merchant_uid: "200",
+        merchant_uid: uuid+"200",
         name: data.name,
         amount: data.amount,
         buyer_email: "${p.user.useremail}",
@@ -119,7 +123,7 @@ function requestMonthPay() {
     IMP.request_pay({ // param    	
         pg: "html5_inicis.INIBillTst",
         pay_method: "card",
-        merchant_uid: "201",
+        merchant_uid: uuid+"201",
         name: data.name,
         amount: data.amount,
         buyer_email: "${p.user.useremail}",
@@ -158,7 +162,7 @@ function requestYearPay() {
     IMP.request_pay({ // param    	
         pg: "html5_inicis.INIBillTst",
         pay_method: "card",
-        merchant_uid: "202",
+        merchant_uid: uuid+"202",
         name: data.name,
         amount: data.amount,
         buyer_email: "${p.user.useremail}",

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	var	str = "<label for='kcal'>칼로리(g)</label>"
 		str += "<div class='progress' id='kcal'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='1' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[2]+"' ></div>";
+		str += "<div data-aos='fade-right' class='progress-bar' role='progressbar' aria-valuenow='1' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[2]+"' ></div>";
 	str += "</div>";
 
 	str += "<label for='car'>탄수화물(g)</label>"

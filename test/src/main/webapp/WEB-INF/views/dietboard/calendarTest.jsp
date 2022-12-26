@@ -123,7 +123,9 @@
 		</div>
 	</div>
 	<section class="row">
-		<h3>${p.user.username}의캘린더</h3>
+		<div style="margin-left: 20px">
+			<h3>${p.user.username}의캘린더</h3>
+		</div>
 		<div class="col col-10" style="float: left;" id='calendar-container'>
 			<div id='calendar'></div>
 		</div>

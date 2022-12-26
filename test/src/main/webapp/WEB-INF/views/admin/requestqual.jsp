@@ -31,7 +31,7 @@
 			    <th>직업</th>
 			    <th>권한</th>
 			    <th>ip</th>
-			    <th>수정</th>
+			    <th>승인</th>
 			    <th>거절</th>
 			  </tr>
 

@@ -176,6 +176,7 @@ $("#modifyBtn").click(function(){
 		contentType : 'application/json;charset=utf-8' 
 	})
 	.done(function(resp){
+		alert("수정 되었습니다.")
 		location.href = "/logout"
 	})
 

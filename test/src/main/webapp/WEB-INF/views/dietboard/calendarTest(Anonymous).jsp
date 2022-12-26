@@ -52,7 +52,9 @@
 		</div>
 	</div>
 	<section>
-		<h3>식단 캘린더</h3>
+		<div style="margin-left: 20px">
+			<h3>식단 캘린더</h3>
+		</div>
 		<div id='calendar-container'>
 			<div id='calendar'></div>
 		</div>

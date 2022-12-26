@@ -30,6 +30,7 @@
 				editable : false,
 			    select: function(info) {
 			      start: 'Date'
+			    	  location.href = "/board/insert/"+info.startStr
 			      },//select
 			      
 			});//calendar
@@ -89,7 +90,7 @@
 		    		    $("#sd_kcal").html(foodkcal);
 		    		    $("#sd_memo").html(resp.sideBoard.memo)
 		    		    }else if(resp==""){
-		    		    	 location.href = "/board/insert"
+		    		    	 location.href = "/board/insert/"+info.startStr
 		    		    }
 		    		})//in done
 		      },//select

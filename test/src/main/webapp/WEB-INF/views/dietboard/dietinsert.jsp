@@ -3,8 +3,9 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp"%>
 <script>
+
 	function foodFinder() {
-		window.open("selectfood", "", "width=700 height=400")
+		window.open("/board/selectfood", "", "width=700 height=400")
 	}
 	
 	var fdlistFoodcodes = []
@@ -58,7 +59,7 @@
 <main id="main">
 	<div class="breadcrumbs">
 		<div class="page-header d-flex align-items-center"
-			style="background-image: url('../img/month-cal-bg-1.jpg');">
+			style="background-image: url('/img/month-cal-bg-1.jpg');">
 			<div class="container position-relative">
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-6 text-center">
@@ -79,7 +80,7 @@
 	<div class="container">
 	<div>
 	<label>날짜</label> 
-	<input type="date" class="form-control" id="regdate" placeholder="날짜를 선택해주세요"><br/>
+	<input type="date" class="form-control" id="regdate" value="${date}" placeholder="날짜를 선택해주세요"><br/>
 	</div>
 	
 	<div>

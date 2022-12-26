@@ -26,7 +26,7 @@
 			selectable: true,
 			editable : true,
 		      select: function(info) {
-		        location.href = "/board/insert"
+		    	  location.href = "/board/insert/"+info.startStr
 		      },
 		});
 

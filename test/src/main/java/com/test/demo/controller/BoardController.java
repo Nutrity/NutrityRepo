@@ -72,6 +72,15 @@ public class BoardController {
 	}
 
 	@PreAuthorize("isAuthenticated()")
+	@GetMapping("insert/{date}")
+	public String boardInsert(@PathVariable String date, Model model) throws ParseException {
+//		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//		Date formdate = formatter.parse(date);
+		model.addAttribute("date", date);
+		return "/dietboard/dietinsert";
+	}
+	
+	@PreAuthorize("isAuthenticated()")
 	@GetMapping("insert")
 	public String boardInsert() {
 		return "/dietboard/dietinsert";

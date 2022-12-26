@@ -144,7 +144,7 @@
 			</div>
 			<div class="h-25 p-3">
 				메모<br />
-				<textarea id="sd_memo" rows="10" cols="25"></textarea>
+				<textarea id="sd_memo" rows="10" cols="25" readonly="readonly"></textarea>
 			</div>
 		</div>
 	</section>

@@ -33,27 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	str += "<label for='car'>탄수화물(g)</label>"
 	str += "<div class='progress' id='car'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[5]+"' ></div>";
+		str += "<div data-aos='fade-right' class='progress-bar' role='progressbar' aria-valuenow='2' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[5]+"' ></div>";
 	str += "</div>";
 
 	str += "<label for='protein'>단백질(g)</label>"
 	str += "<div class='progress' id='protein'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[3]+"'></div>";
+		str += "<div data-aos='fade-right' class='progress-bar' role='progressbar' aria-valuenow='3' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[3]+"'></div>";
 	str += "</div>";
 
 	str += "<label for='fat'>지방(g)</label>"
 	str += "<div class='progress' id='fat'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[4]+"'></div>";
+		str += "<div data-aos='fade-right' class='progress-bar' role='progressbar' aria-valuenow='4' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[4]+"'></div>";
 	str += "</div>";
 
 	str += "<label for='sugar'>당(g)</label>"
 	str += "<div class='progress' id='sugar'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='5' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[6]+"'></div>";
+		str += "<div data-aos='fade-right' class='progress-bar' role='progressbar' aria-valuenow='5' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[6]+"'></div>";
 	str += "</div>";
 
 	str += "<label for='sodium'>나트륨(mg)</label>"
 	str += "<div class='progress' id='sodium'>";
-		str += "<div class='progress-bar' role='progressbar' aria-valuenow='6' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[10]+"'></div>";
+		str += "<div data-aos='fade-right' class='progress-bar' role='progressbar' aria-valuenow='6' aria-valuemin='0' aria-valuemax='"+Object.values(resp)[10]+"'></div>";
 	str += "</div>";
 	
 	$("#nutrents").html(str);

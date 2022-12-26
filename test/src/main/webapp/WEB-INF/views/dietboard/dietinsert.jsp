@@ -62,8 +62,8 @@
 			<div class="container position-relative">
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-6 text-center">
-						<h2>식단 삽입</h2>
-						<p>식단 삽입 창</p>
+						<h2>식단 등록</h2>
+						<p>식단 등록 창</p>
 					</div>
 				</div>
 			</div>
